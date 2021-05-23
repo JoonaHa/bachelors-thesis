@@ -1,0 +1,833 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/mina/Uni/Kandi/thesis-template/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+chapter{Johdanto}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kaikessa julkaistavaksi tarkoitetussa tekstissÃ¤ kirjoittajan luomisen ja esitystavan vapautta rajoittavat monet ohjeet ja tarkatkin mÃ¤Ã¤rÃ¤ykset.
+\end_layout
+
+\begin_layout Standard
+Parhaimmillaan lukijalle ja kirjoittajalle yhteinen, tuttu sÃ¤Ã¤nnÃ¶stÃ¶ luo erÃ¤Ã¤nlaisen tukiverkoston, joka tukee sanoman siirtymistÃ¤ vÃ¤Ã¤ristymÃ¤ttÃ¤. Kirjoituksen lukija lÃ¶ytÃ¤Ã¤ kirjoituksesta helpommin olennaisen sisÃ¤llÃ¶n, jos kirjoituksen ulkoasu ja sisÃ¤llÃ¶n rakenne vastaavat hÃ¤nen tottumuksiaan. Sama koskee myÃ¶s kirjoittajaa. Noudattaessaan valmista esitystapamallia kirjoittajan ei tarvitse kÃ¤yttÃ¤Ã¤ aikaansa itse tyÃ¶n kannalta toissijaisten seikkojen miettimiseen, vaan hÃ¤n voi keskittyÃ¤ hiomaan tekstin sisÃ¤ltÃ¶Ã¤. Siksi kannattaa harjoitella myÃ¶s tyÃ¶n ulkoasua koskevien ohjeiden noudattamista, vaikka omasta mielestÃ¤Ã¤n osaisikin valita esitykselleen ohjetta paremman muodon.
+\end_layout
+
+\begin_layout Standard
+TÃ¤mÃ¤ kirjoitus on tarkoitettu Helsingin yliopiston TietojenkÃ¤sittelytieteen osastoon alempien opinnÃ¤ytteiden ja harjoitusten ulkoasun ja rakenteen ohjeeksi. Ohje soveltuu siten kandidaatintutkielman kirjoittamisen kurssille, ohjelmistotuotantoprojekteihin, seminaareihin ja pro gradu -tutkielmiin. (Kirjoitus on pÃ¤ivitetty uusintapainos aiemmista ohjeista, jotka kurssin luennoijat ovat laatineet 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+citep{erkio01,erkiomakela96,erkio94,verkamo92}
+\end_layout
+
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+TyylimÃ¤Ã¤rittely on saatavissa pdflatex- ja word-versiona. TyylimÃ¤Ã¤rittelyitÃ¤ valitessa on huomattava ohjeet tekstien syÃ¶ttÃ¶Ã¶n liittyvÃ¤sstÃ¤ koodauksesta (UTF8,ISO 8859-15). TÃ¤mÃ¤n kirjoituksen tukena sopivat kÃ¤ytettÃ¤vÃ¤ksi tavanomaiset latex- tai word-oppaat.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+chapter{Kirjoituksen rakenne}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tarkastellaan aluksi tieteelliseltÃ¤ tekstiltÃ¤ odotettuja kirjoituksen osia. Samoihin asioihin on luonnollisesti syytÃ¤ kiinnittÃ¤Ã¤ huomiota myÃ¶s muussa teknisessÃ¤ kirjoittamisessa. Huomattakoon, ettÃ¤ tÃ¤mÃ¤ teksti ei ole tieteellinen teksti, eikÃ¤ siten itse sisÃ¤llÃ¤ kaikkia niitÃ¤ elementtejÃ¤, jotka tieteellisen tekstin sisÃ¤llÃ¶lliseen antiin kuuluvat. TÃ¤llaisia puutteita ovat esimerkiksi johdannon tutkimuskysymyksen asettelun puuttuminen sekÃ¤ arvoivan materiaalin puute tekstin lopussa, sekÃ¤ yhteenvedon latteus. Teksti rajoittuu siten otsikkonsa mukaisesti vain tekniseen sisÃ¤llÃ¶n asetteluun.
+\end_layout
+
+\begin_layout Section
+TiivistelmÃ¤
+\end_layout
+
+\begin_layout Standard
+TiivistelmÃ¤sivu sisÃ¤ltÃ¤Ã¤ seuraavat osat: tyÃ¶n bibliografiset tiedot, tiivistelmÃ¤teksti, aiheluokat ja avainsanat. Bibliografiset tiedot koostuvat tyÃ¶n otsikosta, tekijÃ¤n nimestÃ¤, julkaisupaikan tiedoista, julkaisuajankohdasta ja sivumÃ¤Ã¤rÃ¤stÃ¤.
+\end_layout
+
+\begin_layout Standard
+TiivistelmÃ¤teksti on lyhyt, yleensÃ¤ yhden kappaleen mittainen (maksimissaan noin 100 sanaa) selvitys kirjoituksen tÃ¤rkeimmÃ¤stÃ¤ sisÃ¤llÃ¶stÃ¤: mitÃ¤ on tutkittu, miten on tutkittu ja mitÃ¤ tuloksia on saatu.
+\end_layout
+
+\begin_layout Standard
+Aiheluokat kuvataan ACM Computing Classification System -luokituksen (CCS) luokituksen mukaisesti. Luokittelussa kÃ¤ytetÃ¤Ã¤n tÃ¤ysia polkuja juurisolmun CCS osoittamista lÃ¤htÃ¶posteistÃ¤ lehtisolmuihin. Polkuja voi antaa 1-3 aihepiirien soveltuvuuden mukaan, mitÃ¤ alempi opinnÃ¤yte, sen vÃ¤hemmÃ¤n polkuja se tarvitsee. Poluissa tasot erotetaan toisistaan nuolella eteenpÃ¤in. Kun polun nimisanoja arvioidaan suhteessa tyÃ¶n sisÃ¤ltÃ¶Ã¶n, merkitÃ¤Ã¤n boldface-fontilla tÃ¤rkein termi, italics-fontilla toiseksi tÃ¤rkein. NÃ¤in menetellÃ¤Ã¤n, mikÃ¤li jotkin termeistÃ¤ ovat olennaisesti paremmin kuvaavia kuin muut polun termit. Nimettyjen polkujen lisÃ¤ksi lukija voi siten tarkastella lisÃ¤ulottuvuutena myÃ¶s tÃ¤rkeiksi merkittyjen termien joukkoa sinÃ¤nsÃ¤. Avainsanoiksi valitaan kirjoituksen sisÃ¤ltÃ¶Ã¤ keskeisesti kuvaavia kÃ¤sitteitÃ¤.
+\end_layout
+
+\begin_layout Section
+Johdanto
+\end_layout
+
+\begin_layout Standard
+Johdannon tarkoituksena on kertoa yleiskielisesti tyÃ¶n tavoite. Kerrotaan (kuten tiivistelmÃ¤ssÃ¤kin, mutta laveammin), mitÃ¤ on tutkittu, miten on tutkittu ja mitÃ¤ tuloksia on saatu. Jotta kysymyksenasettelu ja tulokset on lukijan helppo oikein tulkita on syytÃ¤ aloittaa johdanto asettelemalla tutkimus asiayhteyteensÃ¤, esimerkiksi kertomalla aluksi, minkÃ¤laisessa yhteydessÃ¤ tarkasteluun otettavat haasteet esiintyvÃ¤t ja keiden on ratkaisuista tarkoitus hyÃ¶tyÃ¤.
+\end_layout
+
+\begin_layout Standard
+Johdannon pituus mÃ¤Ã¤rÃ¤ytyy suhteessa koko kirjoitelman pituuteen. Parisivuinen kirjoitus ei erikseen otsikoitua johdantoa kaipaa, sillÃ¤ se itsessÃ¤Ã¤n on laajennettu tiivistelmÃ¤. Kymmensivuisen kirjoituksen johdanto voi olla vaikkapa sivun tai puolentoista mittainen. Pro gradu -tutkielman 50-70-sivuiseen kokonaisuuteen tuntuu 2-4-sivuinen johdanto kohtuulliselta.
+\end_layout
+
+\begin_layout Standard
+Johdanto kertoo siis lyhyessÃ¤, yleistajuisessa muodossa koko kirjoitelman kysymyksenasettelun, juonen sekÃ¤ tulokset ja johtopÃ¤Ã¤telmÃ¤t. TÃ¤mÃ¤n luettuaan lukija voi pÃ¤Ã¤tellÃ¤, haluaako syventyÃ¤ asiaan tarkemmin lukemalla koko kirjoituksen.
+\end_layout
+
+\begin_layout Section
+KÃ¤sittelyluvut
+\end_layout
+
+\begin_layout Standard
+KÃ¤sittelylukujen tyÃ¶njako mÃ¤Ã¤rÃ¤ytyy kÃ¤siteltÃ¤vÃ¤n asian luonteen mukaisesti. Lukijan ohjailemiseksi kukin pÃ¤Ã¤luku kannattaa aloittaa lyhyellÃ¤ kappaleella, joka paljastaa mikÃ¤ kyseisen luvun keskeisin sisÃ¤ltÃ¶ on ja kuinka aliluvuissa asiaa kehitellÃ¤Ã¤n eteenpÃ¤in. Erityisesti kannattaa kiinnittÃ¤Ã¤ huomiota siihen, ettÃ¤ lukijalle ilmaistaan selkeÃ¤sti miksi kutakin asiaa kÃ¤sitellÃ¤Ã¤n ja miten kÃ¤siteltÃ¤vÃ¤t asiat suhtautuvat toisiinsa.
+\end_layout
+
+\begin_layout Standard
+JÃ¤sentelyongelmista kielivÃ¤t tilanteet, joissa alilukuja on vain yksi, tai joissa kÃ¤ytetÃ¤Ã¤n useampaa kuin kahta tasoa (pÃ¤Ã¤luku ja sen aliluvut). Kolmitasoisia otsikointeja saatetaan tarvita joissakin teknisissÃ¤ dokumenteissa perustellusti, mutta nÃ¤mÃ¤ muodostavat poikkeuksen.
+\end_layout
+
+\begin_layout Standard
+Perusohjeena on kÃ¤yttÃ¤Ã¤ tekstin rakenteellisesti painokkaita paikkoja, kuten lukujen avauksia ja teksikappaleiden aloitusvirkkeitÃ¤ juonenkuljetukseen ja informaatioaskeleiden sitomiseen toisiinsa. Tekstikappaleiden keskiosat, samoin kuin lukujen keskiosat selostavat asiaa vÃ¤hemmÃ¤n tuntevalle yksityiskohtia, kun taas aihepiirissÃ¤ jo sisÃ¤llÃ¤ olevat lukijat voivat alkuvirkkeitÃ¤ silmÃ¤ilemÃ¤llÃ¤ edetÃ¤ tekstissÃ¤ tehokkaasti eksymÃ¤ttÃ¤ tarinan juonesta.
+\end_layout
+
+\begin_layout Standard
+Kullakin kirjoittajalla on oma temponsa, joka vÃ¤littyy lukijalle tekstikappaleiden pituudessa ja niihin sisÃ¤llytettyjen ajatuskulkujen mutkikkuudessa. Kussakin tekstikappaleessa pitÃ¤isi pitÃ¤ytyÃ¤ vain yhdessÃ¤ informaatioaskelessa tai olennaisessa pÃ¤Ã¤ttelyaskelessa, muuten juonen seuraaminen kÃ¤y raskaaksi olennaisten lauseiden etsiskelyksi. YksivirkkeisiÃ¤ tekstikappaleita on syytÃ¤ varoa.
+\end_layout
+
+\begin_layout Section
+LÃ¤hdeviittausten kÃ¤yttÃ¶
+\end_layout
+
+\begin_layout Standard
+Olennaisia opittavia asioita viittaustekniikoissa ovat viitteen paikka tekstissÃ¤, oikea lÃ¤hdeluettelojÃ¤rjestys valitun viitetyylin parina sekÃ¤ taito ja tahto noudattaa annettua tyylimÃ¤Ã¤rÃ¤ystÃ¤. VÃ¤itÃ¶skirjoissa ja lehti- tai konferenssiartikkeleissa tekstin hyvÃ¤ksyminen riippuu myÃ¶s nÃ¤iden yksityiskohtien asianmukaisesta kÃ¤sittelystÃ¤. TÃ¤stÃ¤ syystÃ¤ laitoksella nÃ¤hdÃ¤Ã¤n tarpeelliseksi opiskelijoiden tutustua edes pinnallisesti myÃ¶s muihin tyylilajeihin ja oppia kÃ¤yttÃ¤mÃ¤Ã¤n automatisoituja muotoilutyÃ¶kaluja tehokkaasti, jolloin tyylimuutokset ovat tehokkaita.
+\end_layout
+
+\begin_layout Standard
+LÃ¤hdeviitteet sijoitetaan aina virkkeen sisÃ¤puolelle. Siten esimerkiksi tekstikappaleen lopussa irrallaan oleva viite ei ole asiallinen. Tilanne ei muutu, vaikka viite sujautettaisiin tekstikappaleen viimeisen virkkeen sisÃ¤Ã¤n. LÃ¤hdeviittauksen yhteyteen merkitÃ¤Ã¤n mukaan tarkentavat sivunumerot, mikÃ¤li lukijan olisi tyÃ¶lÃ¤stÃ¤ lÃ¶ytÃ¤Ã¤ asianomainen kohta viitatusta lÃ¤hteestÃ¤.
+\end_layout
+
+\begin_layout Standard
+Tehokkaita viitteensijoittelupaikkoja ovat esimerkiksi uuden kÃ¤sitteen nimeÃ¤miskohta ja virkkeen loppu kun kyseessÃ¤ on lÃ¤hteestÃ¤ lainattu vÃ¤ite. On myÃ¶s muistettava lainausmerkkien kÃ¤yttÃ¶ silloin kun tehdÃ¤Ã¤n suoria lainauksia.
+\end_layout
+
+\begin_layout Standard
+Tekstin jÃ¤sentelyn on tuotava selkeÃ¤sti esiin, mihin asiaan viite liittyy. Samalla tulee ymmÃ¤rrettÃ¤vÃ¤ksi se, kuinka pitkÃ¤Ã¤n tekstikatkelmaan ko. viite liitetÃ¤Ã¤n. Ei ole siten asiallista aloittaa lukua nimeÃ¤mÃ¤llÃ¤ yhtÃ¤ tai useampaa lÃ¤hdettÃ¤ luvun taustaksi, vaan viitteitÃ¤ on kiinnitettÃ¤vÃ¤ tÃ¤smÃ¤llisemmin vÃ¤itteisiin ja kÃ¤sitteisiin. Luvun avaus viitetiedolla voi olla oire myÃ¶s suuremmasta ongelmasta: lÃ¤hderiippuvuudesta. Aloitteleva kirjoittaja helposti toistaa lÃ¤hteestÃ¤ oppimaansa ilman ettÃ¤ tarpeellinen analysointi ja prosessointi suhteessa muuhun opittuun olisi vielÃ¤ tapahtut.
+\end_layout
+
+\begin_layout Standard
+ViitteillÃ¤ ja sanamuodolilla on myÃ¶s tuotava selkeÃ¤sti esiin se, mikÃ¤ teksissÃ¤ on lainattua ja mikÃ¤ oman pohdinnan ja valikoinnin tulosta.
+\end_layout
+
+\begin_layout Standard
+LÃ¤hdeviittauksiin kÃ¤ytetÃ¤Ã¤n TietojenkÃ¤sittelytieteen osastolla numeroitua tyyliÃ¤ ja APA-tyyliÃ¤, valinnan nÃ¤iden vÃ¤lillÃ¤ tekevÃ¤t kunkin ryhmÃ¤n valvoja ja ohjaaja yhdessÃ¤. Numeroitu tyyli on esimerkiksi IEEE- ja ACM-julkaisuissa yleisesti kÃ¤ytetty ja puolustaa siten paikkaansa. APA-tyyli on poikkeuksellinen ns. kovissa tieteissÃ¤, mutta monet valvojista pitÃ¤vÃ¤t siitÃ¤ sen luettavuuden vuoksi. Numeroita joutuu nimiÃ¤ useammin tarkistamaan lÃ¤hdeluettelosta, sillÃ¤ tarkastus- ja arvointiprosessiin kuuluu arvioida myÃ¶s lÃ¤hteiden valitaa ja niiden kÃ¤yttÃ¶tapaa.
+\end_layout
+
+\begin_layout Section
+Yhteenveto
+\end_layout
+
+\begin_layout Standard
+Yhteenveto vaatimattomimmillaan on vain lyhyt kertaus kirjoituksen keskeisistÃ¤ asioista. Arvokkaamman yhteenvedon saa aikaan kommentoimalla tyÃ¶n tulosten arvoa, tyÃ¶n liittymistÃ¤ ympÃ¤ristÃ¶Ã¶n ja tulevaisuudennÃ¤kymiÃ¤. TÃ¤llaiset arviot huolellisesti perusteltava.
+\end_layout
+
+\begin_layout Section
+LÃ¤hdeluettelon laatiminen
+\end_layout
+
+\begin_layout Standard
+Tieteellisen kirjoittamisen kurssin tÃ¶iden lÃ¤hdeluetteloiden laatimisessa noudatetaan seuraavia ohjeita.
+\end_layout
+
+\begin_layout Standard
+Niiden taustalla on kaksi keskeistÃ¤ pyrkimystÃ¤: tehdÃ¤ viitatun lÃ¤hteen hankkiminen luettavaksi mahdollisimman helpoksi ja ilmaista, millaisen arviointiprosessin lÃ¤pi kÃ¤yneeseen kirjoitukseen vedotaan. NÃ¤istÃ¤ syistÃ¤ 
+\end_layout
+
+\begin_layout Itemize
+lÃ¤hdeviitteen tulee aina olla niin tarkka, ettÃ¤ lÃ¤hde on sen perusteella tunnistettavissa ja lÃ¶ydettÃ¤vissÃ¤ luetteloista ja kirjastoista, 
+\end_layout
+
+\begin_layout Itemize
+erityyppisten lÃ¤hteiden (kirjat, konferenssit, lehdet) on erotuttava toisistaan ja 
+\end_layout
+
+\begin_layout Itemize
+luettelon eri osien tulee olla mahdollisimman yhdenmukaisia, erityisesti lÃ¤hdetyypin sisÃ¤llÃ¤. 
+\end_layout
+
+\begin_layout Standard
+Riippumatta kÃ¤ytettÃ¤vÃ¤stÃ¤ viitetyylistÃ¤, lÃ¤hteet ovat TietojenkÃ¤sittelytieteen osaston opinnÃ¤ytteiden lÃ¤hdeluetteloissa tekijÃ¤n nimen mukaisessa aakkosjÃ¤rjestyksessÃ¤, saman tekijÃ¤n (tekijÃ¤ryhmÃ¤n) tyÃ¶t julkaisuajan mukaisessa jÃ¤rjestyksessÃ¤. Jos jollakin lÃ¤hteellÃ¤ ei ole henkilÃ¶tekijÃ¤Ã¤, se aakkostetaan julkaisun nimen mukaisesti.
+\end_layout
+
+\begin_layout Standard
+Kustakin lÃ¤hteestÃ¤ annetaan seuraavat tiedot, edelleen viitetyylistÃ¤ riippumatta: 
+\end_layout
+
+\begin_layout Itemize
+(tarvittaessa lÃ¤hdeviitelyhenne). 
+\end_layout
+
+\begin_layout Itemize
+tekijÃ¤n tai tekijÃ¶iden nimet (sukunimi, etunimien alkukirjaimet) alkuperÃ¤isessÃ¤ jÃ¤rjestyksessÃ¤Ã¤n; jos tekijÃ¶itÃ¤ on enemmÃ¤n kuin kolme, voidaan toimia siten, ettÃ¤ vain ensimmÃ¤inen tekijÃ¤ nimetÃ¤Ã¤n ja muiden tilalle kirjoitetaan 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ et al.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+julkaisun tai artikkelin nimi alkuperÃ¤isessÃ¤ muodossaan 
+\end_layout
+
+\begin_layout Itemize
+julkaisupaikan tiedot: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+kirjasta: kustantaja, julkaisupaikka (voidaan jÃ¤ttÃ¤Ã¤ pois, jos kyseessÃ¤ on tunnettu kustantaja), vuosi ja 
+\end_layout
+
+\begin_layout Itemize
+lehtiartikkelista: lehden nimi, volyymi, numero, vuosiluku ja kuukausi (suluissa),
+\end_layout
+
+\begin_layout Itemize
+artikkelikokoelmassa (esim. konferenssijulkaisussa) ilmestyneestÃ¤ artikkelista: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+kokoelman nimi, toimittaja, kustantaja, julkaisupaikka ja vuosi 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ tai
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+konferenssin nimi, jÃ¤rjestÃ¤jÃ¤, paikka ja aika, 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+raportista: julkaisusarja, raportin numero, julkaisupaikka, julkaisija ja vuosi ja 
+\end_layout
+
+\begin_layout Itemize
+www-lÃ¤hteestÃ¤: verkko-osoite, voimassaoloajankohta, mahdollisesti viittausajankohta hakasuluissa 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+sivunumerot, mikÃ¤li lÃ¤hteenÃ¤ kÃ¤ytetty julkaisu on artikkeli tai kokoomateoksen itsenÃ¤inen luku. 
+\end_layout
+
+\begin_layout Standard
+Normaaliin suomalaiseen tapaan artikkelin nimessÃ¤ ainoastaan ensimmÃ¤inen sana kirjoitetaan isolla alkukirjaimella, sen sijaan konferenssien ja kokoelmajulkaisujen nimissÃ¤ kÃ¤ytetÃ¤Ã¤n isoa alkukirjainta jokaisen sanan alussa (artikkelisanoja ja prepositioita lukuunottamatta). Katso mallia oheisista esimerkeistÃ¤. Kokoelman nimen edessÃ¤ on syytÃ¤ selvyyden vuoksi kÃ¤yttÃ¤Ã¤ sanaa 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Teoksessa
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+, paitsi kun on kysymys konferenssijulkaisusta, jonka nimi alkaa lyhenteellÃ¤ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Proc.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ (sanasta Proceedings). TÃ¤llÃ¶in ei tarvita mitÃ¤Ã¤n tÃ¤ydennystÃ¤. TÃ¤mÃ¤n eron nÃ¤kee esimerkiksi vertaamalla lÃ¤hdeviitteiden
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+citep{dantowsley90}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ ja
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+citep{gannonetal89}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ ulkoasuja.
+\end_layout
+
+\begin_layout Standard
+WWW-lÃ¤hteiden kÃ¤ytÃ¶ssÃ¤ on syytÃ¤ muistaa, ettÃ¤ verkossa julkaisukynnys on olematon. Kannattaa siten keskittyÃ¤ tunnettujen tieteellisten kustantajien julkaisuihin ja niihin teknisiin standardeihin, joille WWW on ainoa julkaisukanava. MikÃ¤li sama julkaisu on saatavissa myÃ¶s perinteisessÃ¤ muodossa, viitataan ensisijaisesti siihen ja kÃ¤ytetÃ¤Ã¤n verkko-osoitetta lisÃ¤tietona. LÃ¤hdeluettelossa on annettu esimerkit useita kanavia julkaistusta kirjoituksesta
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+citep{abiteboul,dietinger}
+\end_layout
+
+\end_inset
+
+ sekÃ¤ pelkÃ¤stÃ¤Ã¤n WWW-julkaisuna leviÃ¤vÃ¤stÃ¤ standardista
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+citep{bray}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Erityisesti varoitetaan Wikipedian kÃ¤ytÃ¶stÃ¤ tieteellisessÃ¤ tekstissÃ¤. Vaikka sen avulla on helppo alustavasti tutustua joihin aihepiireihin ja asiantuteva lukija voisi teksin kelvolliseksi tiettynÃ¤ hetkenÃ¤ hyvÃ¤ksyÃ¤kin, ei se foorumina millÃ¤Ã¤n lailla tÃ¤ytÃ¤ tieteellisesti vertaisarvoidun tutkimusfoorumin kriteerejÃ¤. Jos Wikipedia-artikkelia ei mitenkÃ¤Ã¤n malta ajankuvana olla mainitsematta, kÃ¤ytettÃ¤kÃ¶Ã¶n jotain muuta kuin lÃ¤hdeviitetekniikkaa tÃ¤hÃ¤n taiteelliseen otteeseen, vaikkapa alaviitteitÃ¤. Olennaista silloinkin on, ettÃ¤ tieteellinen sisÃ¤ltÃ¶ ei tule tÃ¤llÃ¤ korvatuksi vaan sen puute korostetuksi.
+\end_layout
+
+\begin_layout Standard
+WWW-lÃ¤hteeseen viittaamisessa pÃ¤tevÃ¤t samat periaatteet kuin perinteisiin lÃ¤hteisiin viitattaessa: lÃ¤hdeviitteessÃ¤ ilmaistaan otsakkeet, kirjoittajat, toimittajat js muut seikat. Eroa on ainoastaan verkko-osoitteen ja sen voimassaoloajankohdan ilmaisemisessa. MikÃ¤li lÃ¤hde on julkaistu ainoastaan verkossa, voidaan web-osoitetta (URL) kÃ¤yttÃ¤Ã¤ vastaavasti kuin perinteisen julkaisun paikannusinformaatiota (lehden ja se numeron julkaisutiedot). LÃ¤hdeluettelossa on WWW-viittausten yhteydessÃ¤ aina syytÃ¤ ilmaista pÃ¤ivÃ¤mÃ¤Ã¤rÃ¤, jolloin linkin voimassaolo ja lÃ¤hteen sisÃ¤ltÃ¶ on tarkastettu. EsimerkkeinÃ¤ verkkoviitteistÃ¤ soveltuvat seuraavat: 
+\end_layout
+
+\begin_layout Itemize
+Gergen, Kenneth (1999) Narrative, Moral Identity and Historical Consciousness: a Social Constructionist Account. http://www.swarthmore.edu/SocSci/kgergen1/text3.html. Haettu 11.6.1999. 
+\end_layout
+
+\begin_layout Itemize
+Ritala-Koskinen, Aino and Valokivi, Heli (2006) The Role of Development Skills in Social Work Practice Education in Finland. Social Work and Society, The International Online-Only Journal 4(2006)1. http://www.socwork.net/2006/1/series/transition/ritalakoskinenvalokivi. Viitattu 30.8.2006. 
+\end_layout
+
+\begin_layout Itemize
+Heinisuo, Rami and Ekholm, Kai (1997) Elektronisen viittaamisen opas. JyvÃ¤skylÃ¤n yliopiston kirjaston julkaisuja n:o 40. JyvÃ¤skylÃ¤: JyvÃ¤skylÃ¤n yliopiston kirjasto. http://www.pori.tut.fi/
+\begin_inset space ~
+
+\end_inset
+
+multisil/evo/. Viitattu 29.8.2006. 
+\end_layout
+
+\begin_layout Standard
+Kirjoituksen lÃ¤hdeluettelossa luetellaan tÃ¤smÃ¤lleen ne lÃ¤hteet, joihin viitataan kirjoituksen tekstiosassa. TÃ¤mÃ¤n kirjoituksen lÃ¤hdeluettelo on tarkoitettu lÃ¤hinnÃ¤ esitystavan esimerkiksi, mistÃ¤ syystÃ¤ siinÃ¤ on 
+\begin_inset Quotes erd
+\end_inset
+
+ylimÃ¤Ã¤rÃ¤isiÃ¤
+\begin_inset Quotes erd
+\end_inset
+
+ lÃ¤hteitÃ¤.
+\end_layout
+
+\begin_layout Standard
+PÃ¤Ã¤sÃ¤Ã¤ntÃ¶isesti julkaisun tai artikkelin nimen perÃ¤Ã¤n tulee piste, samoin kunkin lÃ¤hteen bibliografisten tietojen perÃ¤Ã¤n. Muut tiedot erotetaan toisistaan pilkulla. Useimmissa tapauksissa voidaan noudattaa teknisten vÃ¤lineiden antamaa mallia, sillÃ¤ edellytyksellÃ¤, ettÃ¤ yllÃ¤olevat vaatimukset muuten tÃ¤yttyvÃ¤t.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+chapter{Ulkoasulliset seikat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TÃ¤ssÃ¤ luvussa kÃ¤sitellÃ¤Ã¤n yleisimpiÃ¤ tekstin tekniseen esittÃ¤miseen liittyviÃ¤ seikkoja.
+\end_layout
+
+\begin_layout Section
+TyÃ¶n osien jÃ¤rjestys
+\end_layout
+
+\begin_layout Standard
+Kirjoituksen alussa on aina erillinen, mallin mukainen kansilehti. Toisena sivuna on tiivistelmÃ¤sivu, sen jÃ¤lkeen sisÃ¤llysluettelo (yksi tai useampia sivuja) ja sitten varsinainen teksti. Sivunumerointi aloitetaan vasta ensimmÃ¤iseltÃ¤ tekstisivulta (arabialaisella ykkÃ¶sellÃ¤). (Tarkat jÃ¤ttÃ¤vÃ¤t ykkÃ¶ssivun numeromerkittÃ¤.) SisÃ¤llysluetteloon merkitÃ¤Ã¤n kaikki (numeroidut) otsikot ja vastaavat sivunumerot. Monet tekstin\SpecialChar softhyphen
+kÃ¤sittelyjÃ¤rjestelmÃ¤t muodostavat itse sisÃ¤llysluettelon, jolloin kirjoittajan ei tarvitse huolehtia luettelon sivunumeroiden pÃ¤ivittÃ¤misestÃ¤ tekstin kehittyessÃ¤. SisÃ¤llysluettelo\SpecialChar softhyphen
+sivu ja sitÃ¤ edeltÃ¤vÃ¤t sivut voidaan haluttaessa numeroida erikseen (roomalaisin numeroin) esimerkiksi tÃ¤mÃ¤n mallin mukaisesti.
+\end_layout
+
+\begin_layout Standard
+Varsinaisen tekstin jÃ¤ljessÃ¤, mutta itse tyÃ¶hÃ¶n kuuluvana on ensimmÃ¤isenÃ¤ lÃ¤hdeluettelo, jonka otsikkoa ei numeroida. LÃ¤hdeluettelon jÃ¤lkeen sijoitetaan mahdolliset liitteet, jotka otsikoidaan ja varustetaan sisÃ¤isillÃ¤ sivunumeroilla.
+\end_layout
+
+\begin_layout Standard
+MikÃ¤li kuvista, algoritmeista ja taulukoista halutaan tehdÃ¤ yhtenÃ¤inen luettelo, sijoitetaan luettelot sisÃ¤llysluettelon jÃ¤lkeen. Luetteloiden kÃ¤yttÃ¶arvosta on eriÃ¤viÃ¤ mielipiteitÃ¤, joten niiden laatimiseen ei varsinkaan ilman tekstinkÃ¤sittelyjÃ¤rjestelmÃ¤n tukea kannata ryhtyÃ¤ ilman tarkastajan erityistÃ¤ toivetta.
+\end_layout
+
+\begin_layout Standard
+MikÃ¤li kirjoitukseen erityissyistÃ¤ halutaan liittÃ¤Ã¤ aakkosellinen hakemisto, sijoitetaan se lÃ¤hdeluettelon jÃ¤lkeen ennen liitteitÃ¤. Indeksi merkitÃ¤Ã¤n sisÃ¤llysluetteloon samoin kuin lÃ¤hdeluettelo (numeroimaton luku). MikÃ¤li indeksin tekemiseen ryhdytÃ¤Ã¤n, on syytÃ¤ kÃ¤yttÃ¤Ã¤ tekstinkÃ¤sittelyjÃ¤rjestelmÃ¤n tarjoamaa automatiikkaa.
+\end_layout
+
+\begin_layout Standard
+Teksin luonnollisen juonenkuljetuksen mukana esiin tulevien kÃ¤sitteiden mÃ¤Ã¤rittelyjen sijasta ei pidÃ¤ yrittÃ¤Ã¤ sen enempÃ¤Ã¤ pakata kaikkia mÃ¤Ã¤ritelmiÃ¤ johdantoon kuin laatia johdantoa ennen kÃ¤sitelistaa tai lyhenteiden selityslistaa. Kumpikaan ei sovi tavanomaiseen argumentoivaan tieteelliseen tekstityyliin, vaikka teknisessÃ¤ yhteydessÃ¤ niillÃ¤ liitteinÃ¤ voi olla lisÃ¤arvoa.
+\end_layout
+
+\begin_layout Section
+Tekstin yleinen sijoittelu
+\end_layout
+
+\begin_layout Standard
+Lopullinen tutkielmaversio voi olla yksi- tai kaksipuoleiseksi aseteltua ja rivivÃ¤liltÃ¤Ã¤n 1,5 tai 1. ErityyppisissÃ¤ teksteissÃ¤ haasteet ja asetteluvaatimukset voivat olla erilaiset. Erota kappaleet toisistaan yhdellÃ¤ tyhjÃ¤llÃ¤ rivillÃ¤ tai kÃ¤ytÃ¤ tekstinkÃ¤sittelytyÃ¶kalujen ominaisuuksia hyÃ¶dyksesi ja mÃ¤Ã¤rittele tekstikappaleiden vÃ¤liin jÃ¤Ã¤vÃ¤ tila hieman normaalia rivivÃ¤liÃ¤ suuremmaksi.
+\end_layout
+
+\begin_layout Standard
+Kirjoituksen lukujen, kuvien ja taulukoiden erottumisen kannalta tÃ¤rkein keino on riittÃ¤vÃ¤n tilan kÃ¤yttÃ¶ niiden ympÃ¤rillÃ¤. Kuvan ja nimekkeen tulee olla selkeÃ¤sti yksi kokonaisuus, joka eroaa muusta tyhjÃ¤n tilan rajaamana. Kuvan tai taulukon on aina numerointinsa ja nimekkeensÃ¤ kanssa mahduttava yhdelle sivulle tai varmasti kaksipuolisena paperidokumenttina tarkasteltavassa tekstissÃ¤ aukeamalle. Kuvissa fonttikoko ei saa alittaa 8 pistettÃ¤.
+\end_layout
+
+\begin_layout Standard
+Jos uusi luku tulisi alkamaan aivan sivun alareunasta (vain yksi tai kaksi riviÃ¤ varsinaista tekstiÃ¤), aloita mieluummin uusi sivu. Jokaista uutta lukua ei kuitenkaan ole tarpeen — etenkÃ¤Ã¤n lyhyessÃ¤ kirjoituksessa — aloittaa uudelta sivulta: jos kirjoituksessa on paljon melkein tyhjiÃ¤ sivuja, lukija voi epÃ¤illÃ¤, ettÃ¤ kirjoittaja on yrittÃ¤nyt saada kirjoituksensa nÃ¤yttÃ¤mÃ¤Ã¤n pitemmÃ¤ltÃ¤ kuin se onkaan. TyhjÃ¤Ã¤ tilaa kannattaa kÃ¤yttÃ¤Ã¤ hyÃ¶dyksi myÃ¶s kuvien ja taulukoiden yhteydessÃ¤. Erityisesti jos kirjoituksessa kÃ¤ytetÃ¤Ã¤n kauttaaltaan samaa tekstityyppiÃ¤, tyhjÃ¤t rivit ovat vÃ¤lttÃ¤mÃ¤ttÃ¶miÃ¤ erottamaan esimerkiksi tekstiÃ¤ ja taulukkoa toisistaan. TyhjÃ¤ tila on halpaa, mutta se lisÃ¤Ã¤ selkeyttÃ¤ ja luettavuutta.
+\end_layout
+
+\begin_layout Section
+Kuvat ja taulukot
+\end_layout
+
+\begin_layout Standard
+Kuva tai taulukko sijoitetaan mahdollisimman lÃ¤helle (ensimmÃ¤istÃ¤) tekstikohtaa, jossa siihen viitataan, ei kuitenkaan kyseistÃ¤ viittausta aikaisemmaksi. TekstissÃ¤ on syytÃ¤ myÃ¶s kertoa, mitÃ¤ kuvalla halutaan havainnollistaa. Kuvan voi lukea monella eri tavalla, joten lukijaa on ohjattava.
+\end_layout
+
+\begin_layout Standard
+Kuvaa ei pidÃ¤ sijoittaa vÃ¤littÃ¶mÃ¤sti luvun otsikon alle, vaan on aloitettava tekstillÃ¤. Kuvaa ei pidÃ¤ sijoittaa keskelle tekstikappaletta (saati virkettÃ¤), paitsi jos kuva tulee sivun alkuun tai loppuun eikÃ¤ kappaleen jatkumisesta tule epÃ¤selvyyttÃ¤.
+\end_layout
+
+\begin_layout Standard
+Kuvan ei aina tarvitse olla vÃ¤littÃ¶mÃ¤sti viittaavan kappaleen perÃ¤ssÃ¤. Esimerkiksi viittauskohdan ja vasta seuraavalle sivulle mahtuvan kuvan vÃ¤liin jÃ¤Ã¤vÃ¤Ã¤ sivun loppuosaa ei jÃ¤tetÃ¤ tyhjÃ¤ksi. Kuvaa ei kuitenkaan pidÃ¤ viedÃ¤ seuraavaa sivua kauemmas viittauskohdasta.
+\end_layout
+
+\begin_layout Standard
+Varsinaista kuvan esittÃ¤mistÃ¤ havainnollistaa kuva
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "kuvaesimerkki"
+
+\end_inset
+
+. Huomiota on kiinnitettÃ¤vÃ¤ kuvan osien ja tekstimerkintÃ¶jen nÃ¤kyvyyteen, kuvan numerointiin ja otsikointiin.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%
+\backslash
+begin{figure}[tbh] t= top, b = bottom, h=here
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement ht
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset space \space{}
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\begin_inset Graphics 
+	filename kuvaesimerkki.pdf
+	width 75text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kuvan elementit.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "kuvaesimerkki"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kuvien kokoon on kiinnitettÃ¤vÃ¤ huomiota. KÃ¤ytettyjen merkintÃ¶jen on oltava helposti luettavissa ja selkeÃ¤t. Esimerkiksi suorituskykykÃ¤yriÃ¤ esitettÃ¤essÃ¤ akselit on nimettÃ¤vÃ¤, asteikot merkittÃ¤vÃ¤ ja kÃ¤ytetyt yksikÃ¶t tuotava selkeÃ¤sti esiin. Samankaltaisia asioita esitettÃ¤essÃ¤ useammalla kuvalla on syytÃ¤ kÃ¤yttÃ¤Ã¤ samaa mittakaavaa vertailun helpottamiseksi.
+\end_layout
+
+\begin_layout Standard
+Kuvan otsikko kirjoitetaan kuvan alle ja sen tulee olla mieluummin lyhyt ja ytimekÃ¤s kuin liian selittelevÃ¤. Samoin toimitaan taulukoiden otsikoinnissa.
+\end_layout
+
+\begin_layout Standard
+Kuvat ja taulukot numeroidaan juoksevasti. PitkissÃ¤ teksteissÃ¤ kÃ¤ytetÃ¤Ã¤n kaksitasoista numerointia (esimerkiksi Kuva 3.1) pÃ¤Ã¤luvuittain, lyhyissÃ¤ riittÃ¤Ã¤ yksitasoinen numerointi.
+\end_layout
+
+\begin_layout Standard
+Kuva- ja taulukko-otsikoiden yhdenmukaiseen esitystyyliin on syytÃ¤ kiinnittÃ¤Ã¤ huomiota, samoin mm. vÃ¤limerkkeihin. Luontevaa on kÃ¤yttÃ¤Ã¤ kuvatekstin lopussa pistettÃ¤, ovathan useimmat kuvateksteistÃ¤ virkkeitÃ¤.
+\end_layout
+
+\begin_layout Standard
+(Kuvien ja taulukoiden otsikointityyli vaihtelee kustantajittain ja julkaisuittain. Samoin tuntuu suositeltava kÃ¤ytÃ¤ntÃ¶ TietojenkÃ¤sittelytieteen laitoksen sisÃ¤llÃ¤ vaihtelevan taulukon otsikon sijainnin suhteen.)
+\end_layout
+
+\begin_layout Section
+Otsikot
+\end_layout
+
+\begin_layout Standard
+Otsikoissa voi kÃ¤yttÃ¤Ã¤ muusta tekstistÃ¤ poikkeavaa kirjasintyyppiÃ¤, alleviivausta, suurempaa kirjasinkokoa tms.
+\begin_inset space \space{}
+
+\end_inset
+
+erotuskeinoa, yleensÃ¤ kuitenkin vain yhtÃ¤ nÃ¤istÃ¤, koska kovin monta erilaista kirjasintyyppiÃ¤ ja -kokoa tekee ulkoasusta helposti sekavan. Otsikoiden esitystavan on oltava johdonmukainen lÃ¤pi koko kirjoituksen. Numeroimattomia 
+\begin_inset Quotes erd
+\end_inset
+
+ylimÃ¤Ã¤rÃ¤isiÃ¤
+\begin_inset Quotes erd
+\end_inset
+
+ otsikoita ei tule yleensÃ¤ kÃ¤yttÃ¤Ã¤.
+\end_layout
+
+\begin_layout Section
+Mallin kÃ¤yttÃ¶
+\end_layout
+
+\begin_layout Standard
+Voit kÃ¤yttÃ¤Ã¤ tÃ¤tÃ¤ kirjoitusta mallina oman opinnÃ¤ytteesi ulkoasua varten. Eri tekstinkÃ¤sittelyjÃ¤rjestelmissÃ¤ kÃ¤ytÃ¶ssÃ¤ olevat yksityiskohdat kuten kirjasintyypit ja -koot ja rivivÃ¤lit poikkeavat toisistaan, joten pienet poikkeamat ovat toki hyvÃ¤ksyttÃ¤viÃ¤.
+\end_layout
+
+\begin_layout Standard
+Tieteellisen kirjoittamisen kurssin luennoilla ja liitteenÃ¤ olevassa ohjeessa annetut tÃ¶iden ohjeelliset sivumÃ¤Ã¤rÃ¤t koskevat tyÃ¶tÃ¤, joka vastaa ulkoasultaan tÃ¤tÃ¤ ohjetta (kirjasinkoko 12
+\begin_inset space ~
+
+\end_inset
+
+pistettÃ¤). TÃ¤ssÃ¤ tekstissÃ¤ keskimÃ¤Ã¤rÃ¤inen rivin pituus lienee noin 80
+\begin_inset space ~
+
+\end_inset
+
+merkkiÃ¤ ja sivun pituus 35-40
+\begin_inset space ~
+
+\end_inset
+
+riviÃ¤. SivumÃ¤Ã¤riin lasketaan varsinaisen tekstiosuuden pituus ja lÃ¤hdeluettelo (arabialaisin numeroin numeroitu osuus), ei kansilehteÃ¤, tiivistelmÃ¤Ã¤ eikÃ¤ sisÃ¤llysluetteloa. SivumÃ¤Ã¤rÃ¤arviossa otetaan huomioon hyvin vajaat sivut, joita syntyy paljon lyhyiden lukujen ja taittotyyliin mÃ¤Ã¤ritellyn luvun avauksen pakottaminen oikeanpuolimmaiselle sivulle.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+chapter{Yhteenveto}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TÃ¤mÃ¤n kirjoituksen tarkoituksena on toimia muistilistana erÃ¤istÃ¤ esitystavallisista sÃ¤Ã¤nnÃ¶istÃ¤, joihin harjoitusten ja tutkielmien kohdalla on syytÃ¤ kiinnittÃ¤Ã¤ huomiota.
+\end_layout
+
+\begin_layout Standard
+Annetut ohjeet on laitoksen henkilÃ¶kunta muotoillut yhdessÃ¤ keskustellen ja noudattaen oman tieteenalansa perinteitÃ¤. Eri erikoistumisaloilla ja erilaisillaa mÃ¤Ã¤rÃ¤Ã¤vÃ¤ssÃ¤ asemassa olevissa julkaisufooruilla kÃ¤ytÃ¤nteet vaihtelevat ja nuorten tutkijoiden onkin tiedostettava ero yleisten sisÃ¤ltÃ¶ohjeiden ja teknisten muotoilusÃ¤Ã¤ntÃ¶jen vÃ¤lillÃ¤. Aina tekstin valmistuessa on tarkastettava erikseen, tÃ¤yttÃ¤Ã¤kÃ¶ se annetut pituusrajoitteet ja vastaako se annettuja muotoiluohjeita, olivatpa ne kuinka pikkutarkkoja tahansa. Tarkasta sÃ¤Ã¤ntÃ¶jen noudattamisesta syntyy yhteinÃ¤isyyttÃ¤ kokoovan julkaisun tasolla, mikÃ¤ helpottaa lukijoiden tyÃ¶skentelyÃ¤.
+\end_layout
+
+\begin_layout Standard
+TÃ¤mÃ¤ ohje vastaa vain asettelullisiin kysymyksiin ja sen rinnalla on syytÃ¤ tutustua materiaaliin ja luentoihin, joissa keskitytÃ¤Ã¤n tekstin varsinaiseen sisÃ¤ltÃ¶Ã¶n. Olennaisin vÃ¤line on kuitenkin akateemisesti pidemmÃ¤lle ehtineen, jo julkaisuja rakentaneen ohjaajan palaute ja mentorointi.
+\end_layout
+
+\end_body
+\end_document

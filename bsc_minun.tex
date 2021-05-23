@@ -1,0 +1,34 @@
+\chapter{Johdanto}
+
+\chapter{Järjestelmäintegraatiot}
+
+\section{Järjestelmäintegraatioiden tarve}
+
+Järjestelmäintegraatiot tai englanniksi Enterprise Application Integration (lyh. EAI) tarkoittaa
+ohjelmistoja jotka yhdistävät eli integroivat firman tai firmojen olemassa olevia erillisiä
+järjestelmiä toimimaan yhdessä. Tarve EAI:lle syntyy kun organisaation jo olemassa olevien
+järjestelmien hajautunut tieto pitäisi yhdistää tiedonkulut optimoimiseksi ja
+automatisoimiseksi. Esimerkiksi organisaation asiakkuudenhallinnasta vastaavan ohjelmiston
+pitäisi pystyä keskustelemaan myynninhallinnointiohjelmiston kanssa pitääkseen
+asiakastilastot ajan tasalla; ohjelmistot voivat pyöriä eri käyttöjärjestelmällä ja käyttää
+ohjelmointikieliä ja tietokantaratkaisuita. Väliin tarvitaan integraatio, joka hoitaa
+kommunikoinnin ohjelmistojen välillä.
+
+\section{Järjestelmäintegraatioiden määritelmä}
+Kirjassa Enterprise Integration Patterns (lyh. EIP) Gregor Hohpe ja Bobby Woolf \citep{10.5555/940308}
+erottelevat integraatiot hajautetuista sovelluksista määrittelemällä, että vaikka
+yritysohjelmistot usein hyödyntävät monitasoista arkkitehtuuria (tai n-tier arkkitehtuuri) jossa
+eri koneilla olevat prosessit kommunikoivat keskenään, on tämä sovelluksen hajauttamista
+eikä integraatiota. Ensisijaisesti, monitasoisessa arkkitehtuurissa keskenään kommunikoivat
+komponentit ovat tiukasti riippuvaisia toisistaan kuin taas integraatioissa komponentit ovat
+itsenäisiä sovelluksia, jotka ovat löyhästi kytköksissä eivätkä ole riippuvaisia toistaan
+toimiakseen itsenäisesti. Toiseksi, monitasoisen arkkitehtuurin tasot kommunikoivat
+useimmiten synkronisesti, kun taas integraatiot hyödyntävät asynkronista kommunikointia ja
+voivat edetä suorituksesta ilman vastausta tai vaihtaa rinnakkaiseen tehtävään kunnes vastaus
+on saapunut. Kolmanneksi monitasoisilla sovelluksilla on usein ihminen käyttäjänä, joka
+odottaa suht’ nopeaa vastausta, kun taas integroiduilla applikaatioilla on vapaampi aikarajoite,
+koska ohjelmisto voi suorittaa toista tehtävää odottaessaan vastausta, eikä omista
+ihmiskäyttäjän kärsimättömyyttä.
+
+
+\chapter{Yhteenveto}

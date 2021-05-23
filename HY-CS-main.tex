@@ -54,7 +54,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% REFERENCES
 %% Some notes on bibliography usage and options:
-%% natbib -> you can use, e.g., \citep{} or \parencite{} for (Einstein, 1905); with APA \cite -> Einstein, 1905 without ()
+%%  -> you can use, e.g., \citep{} or \parencite{} for (Einstein, 1905); with APA \cite -> Einstein, 1905 without ()
 %% maxcitenames=2 -> only 2 author names in text citations, if more -> et al. is used
 %% maxbibnames=99 as no great need to suppress the biliography list in a thesis
 %% for more information see biblatex package documentation, e.g., from https://ctan.org/pkg/biblatex 
@@ -111,10 +111,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Set up personal information for the title page and the abstract form.
 %% Replace parameters with your information.
-\title{Tutkielman otsikko}
+\title{Järjestelmäintegraatioiden tyylit ja suunnittelumallit nykypäivänä}
 
 % TM: Contributors to template editors now listed in the beginning of the file in comments
-\author{Outi Opiskelija}
+\author{Joona Halonen}
 \date{\today}
 
 
@@ -122,7 +122,7 @@
 % Set supervisors and examiners, use the titles according to the thesis language
 % Prof. 
 % Dr. or in Finnish toht. or tri or FT, TkT, Ph.D. or in Swedish... 
-\supervisors{Prof.~D.U.~Mind, Dr.~O.~Why}
+\supervisors{Toht.~Lea Kutvonen}
 \examiners{Prof.~D.U.~Mind, Dr.~O.~Why}
 
 
@@ -229,11 +229,12 @@ additional insight.
 %% As a side effect, subsequent inclusions may force a page break.
 
 % BSc instructions
-%\include{bsc_finnish_contents}
+\include{bsc_minun}
+\include{bsc_finnish_contents}
 %\include{bsc_english_contents}
 % MSc instructions
 %\include{msc_finnish_contents}
-\include{msc_english_contents}
+%\include{msc_english_contents}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage                          %fixes the position of bibliography in bookmarks
@@ -246,7 +247,7 @@ additional insight.
 \begin{appendices}
 
 %\input{instructions_english}
-\input{instructions_finnish}
+%\input{instructions_finnish}
 
 \appendix{Sample Appendix\label{appendix:model}}
 usually starts on its own page, with the name and number of the appendix at the top. 
