@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.5.1)  23 MAY 2021 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.5.1)  1 JUN 2021 02:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1293,7 +1293,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: ... file 'numeric.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count270
@@ -1395,11 +1395,11 @@ Package biblatex Info: ... file 'blx-natbib.def' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
 File: blx-natbib.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
 )
-Package biblatex Info: Trying to load bibliography style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.bbx' found.
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
-File: authoryear.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
@@ -1408,18 +1408,22 @@ File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count345
 \c@bbx:relatedtotal=\count346
 ))
-Package biblatex Info: Trying to load citation style 'authoryear'...
-Package biblatex Info: ... file 'authoryear.cbx' found.
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
 
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
-File: authoryear.cbx 2017/12/19 v3.10 biblatex citation style (PK/JW/AB)
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2017/12/19 v3.10 biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
 Package biblatex Info: Redefining '\footcitetext'.
 Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
 Package biblatex Info: Redefining '\textcite'.
 Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
@@ -1698,13 +1702,76 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'HY-CS-main.bbl' found.
- (./HY-CS-main.bbl)
+ (./HY-CS-main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                abiteboul
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                bray
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                dantowsley90
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                dietinger
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                erkio01
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                erkio94
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                erkiomakela96
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                gannonetal89
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                verkamo92
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 173.
 Package biblatex Info: Reference segment=0 on input line 173.
 \AtBeginShipoutBox=\box42
 Package hyperref Info: Link coloring ON on input line 173.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1721,7 +1788,7 @@ LaTeX Info: Redefining \nameref on input line 173.
 \openout6 = `HY-CS-main.out'.
 
 Package hyperref Info: Option `pageanchor' set `true' on input line 177.
-<HY-logo-ml.png, id=95, 270.0489pt x 254.8722pt>
+<HY-logo-ml.png, id=91, 270.0489pt x 254.8722pt>
 File: HY-logo-ml.png Graphic file (type png)
 <use HY-logo-ml.png>
 Package pdftex.def Info: HY-logo-ml.png  used on input line 177.
@@ -1847,32 +1914,30 @@ l.218 \mytableofcontents
  (./bsc_minun.tex
 Luku 1.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 2.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 [1
 
 
 ]
 Luku 2.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 14.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 17.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 34.
-Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 18.
 [2
 
 ]
 Luku 3.
 Package babel Info: Redefining finnish shorthand "|
-(babel)             in language  on input line 34.
+(babel)             in language  on input line 18.
 )
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 232.
@@ -2000,7 +2065,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 420--421
 
  []
 
-<kuvaesimerkki.pdf, id=231, 361.35pt x 252.945pt>
+<kuvaesimerkki.pdf, id=212, 361.35pt x 252.945pt>
 File: kuvaesimerkki.pdf Graphic file (type pdf)
 <use kuvaesimerkki.pdf>
 Package pdftex.def Info: kuvaesimerkki.pdf  used on input line 422.
@@ -2032,11 +2097,16 @@ Package babel Info: Redefining finnish shorthand "|
 ]
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 242.
+
+
+Package biblatex Warning: No driver for entry type 'web_page'.
+(biblatex)                Using fallback driver on input line 243.
+
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 246.
 Package babel Info: Redefining finnish shorthand "|
 (babel)             in language  on input line 246.
- [17
+[17
 
 
 
@@ -2069,19 +2139,19 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
 Package rerunfilecheck Info: File `HY-CS-main.out' has not changed.
-(rerunfilecheck)             Checksum: 1226825472DA8BC15D4BE144E58729D2;3026.
+(rerunfilecheck)             Checksum: 1F833914C1F9AFA61CD0FF38582796B8;2797.
 Package logreq Info: Writing requests to 'HY-CS-main.run.xml'.
 \openout1 = `HY-CS-main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31193 strings out of 494340
- 545602 string characters out of 6164411
- 996284 words of memory out of 5000000
- 33915 multiletter control sequences out of 15000+600000
+ 31146 strings out of 494340
+ 544500 string characters out of 6164411
+ 994243 words of memory out of 5000000
+ 33876 multiletter control sequences out of 15000+600000
  85324 words of font info for 74 fonts, out of 8000000 for 9000
  350 hyphenation exceptions out of 8191
- 62i,7n,56p,2569b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,7n,56p,813b,2026s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/shar
 e/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/l
@@ -2091,10 +2161,10 @@ xmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
 /type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmtt12.pfb>
-Output written on HY-CS-main.pdf (25 pages, 305769 bytes).
+Output written on HY-CS-main.pdf (25 pages, 299550 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 199 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 298 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 
