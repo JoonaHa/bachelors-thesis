@@ -1,0 +1,561 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{abiteboul}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=9a6dbfb40d94bebdb629d0ab5f73e978}{%
+           family={Abiteboul},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=601d3598eba24c17cab36690163bf2b4}{%
+           family={Quass},
+           familyi={Q\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=224c6420b84aca5a40944eb4d41af545}{%
+           family={McHugh},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d9f7eda2a7bc79fd844e14c5cc424b6e}{%
+           family={Widom},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=42484141e4343bc66bc8f45063b8b510}{%
+           family={Wiener},
+           familyi={W\bibinitperiod},
+           given={J.L.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{767c8d90960fdde7e3bf80c61cbc6b73}
+      \strng{fullhash}{63a3e268780247c0de47a56cfab532ef}
+      \strng{bibnamehash}{63a3e268780247c0de47a56cfab532ef}
+      \strng{authorbibnamehash}{63a3e268780247c0de47a56cfab532ef}
+      \strng{authornamehash}{767c8d90960fdde7e3bf80c61cbc6b73}
+      \strng{authorfullhash}{63a3e268780247c0de47a56cfab532ef}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Digital Libraries}
+      \field{note}{[ \url{http://link.springer.de/ link/service/journals/00799/ bibs/7001001/70010068.htm}, 18.1.2000]}
+      \field{number}{1}
+      \field{title}{The Lorel query language for semistructured data}
+      \field{volume}{1}
+      \field{year}{1997}
+      \field{pages}{68\bibrangedash 88}
+      \range{pages}{21}
+    \endentry
+    \entry{bray}{misc}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=532fb491ff1af75ada11b8ee4c440170}{%
+           family={Bray},
+           familyi={B\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dccb4b7cf6960f72ea7ae776c24ac5d5}{%
+           family={Paoli},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=909ffa7620d4114fdff3589725c5d4ad}{%
+           family={Sperberg-McQueen},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={C.M.},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \strng{fullhash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \strng{bibnamehash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \strng{authorbibnamehash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \strng{authornamehash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \strng{authorfullhash}{7051a1e559c4acfd2a4512c5a5d393a9}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{[\url{http://www.w3.org/TR/1998/REC-xml-19980210}, 02.11.2016]}
+      \field{title}{{Extensible Markup Language {XML} 1.0. W3C Recommendation 10-February-1998}}
+    \endentry
+    \entry{dantowsley90}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ac15085cbc2a808741243df5159aa5de}{%
+           family={Dan},
+           familyi={D\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3bf7f7be8156738f24f12da4fee41ef9}{%
+           family={Towsley},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Boulder, Colorado, {USA}}%
+      }
+      \strng{namehash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \strng{fullhash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \strng{bibnamehash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \strng{authorbibnamehash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \strng{authornamehash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \strng{authorfullhash}{f9d7d75ea7033f62d98768fa5f487f15}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. {ACM} Conf.\ Measurement and Modeling of Computer Systems}
+      \field{month}{5}
+      \field{title}{An approximate analysis of the {LRU} and {FIFO} buffer replacement schemes}
+      \field{year}{1990}
+      \field{pages}{143\bibrangedash 152}
+      \range{pages}{10}
+    \endentry
+    \entry{dietinger}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=58f6e48be18d316167ed76b436effa66}{%
+           family={Dietinger},
+           familyi={D\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \strng{fullhash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \strng{bibnamehash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \strng{authorbibnamehash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \strng{authornamehash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \strng{authorfullhash}{5aa5e673cae279f611c3dfffe28c7dd0}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Universal Computer Science}
+      \field{note}{[\url{http://www.iicm.edu/ jucs_5_1/dynamic_background_libraries_new}, 18.1.2000]}
+      \field{number}{1}
+      \field{title}{{Dynamic Background Libraries - New Developments in Distance Education Using {HIKS} {Hierarchical Interactive Knowledge System}}}
+      \field{volume}{5}
+      \field{year}{1999}
+    \endentry
+    \entry{einstein}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3ebf53e52a3ce84f0ffb8553200a6a63}{%
+           family={Einstein},
+           familyi={E\bibinitperiod},
+           given={Albert},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{fullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{bibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorbibnamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authornamehash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \strng{authorfullhash}{3ebf53e52a3ce84f0ffb8553200a6a63}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annalen der Physik}
+      \field{number}{10}
+      \field{title}{{Zur Elektrodynamik bewegter Körper}. ({German}) [{On} the electrodynamics of moving bodies]}
+      \field{volume}{322}
+      \field{year}{1905}
+      \field{pages}{891\bibrangedash 921}
+      \range{pages}{31}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1002/andp.19053221004
+      \endverb
+    \endentry
+    \entry{mordorintelligence}{web_page}{}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labeltitlesource}{title}
+      \field{title}{Enterprise Application Integration Market | Growth, Trends, Forecasts (2020 - 2025)}
+      \verb{urlraw}
+      \verb https://www.mordorintelligence.com/industry-reports/enterprise-application-integration-market
+      \endverb
+      \verb{url}
+      \verb https://www.mordorintelligence.com/industry-reports/enterprise-application-integration-market
+      \endverb
+    \endentry
+    \entry{erkio94}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=56cef9cc02f80f6f49cf167f24099ed0}{%
+           family={Erkiö},
+           familyi={E\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Tietojenkäsittelyopin laitos}%
+      }
+      \list{location}{1}{%
+        {Helsinki}%
+      }
+      \strng{namehash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \strng{fullhash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \strng{bibnamehash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \strng{authorbibnamehash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \strng{authornamehash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \strng{authorfullhash}{56cef9cc02f80f6f49cf167f24099ed0}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Opinnäytetyän ulkoasun malli.}
+      \field{type}{Tieteellisen kirjoittamisen kurssiin liittyvä julkaisematon moniste}
+      \field{year}{1994}
+    \endentry
+    \entry{erkiomakela96}{report}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=56cef9cc02f80f6f49cf167f24099ed0}{%
+           family={Erkiö},
+           familyi={E\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a5dbfe7b583ee64ed67a22211cadd8c}{%
+           family={Mäkelä},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Tietojenkäsittelytieteen laitos}%
+      }
+      \list{location}{1}{%
+        {Helsinki}%
+      }
+      \strng{namehash}{313c97e64625039a1bb674ccc3473f43}
+      \strng{fullhash}{313c97e64625039a1bb674ccc3473f43}
+      \strng{bibnamehash}{313c97e64625039a1bb674ccc3473f43}
+      \strng{authorbibnamehash}{313c97e64625039a1bb674ccc3473f43}
+      \strng{authornamehash}{313c97e64625039a1bb674ccc3473f43}
+      \strng{authorfullhash}{313c97e64625039a1bb674ccc3473f43}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Opinnäytetyän ulkoasun malli}
+      \field{type}{Tieteellisen kirjoittamisen kurssiin liittyvä julkaisematon moniste}
+      \field{year}{1996}
+    \endentry
+    \entry{erkio01}{report}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=56cef9cc02f80f6f49cf167f24099ed0}{%
+           family={Erkiö},
+           familyi={E\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9a5dbfe7b583ee64ed67a22211cadd8c}{%
+           family={Mäkelä},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a7c1000887d4da6462322c90b3b893db}{%
+           family={Nykänen},
+           familyi={N\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e7b7890f52439be82c79012f0cf7f4e2}{%
+           family={Verkamo},
+           familyi={V\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Tietojenkäsittelyopin laitos}%
+      }
+      \list{location}{1}{%
+        {Helsinki}%
+      }
+      \strng{namehash}{4a716ba5ceacb7223ced728513b7e0fa}
+      \strng{fullhash}{97384c9acd58d54d71ac35029b0bca17}
+      \strng{bibnamehash}{97384c9acd58d54d71ac35029b0bca17}
+      \strng{authorbibnamehash}{97384c9acd58d54d71ac35029b0bca17}
+      \strng{authornamehash}{4a716ba5ceacb7223ced728513b7e0fa}
+      \strng{authorfullhash}{97384c9acd58d54d71ac35029b0bca17}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Opinnäytetyän ulkoasun malli.}
+      \field{type}{Tieteellisen kirjoittamisen kurssiin liittyvä julkaisematon moniste}
+      \field{year}{2001}
+    \endentry
+    \entry{gannonetal89}{incollection}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=becdbc20f41be65d58ab3a653a54385e}{%
+           family={Gannon},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \true{moreeditor}
+      \name{editor}{1}{}{%
+        {{hash=5d58b78e79f786efdb2eeaa38277a37e}{%
+           family={Cosnard},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{fullhash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{bibnamehash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{authorbibnamehash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{authornamehash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{authorfullhash}{a95fe0a7fc7ed9ba7e34aa2245bd84f6}
+      \strng{editorbibnamehash}{bce0a73d4e8143ab24b7aaba5752249a}
+      \strng{editornamehash}{bce0a73d4e8143ab24b7aaba5752249a}
+      \strng{editorfullhash}{bce0a73d4e8143ab24b7aaba5752249a}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Parallel and Distributed Algorithms}
+      \field{title}{Programming environments for parallel algorithms}
+      \field{year}{1989}
+      \field{pages}{101\bibrangedash 108}
+      \range{pages}{8}
+    \endentry
+    \entry{latexcompanion}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=0743efb276e9219ee664a9b3dbd60619}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e341c89f7bb5be4f5a050618c0b63942}{%
+           family={Samarin},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Reading, Massachusetts}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{fullhash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{bibnamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authorbibnamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authornamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authorfullhash}{369a4e878eb8157d94588ee72e0b486b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The \LaTeX{} Companion}
+      \field{year}{1993}
+    \endentry
+    \entry{10.5555/940308}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=2ed2f5feceafdf9a03a27134da39d3d0}{%
+           family={Hohpe},
+           familyi={H\bibinitperiod},
+           given={Gregor},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8ea1767d5a1edce116c79b82a83c54da}{%
+           family={Woolf},
+           familyi={W\bibinitperiod},
+           given={Bobby},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Longman Publishing Co., Inc.}%
+      }
+      \strng{namehash}{ddf3be6dfde807c1811cbd3352154f04}
+      \strng{fullhash}{ddf3be6dfde807c1811cbd3352154f04}
+      \strng{bibnamehash}{ddf3be6dfde807c1811cbd3352154f04}
+      \strng{authorbibnamehash}{ddf3be6dfde807c1811cbd3352154f04}
+      \strng{authornamehash}{ddf3be6dfde807c1811cbd3352154f04}
+      \strng{authorfullhash}{ddf3be6dfde807c1811cbd3352154f04}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Would you like to use a consistent visual notation for drawing integration solutions? Look inside the front cover. Do you want to harness the power of asynchronous systems without getting caught in the pitfalls? See "Thinking Asynchronously" in the Introduction. Do you want to know which style of application integration is best for your purposes? See Chapter 2, Integration Styles. Do you want to learn techniques for processing messages concurrently? See Chapter 10, Competing Consumers and Message Dispatcher. Do you want to learn how you can track asynchronous messages as they flow across distributed systems? See Chapter 11, Message History and Message Store. Do you want to understand how a system designed using integration patterns can be implemented using Java Web services, .NET message queuing, and a TIBCO-based publish-subscribe architecture? See Chapter 9, Interlude: Composed Messaging.Utilizing years of practical experience, seasoned experts Gregor Hohpe and Bobby Woolf show how asynchronous messaging has proven to be the best strategy for enterprise integration success. However, building and deploying messaging solutions presents a number of problems for developers. Enterprise Integration Patterns provides an invaluable catalog of sixty-five patterns, with real-world solutions that demonstrate the formidable of messaging and help you to design effective messaging solutions for your enterprise.The authors also include examples covering a variety of different integration technologies, such as JMS, MSMQ, TIBCO ActiveEnterprise, Microsoft BizTalk, SOAP, and XSL. A case study describing a bond trading system illustrates the patterns in practice, and the book offers a look at emerging standards, as well as insights into what the future of enterprise integration might hold.This book provides a consistent vocabulary and visual notation framework to describe large-scale integration solutions across many technologies. It also explores in detail the advantages and limitations of asynchronous messaging architectures. The authors present practical advice on designing code that connects an application to a messaging system, and provide extensive information to help you determine when to send a message, how to route it to the proper destination, and how to monitor the health of a messaging system. If you want to know how to manage, monitor, and maintain a messaging system once it is in use, get this book. 0321200683B09122003}
+      \field{isbn}{0321200683}
+      \field{title}{Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions}
+      \field{year}{2003}
+    \endentry
+    \entry{Johannesson2001}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=dd80ac4b1137a2146cfe23198c3b97b4}{%
+           family={Johannesson},
+           familyi={J\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5738b162e36788f4d223f0b77218c657}{%
+           family={Perjons},
+           familyi={P\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{761a6a099c1d307d74864e60982d1956}
+      \strng{fullhash}{761a6a099c1d307d74864e60982d1956}
+      \strng{bibnamehash}{761a6a099c1d307d74864e60982d1956}
+      \strng{authorbibnamehash}{761a6a099c1d307d74864e60982d1956}
+      \strng{authornamehash}{761a6a099c1d307d74864e60982d1956}
+      \strng{authorfullhash}{761a6a099c1d307d74864e60982d1956}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{03064379}
+      \field{issue}{3}
+      \field{journaltitle}{Information Systems}
+      \field{month}{5}
+      \field{title}{Design principles for process modelling in enterprise application integration}
+      \field{volume}{26}
+      \field{year}{2001}
+      \verb{doi}
+      \verb 10.1016/S0306-4379(01)00015-1
+      \endverb
+    \endentry
+    \entry{knuth99}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{2}{%
+        {The Center for the Study of Language}%
+        {Information}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{CLSI Lecture Notes (78)}
+      \field{title}{Digital Typography}
+      \field{year}{1999}
+    \endentry
+    \entry{linthicum2000enterprise}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=7edd981106e40686a990f3d022125098}{%
+           family={Linthicum},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima S},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{7edd981106e40686a990f3d022125098}
+      \strng{fullhash}{7edd981106e40686a990f3d022125098}
+      \strng{bibnamehash}{7edd981106e40686a990f3d022125098}
+      \strng{authorbibnamehash}{7edd981106e40686a990f3d022125098}
+      \strng{authornamehash}{7edd981106e40686a990f3d022125098}
+      \strng{authorfullhash}{7edd981106e40686a990f3d022125098}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Enterprise application integration}
+      \field{year}{2000}
+    \endentry
+    \entry{verkamo92}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=66eba8613b850b848f1800f97cab40a0}{%
+           family={Verkamo},
+           familyi={V\bibinitperiod},
+           given={A.\bibnamedelimi I.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Tietojenkäsittelyopin laitos}%
+      }
+      \list{location}{1}{%
+        {Helsinki}%
+      }
+      \strng{namehash}{66eba8613b850b848f1800f97cab40a0}
+      \strng{fullhash}{66eba8613b850b848f1800f97cab40a0}
+      \strng{bibnamehash}{66eba8613b850b848f1800f97cab40a0}
+      \strng{authorbibnamehash}{66eba8613b850b848f1800f97cab40a0}
+      \strng{authornamehash}{66eba8613b850b848f1800f97cab40a0}
+      \strng{authorfullhash}{66eba8613b850b848f1800f97cab40a0}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Opinnäytetyän ulkoasun malli}
+      \field{type}{Tieteellisen kirjoittamisen kurssiin liittyvä julkaisematon moniste}
+      \field{year}{1992}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
