@@ -22,15 +22,31 @@ kommunikoinnin ohjelmistojen välillä
 Vuonna 2020 EAI-markkinan arvioitiin olevan 9,26 miljardin dollarin (USD) arvoinen \citep{mordorintelligence} ja koostuu ohjelmistojättien (Microsoft, Oracle, Salesforce IBM) ja pienempien yksittäisten yritysten (Workato, SnapLogic, Tibico) tarjoamista järjestelmistä.
 
 
-\chapter{Tekniset lähestymistavat}
+\chapter{Integraadioiden lähestymistavat}
 
-Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen kattokategoriaan.
+\section{Tekniset lähestymistavat}
+
+Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen yläkategoriaan \citep{Hohpe2004}.
 
 \begin{enumerate}
    \item Tiedostojen siirto
    \item Jaettu tietokanta
    \item Etäproseduurikutsu
    \item Viestintä
+   
+\end{enumerate}
+
+
+
+\section{Integraatiotasot}
+
+Teoksessaan \citep{linthicum2000enterprise} kategorioi itegraatiometodit neljään eri tasoon
+
+\begin{enumerate}
+   \item Data Level EAI is for moving data between data stores. This level extracts information from one database and updates it in another database.
+   \item Application Interface Level EAI is for leveraging of interfaces exposed by custom or packaged applications to gain access to application services.
+   \item Method Level EAI is for sharing application logic or methods. This level is accomplished either by defining methods that can be shared and hosting them on a central server, or by rebuilding each application using a method sharing mechanism such as distributed object technologies.
+   \item User Interface Level EAI is for integrating applications by using their user interfaces as a common point of integration. This approach is more suitable for custom application integration.
    
 \end{enumerate}
 
