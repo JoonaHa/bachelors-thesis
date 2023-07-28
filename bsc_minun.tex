@@ -43,13 +43,16 @@ Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan 
 Teoksessaan \citep{linthicum2000enterprise} kategorioi itegraatiometodit neljään eri tasoon
 
 \begin{enumerate}
-   \item Data Level EAI is for moving data between data stores. This level extracts information from one database and updates it in another database.
-   \item Application Interface Level EAI is for leveraging of interfaces exposed by custom or packaged applications to gain access to application services.
-   \item Method Level EAI is for sharing application logic or methods. This level is accomplished either by defining methods that can be shared and hosting them on a central server, or by rebuilding each application using a method sharing mechanism such as distributed object technologies.
-   \item User Interface Level EAI is for integrating applications by using their user interfaces as a common point of integration. This approach is more suitable for custom application integration.
+   \item Datataso: Dataa liikutellaan eri tietovarastojen välillä ja mahdollinen datan prosessointi ja muokkaus toteutetaan siirron yhteydessä. Kyseisellä menetelmällä on myös paljon yhtäläisyyksiä tyypillisen datavaraston (data warehouse) toteutuksen kanssa.
+   \item Rajapintataso: Tasolla pyritään hyödyntämään tarkoitusta varten tilattujen tai paketoitujen sovellusten, esimerkiksi SAP, PeopleSoft, tarjoamia ohjelmointirajapintoja.
+   \item Metoditaso: Tällä tasolla pyritään hyödyntämään jaettua sovelluslogiikka. Esimerkiksi hyöntyntämällä sovelluspalvelimia (application server) metodienjakamiseen tai käyttämällä hajautettuja objekteja tai etäkutsuja hyödyntäviä teknologioita.
+   \item Käyttöliittymätaso: Integraatioiden yhdistävä tekijä on olemassa olevan sovelluksen käyttöliittymä kun sovellus ei tarjoa muita keinoja datan jakamiseen. Tämä toteutetaan hyödyntymällä ruudun tiedonharavointi tekniikoita (screen scraping). \citep{linthicum2000enterprise}
    
 \end{enumerate}
 
 
+\chapter{Viestintä}
+
+\chapter{Integraatioteknologioiden jaottelusta}
 
 \chapter{Yhteenveto}
