@@ -13,7 +13,7 @@ asiakastilastot ajan tasalla.
 Järjestelmät jäivät helposti erillisiksi saarekkeiksi eivätkä jakaneet tietoa keskenään. 
 Syntyi niin sanottuja "savupiippujärjestelmiä", joissa järjestelmä oltiin suunniteltu pitämään data esimerkiksi firman yksittäisen osaston sisällä, eikä järjestelmän suunnitteluvaiheessa oltu huomioitu datan jakamista; järjestelmästä puuttui esimerkiksi ulospäin suuntavat ohjelmointirajapinnat. 
 
-Järjestelmäintegraatio mahdollistaa näiden eri järjestelmien keskustelevan toisilleen. Näin voidaan rakentaa yhteinen järjestelmä jo olemassa olevista palasista \citep[sivu 15]{linthicum2000enterprise}. Useissa tapauksissa organisaation sisäisiä järjestelmiä yhdistetään myös ulkoisiin järjestelmiin tai muiden organisaatioiden kanssa \cite{Johannesson2001}.
+Järjestelmäintegraatio mahdollistaa näiden eri järjestelmien keskustelevan toisilleen. Näin voidaan rakentaa yhteinen järjestelmä jo olemassa olevista palasista \citep[sivu 15]{linthicum2000enterprise}. Useissa tapauksissa organisaation sisäisiä järjestelmiä yhdistetään myös ulkoisiin järjestelmiin tai muiden organisaatioiden kanssa \citep{Johannesson2001}.
 Organisaation olemassa olevat järjestelmät voi olla kehitetty eri käyttöjärjestelmille, hyödyntävät eri
 ohjelmointikieliä tai tietokantaratkaisuita. Väliin tarvitaan integraatio, joka hoitaa
 kommunikoinnin ohjelmistojen välillä
@@ -26,7 +26,7 @@ Vuonna 2020 EAI-markkinan arvioitiin olevan 9,26 miljardin dollarin (USD) arvoin
 
 \section{Tekniset lähestymistavat}
 
-Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen yläkategoriaan \citep{Hohpe2004}.
+Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen yläkategoriaan \citep[sivu~64]{Hohpe2004}.
 
 \begin{enumerate}
    \item Tiedostojen siirto
@@ -36,6 +36,8 @@ Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan 
    
 \end{enumerate}
 
+\textbf{Tiedostojen siirto}: Tiedostojen siirrossa integroitavat sovellukset voivat toimia itsenäisesti ja yhden sovelluksen muutokset eivät vaikuta toisen sovelluksen toimintaan kunhan sovellukset toimivat sovituilla tiedostotyypeillä ja tiedoston nimeämisstrategioilla. Integroijan vastuulla on taata, että tiedostot muutetaan toisen sovelluksen ymmärtämään muotoon. Lähestymistapana tiedostojen siirto on yksinkertainen eikä vaadi lisätyökaluja, koska yleisten tiedostotyyppien (JSON, XML, CSV) tuki löytyy käytännössä jokaisesta ohjelmointikielestä tai integraatiotyökalusta.
+Data-analytiikassa ja datavarastojen saralla on myös muita yleisiä tiedostomuotoja kuten Apache Parquet, jolle löytyy myös tuki useista ohjelmointikielistä ohjelmistokirjaston muodossa \citep{Parquet}.
 
 
 \section{Integraatiotasot}
