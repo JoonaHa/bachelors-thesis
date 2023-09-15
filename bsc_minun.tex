@@ -40,6 +40,11 @@ Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan 
 
 \textbf{Tiedostojen siirto}: Tiedostojen siirrossa integroitavat sovellukset voivat toimia itsenäisesti ja yhden sovelluksen muutokset eivät vaikuta toisen sovelluksen toimintaan kunhan sovellukset toimivat sovituilla tiedostotyypeillä ja tiedoston nimeämisstrategioilla. Integroijan vastuulla on taata, että tiedostot muutetaan toisen sovelluksen ymmärtämään muotoon. Lähestymistapana tiedostojen siirto on yksinkertainen eikä vaadi lisätyökaluja, koska yleisten tiedostotyyppien (JSON, XML, CSV) tuki löytyy käytännössä jokaisesta ohjelmointikielestä tai integraatiotyökalusta.
 Data-analytiikassa ja datavarastojen saralla on myös muita yleisiä tiedostomuotoja kuten Apache Parquet, jolle löytyy myös tuki useista ohjelmointikielistä ohjelmistokirjaston muodossa \citep{Parquet}.
+Sovitusta tiedostomuodosta tulee käytännössä integroitavien sovellusten välinen rajapinta.
+
+Tiedostojen siirron heikkouksina on tiedostojärjestelmäoperaaatioiden hallinnointi ja datan synkronointi.
+
+\textbf{Jaettu tietokanta}: Jaetun tietokannan etuna tiedostojen siirtoon on muutosten nopea propagointuminen eri sovelluksille. Samassa tietokannassa uusin tieto on saatavilla eri sovelluksille lähes samanaikaisesti. Etuna on myös, että tietokantojen datamallit takaavat yhtenevän datan esitysmuodon verrattua tiedostojen siirtoon.
 
 
 \section{Integraatiotasot}
