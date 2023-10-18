@@ -31,9 +31,9 @@ Esittelen tässä luvussa suosituimpia jäsentely ja lähestymistapoja järjeste
 Teoksessaan \citep{linthicum2000enterprise} luokittelee integraatioiden lähestymistavat neljään eri tasoon
 
 \begin{enumerate}
-   \item Datataso: Dataa liikutellaan eri tietovarastojen välillä ja mahdollinen datan prosessointi ja muokkaus toteutetaan siirron yhteydessä. Kyseisellä menetelmällä on myös paljon yhtäläisyyksiä tyypillisen datavaraston (data warehouse) toteutuksen kanssa.
+   \item Datataso: Dataa liikutellaan eri tietovarastojen välillä ja mahdollinen datan prosessointi ja muokkaus toteutetaan siirron yhteydessä. Kyseisellä menetelmällä on myös paljon yhtäläisyyksiä tyypillisen datavaraston \textit{(data warehouse)} toteutuksen kanssa.
    \item Rajapintataso: Tasolla pyritään hyödyntämään tarkoitusta varten tilattujen tai paketoitujen sovellusten, esimerkiksi SAP, PeopleSoft, tarjoamia ohjelmointirajapintoja.
-   \item Metoditaso: Tällä tasolla pyritään hyödyntämään jaettua sovelluslogiikka. Esimerkiksi hyöntyntämällä sovelluspalvelimia (application server) metodienjakamiseen tai käyttämällä hajautettuja objekteja ja/tai etäkutsuja hyödyntäviä teknologioita.
+   \item Metoditaso: Tällä tasolla pyritään hyödyntämään jaettua sovelluslogiikka. Esimerkiksi hyöntyntämällä sovelluspalvelimia \textit{(application server)} metodienjakamiseen tai käyttämällä hajautettuja objekteja ja/tai etäkutsuja \textit{(Remote Procedure Call, RPC)} hyödyntäviä teknologioita.
    \item Käyttöliittymätaso: Integraatioiden yhdistävä tekijä on olemassa olevan sovelluksen käyttöliittymä kun sovellus ei tarjoa muita keinoja datan jakamiseen. Tämä toteutetaan hyödyntymällä ruudun tiedonharavointi tekniikoita (screen scraping).
    
 \end{enumerate}
@@ -46,7 +46,7 @@ Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan 
    \item Tiedostojen siirto
    \item Jaettu tietokanta
    \item Etäproseduuriherätys
-   \item Viestintä
+   \item Sanomat
    
 \end{enumerate}
 
@@ -86,6 +86,9 @@ Useammat eri rajapinnat tarkoittavat lisää työtä integraatiokehittäjille da
 Etäproseduuriherätyksen helppous kehittjille voi myös olla sen haittapuoli jos integraatiokehittäjät eivät tiedosta etäkutsujen suorituskyky- ja luotettavuuseroja verrattuna paikkalisiin kutsuihin. Useat etäkutsut voivat kasaannuttaa näitä ongelmia ja johtaa hitaaseen ja epäluotettavaan järjestelmään.
 
 Vaikka etäproseduuriherätyksen mahdollistama datan kapselointi vähentää sovelluksen kytköksiä karsimalla suuren yhteisen datalähteen, niin se voi silti aiheuttaa solmukohtia, erityisesti kun kyse on jaksossa - tietyssä järjestyksessä tehtävistä- operaatioista. Integraatioijärjestelmistä näistä muodostuu helposti ongelma, koska vastaavat kytkökset eivät välttämättä aiheuttaisi ongelmia yksittäisessä sovelluksessa, mutta usemman sovelluksen integraatiossa lisäkytkökset tarkoittavat lisäviivettä ja ylimääräisiä verkkokutsuja.
+
+\textbf{Sanomat:}\textit{(Messaging)} Aikaisemmat integraatioiden lähestymistavat keskittyivät joko datan tai toiminnalisuuden jakamiseen. Gregor Hohpen ja Bobby Woolfin mukaan yleinen integraationkehitykesn haaste on saada eri järjestelmät toimimaan yhdessä mahdollisimman viipettä ilman, että järjestelmien välillä on kytkösiä jotka tekevät järjestelmänstä epäluotettavan joka sovelluksen suorittamisen tai kehittämisen kannalta \citep[sivu~72]{Hohpe2004}. Tiedostojen siirrossa datan siirtyminen ei ole tarpeeksi viipeetöntä ja sovellusten välinen toiminta tarpeeksi sujuvaa vaikka lähestymistapa estää rajoittavien kyskösten muodostamisen. Jaetussa tietokannassa data on jaettu ja datan muutokset ovat responsiivisa, mutta kaikki sovellukset ovat kytköksissä samaan tietokantaan.
+
 
 
 
