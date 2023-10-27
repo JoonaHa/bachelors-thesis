@@ -2,7 +2,7 @@
 \chapter{Johdanto}
 
 
-Järjestelmäintegraatiot tai englanniksi Enterprise Application Integration (EAI) tarkoittaa ohjelmistoja, 
+Järjestelmäintegraatiot \textit{(Enterprise Application Integration, EAI)} tarkoittaa ohjelmistoja, 
 jotka yhdistävät eli integroivat organisaation olemassa olevia erillisiä järjestelmiä toimimaan yhdessä.
 
 Tarve EAI:lle kehittyi kun organisaation jo olemassa olevien
@@ -13,7 +13,7 @@ asiakastilastot ajan tasalla.
 Järjestelmät jäivät helposti erillisiksi saarekkeiksi eivätkä jakaneet tietoa keskenään. 
 Syntyi niin sanottuja "savupiippujärjestelmiä", joissa järjestelmä oltiin suunniteltu pitämään data esimerkiksi firman yksittäisen osaston sisällä, eikä järjestelmän suunnitteluvaiheessa oltu huomioitu datan jakamista; järjestelmästä puuttui esimerkiksi ulospäin suuntavat ohjelmointirajapinnat. 
 
-Järjestelmäintegraatio mahdollistaa näiden eri järjestelmien keskustelevan toisilleen. Näin voidaan rakentaa yhteinen järjestelmä jo olemassa olevista palasista \citep[sivu 15]{linthicum2000enterprise}. Useissa tapauksissa organisaation sisäisiä järjestelmiä yhdistetään myös ulkoisiin järjestelmiin tai muiden organisaatioiden kanssa \citep{Johannesson2001}.
+Järjestelmäintegraatio mahdollistaa näiden eri järjestelmien keskinäisen keskustelun toisilleen. Näin voidaan rakentaa yhteinen järjestelmä jo olemassa olevista palasista \citep[sivu 15]{linthicum2000enterprise}. Useissa tapauksissa organisaation sisäisiä järjestelmiä yhdistetään myös ulkoisiin järjestelmiin tai muiden organisaatioiden kanssa \citep{Johannesson2001}.
 Organisaation olemassa olevat järjestelmät voi olla kehitetty eri käyttöjärjestelmille, hyödyntävät eri
 ohjelmointikieliä tai tietokantaratkaisuita. Väliin tarvitaan integraatio, joka hoitaa
 kommunikoinnin ohjelmistojen välillä
@@ -22,7 +22,7 @@ kommunikoinnin ohjelmistojen välillä
 Vuonna 2020 EAI-markkinan arvioitiin olevan 9,26 miljardin dollarin (USD) arvoinen \citep{mordorintelligence} ja koostuu ohjelmistojättien (Microsoft, Oracle, Salesforce IBM) ja pienempien yksittäisten yritysten (Workato, SnapLogic, Tibico) tarjoamista järjestelmistä.
 
 
-\chapter{Integraadioiden lähestymistavat}
+\chapter{Integraatioiden lähestymistavat}
 
 Esittelen tässä luvussa suosituimpia jäsentely ja lähestymistapoja järjestelmäintegraatioille. Eri lähestymistavat perustuvat viitatuimpaan järjestelmäintegraatioarkkitehtuurin kirjallisuuteen. Luvun tarkoituksena on antaa kattokategorioita erilaisille teknisille lähestymistavoille ja antaa historiallista kontekstia eri arkkitehtuurisuuntauksille.
 
@@ -80,25 +80,25 @@ Jokainen sovellus vastaa oman datansa eheydestä ja jokainen sovellus voi tehdä
 
 Etäproseduuriherätyksen mahdollistavat teknologiat ovat myös yleisiä ja tuttuja kehittäjille. Etäproseduurikutsu \textit{(Remote Procedure Call, RPC)} teknologiat ja kirjastot ovat tunnettuja ja yleisesti käytettyjä. Teoksessa \citep[sivu~71]{Hohpe2004} Martin Fowler listaa CORBA, COM, .NET Remoting ja Java RMI esimerkkeinä ja mainitsee, että web-palveluiden yleistyessä http-yhteyksiä hyödyntävät lähestymistavat kuten SOAP ja XML ovat tulleet kehittäjien suosikeiksi. Varsinkin kun http-yhteyksien kanssa on helppo työskennellä, koska useimpien yritysten palomuurit sallivat http-liikenteen. Teoksen julkaisun jälkeen REST ja JSON ovat pitkälti korvanneet SOAP:in ja XML:än web-palveluiden suosituimpana lähestymistapana.
 
-Etäproseduuriherätyksellä on mahdollisuus vähentää  semanttista dissonanssia, koska sovellukset voivat tarjota usean erillaisen rajapinnan samalle datalle. Eri asiakasohjelmille voidaan tarjota erilainen datanesitysmalli riippune siitä mikä asiakasohjelma on kyseessä. Tämä antaa ennemmn mahdollisuuksia esittää datan useammalla eri tavalla verrattuna pelkkään relaationaaliseen malliin.
+Etäproseduuriherätyksellä on mahdollisuus vähentää  semanttista dissonanssia, koska sovellukset voivat tarjota usean erillaisen rajapinnan samalle datalle. Eri asiakasohjelmille voidaan tarjota erilainen datanesitysmalli riippuen siitä, mikä asiakasohjelma on kyseessä. Tämä antaa ennemmän mahdollisuuksia esittää datan useammalla eri tavalla verrattuna pelkkään relationaaliseen malliin.
 Useammat eri rajapinnat tarkoittavat lisää työtä integraatiokehittäjille datan muokkaamisen parissa ja integroitaviensovellusten täytyykin neuvotella mitä rajapintoja ne tulevat toisiltansa käyttämään.
 
 Etäproseduuriherätyksen helppous kehittjille voi myös olla sen haittapuoli jos integraatiokehittäjät eivät tiedosta etäkutsujen suorituskyky- ja luotettavuuseroja verrattuna paikkalisiin kutsuihin. Useat etäkutsut voivat kasaannuttaa näitä ongelmia ja johtaa hitaaseen ja epäluotettavaan järjestelmään.
 
 Vaikka etäproseduuriherätyksen mahdollistama datan kapselointi vähentää sovelluksen kytköksiä karsimalla suuren yhteisen datalähteen, niin se voi silti aiheuttaa solmukohtia, erityisesti kun kyse on jaksossa - tietyssä järjestyksessä tehtävistä- operaatioista. Integraatioijärjestelmistä näistä muodostuu helposti ongelma, koska vastaavat kytkökset eivät välttämättä aiheuttaisi ongelmia yksittäisessä sovelluksessa, mutta usemman sovelluksen integraatiossa lisäkytkökset tarkoittavat lisäviivettä ja ylimääräisiä verkkokutsuja.
 
-\textbf{Sanomat:}\textit{(Messaging)} Aikaisemmat integraatioiden lähestymistavat keskittyivät joko datan tai toiminnalisuuden jakamiseen. Gregor Hohpen ja Bobby Woolfin mukaan yleinen integraationkehitykesn haaste on saada eri järjestelmät toimimaan yhdessä mahdollisimman viipettä ilman, että järjestelmien välillä on kytkösiä jotka tekevät järjestelmänstä epäluotettavan joka sovelluksen suorittamisen tai kehittämisen kannalta \citep[sivu~72]{Hohpe2004}. Tiedostojen siirrossa datan siirtyminen ei ole tarpeeksi viipeetöntä ja sovellusten välinen toiminta tarpeeksi sujuvaa vaikka lähestymistapa estääkin rajoittavien kyskösten muodostamisen. Jaetussa tietokannassa data on jaettu ja datan muutokset ovat responsiivisia, mutta kaikki sovellukset ovat kytköksissä samaan tietokantaan ja lähestymistapa ei mahdollista sovellusten yhteistä toimintaa.
-Etäproseduuriherätyksen heikkoudet olivat yleiset hajautettujenjärjestelmien sudenkuopat, varsinkin jos eäkutsuja käytetään samallailla kuin paikallisia kutsuja ja lähestymistavassa sovellusten pitää jakaa tietoa toistensa rajapinnoista mikä lisää kehitystä vaikeuttavien kytkösten määrää.
+\textbf{Sanomat:}\textit{(Messaging)} Aikaisemmat integraatioiden lähestymistavat keskittyivät joko datan tai toiminnalisuuden jakamiseen. Gregor Hohpen ja Bobby Woolfin mukaan yleinen integraationkehitykesn haaste on saada eri järjestelmät toimimaan yhdessä mahdollisimman viipettä ilman, että järjestelmien välillä on kytköksiä, jotka tekevät järjestelmästä epäluotettavan joko sovelluksen suorittamisen tai kehittämisen kannalta \citep[sivu~72]{Hohpe2004}. Tiedostojen siirrossa datan siirtyminen ei ole tarpeeksi viipeetöntä ja sovellusten välinen toiminta tarpeeksi sujuvaa vaikka lähestymistapa estääkin rajoittavien kyskösten muodostamisen. Jaetussa tietokannassa data on jaettu ja datan muutokset ovat responsiivisia, mutta kaikki sovellukset ovat kytköksissä samaan tietokantaan ja lähestymistapa ei mahdollista sovellusten yhteistä toimintaa.
+Etäproseduuriherätyksen heikkoudet olivat yleiset hajautettujenjärjestelmien sudenkuopat, kuten verkkoviiveet ja verkon luetattavuus, varsinkin jos eäkutsuja käytetään samallalailla kuin paikallisia kutsuja ja lähestymistavassa sovellusten pitää jakaa tietoa toistensa rajapinnoista, mikä lisää kehitystä vaikeuttavien kytkösten määrää.
 
-Teoksen mukan \citep[sivu~73]{Hohpe2004} sanomien käyttö erityisesti asynkronisella viestinnällä tarjoaa lähestymistavan mikä on aikaisemmin esiteltyjen lähestymistapojen parhaiden puolien yhdistelmä.
-Sanomien käyttö mahdollistaa pienien tiheästi kulkevien datapakettien lähetyksen ja jossa tallenttamisen ja tiedosto-operaatioiden yksityiskohdat on abstsraktoitu pois, joka mahdollistaa nopeille skeeman muutoksille vastaten yrityksen tarpeisiin.
-Sovellukset pystyvät jakaa toiminnallisuuksian lähettämällä sanoman toisilleen joka herättää esimerkiksi datan muokkaus proseduurin. Asynkroninen viestintä ei taas vaadi vastaanottajan olemaan saatavilla lähetyhetkellä ja asynkronisen viestintä ohjaa kehittäjiä ymmärtämään, että etäyhteyksien käyttäminen hitaampaa ja suunnittelemaan korkeamman koheesion komponentteja, jolloin etänä tehtävien operaatioiden käyttö on harkitumpaa.
-Sanomapohjaiset järjestelmät myös mahdollistavat tiedostojen siirron kaltaisten löyhien kytkösten käytön. Sanomia voidaan muokata kesken lähetyksen ilman, että lähettäjä- tai vastaanottajasovelluksen tarvitsee olla tietoinen muokkausoperaation yksityiskohdista. Tämä mahdollistaa integroijien yleislähettävän \textit{broadcast} sanomia useammalle vastaanottajalle, valitsevan yhden vastaanottajan useamman joukosta tai valita useasta muunlaisesta topologiasta jotka sallivat integraation irrottamisen sovelluksen kehitysprosessista. 
+Sanomien käyttö erityisesti asynkroniseen viestintään on aikaisemmin esiteltyjen lähestymistapojen parhaiden puolien yhdistelmä \citep[sivu~73]{Hohpe2004}.
+Sanomien käyttö mahdollistaa pienien tiheästi kulkevien datapakettien lähetyksen ja tallenttamisen ja tiedosto-operaatioiden yksityiskohtien abstsraktoinnin. Tämä mahdollistaa nopeat skeeman muutokset vastaten yrityksen tarpeisiin.
+Sovellukset pystyvät jakaa toiminnallisuuksian lähettämällä sanoman toisilleen joka herättää esimerkiksi datanmuokkausproseduurin. Asynkroninen viestintä ei taas vaadi vastaanottajan olemaan saatavilla lähestyhetkellä ja asynkronine viestintä ohjaa kehittäjiä ymmärtämään, että etäyhteyksien käyttäminen on hitaampaa ja suunnittelemaan korkeamman koheesion komponentteja, jolloin etänä tehtävien operaatioiden käyttö on harkitumpaa.
+Sanomapohjaiset järjestelmät myös mahdollistavat tiedostojen siirron kaltaisten löyhien kytkösten käytön. Sanomia voidaan muokata kesken lähetyksen ilman, että lähettäjä- tai vastaanottajasovelluksen tarvitsee olla tietoinen muokkausoperaation yksityiskohdista. Tämä mahdollistaa integroijien yleislähettävän \textit{(broadcast)} sanomia useammalle vastaanottajalle, valitsevan yhden vastaanottajan useamman joukosta tai valita useasta muunlaisesta topologiasta jotka sallivat integraation irrottamisen sovelluksen kehitysprosessista. 
 Sanomien tiheä lähettäminen mahdollistaa säännöllisen datan jakamisen lisäksi toiminnallisuutta. Käsittelyprosessi voidaan käynistää heti kun yksittäinen sovellus saapuu ja asynkronisten kutsujen avulla lähettävän sovelluksen suoritus ei keskeydy odottamaan vastausta.
 
 
 Sanomien lähetyksen tiheä datanvaihto ei kuitenkaan estä semanttisen dissonanssin syntymistä, varsinkin kuin datan esitysmuoto voi vaihtua useasti sanomia muokatessa.
-Sanomien lähetyksen tiheys ei myöskään täysin poista samoja datan synkronointi haasteita mitä tiedostojen siirrossa ilmeni. Sanomien siirrossta on jonkin verran viiveitä ja niiden ajoituksella tulee edelleen olemaan merkitystä.
+Sanomien lähetyksen tiheys ei myöskään täysin poista samoja datan synkronointihaasteita, joita tiedostojen siirrossa ilmeni. Sanomien siirrossta on jonkin verran viiveitä ja niiden ajoituksella tulee edelleen olemaan merkitystä.
 Asynkronisuus tuo myös lisä haasteensa integraatioden kehitys vaiheessa. Testaus ja sovellusten virheenpaikkannus tulee olemaan monimutkaisempaa sanomien lähetyksen rinnakkaisuuden takia ja vaati integraatiokehittäjiltä jonkin verran lisätotuttelua.
 Sanomien käytön löyhät kytkennät lisäävät integroitavien sovellusten koheesioita, mutta tarkoittavat kuiten vaikeammin ylläpidettävän "liima koodin" tarvetta jotta integraatiot saadaan toimimaan yhdessä.
 
