@@ -106,10 +106,35 @@ Edellä mainitut haasteet tarkoittavat sanomapohjaisille järjestelmille suunnit
 
 \chapter{Sanomapohjaiset suunnittelumallit}
 
-Edellisessä luvussa esitellyistä neljästä kategoriasta Hohpe ja Woolf suosivat sanomien käyttöä integraatioratkaisuissa ja suurin osa teoksesta keskittyy sanomapohjaisen suunnittelumallien esittelyyn \citep[sivu~76]{Hohpe2004}. Nämä järjestelmäintegraatioiden suunnittelumalleina tunnetut kehitysohjeet ovat vaikuttaneet useamman eri integraatioalustan arkkitehtuuriin. Vuonna 2018 viimeisintä tekniikka edustavista 48:sta integraatioalustasta yksitoista tuki EIP-malleja \citep{Freire2019}.
+Edellisessä luvussa esitellyistä neljästä kategoriasta Hohpe ja Woolf suosivat sanomien käyttöä integraatioratkaisuissa ja suurin osa teoksesta keskittyy sanomapohjaisen suunnittelumallien esittelyyn \citep[sivu~76]{Hohpe2004}. Nämä järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnetut kehitysohjeet ovat vaikuttaneet useamman eri integraatioalustan arkkitehtuuriin. 
+
+Vuonna 2018 viimeisintä tekniikka edustavista 48:sta integraatioalustasta yksitoista tuki EIP-malleja \citep{Freire2019}.
+Kaksistoista vuotta kirjan julkaisun jälkeen pidetyssä haastattelussa kirjailijat sanovat, että useimmat avoimen lähdekoodin liikepalveluväylät \textit{(enterprise service bus, ESB)} ovat omaksuneet teoksessa esitellyn mallikielen \texit{(pattern language)} \citep{Zimmermann2016}.
+Samassa haastattelussa Hohpe ja Woolf toteavatkin, että kirjan pysyminen relevanttina yli 12 vuotta julkaisun jälkeen on harvinaista tietokoneaiheisille kirjoille \citep{Zimmermann2016}. Woolf selittää kirjan pitkän vaikutuksen johtuvan kirjan keskittymisestä suunnittelumalleihin eikä spesifisiin teknologioihin \citep{Zimmermann2016}.
 
 
-Neljästäkymmenestäkahdeksasta modernista integraatioalusta kymmenen erityisesti adoptoivat putket-ja-suodattimet arkkitehtuurityylin.
+Teos sisältää 67 sanomapohjaista suunnittelumallia ja nämä mallit on jaettu seitsemään eri kategoriaan \citep{Hohpe2004}:
+
+
+\begin{enumerate}
+   \item Järjestelmät \texit{(messaging systems)}
+   \item Kanavat \texit{(messaging channels)}
+   \item Rakentaminen \texit{(message construction)}
+   \item Reititys \texit{(message routing)}
+   \item Muokkaus \texit{(message transformation)}
+   \item Päätepisteet \texit{(messaging endpoints)}
+   \item Järjestelmän hallinta \texit{(systems management)}
+\end{enumerate}
+
+\section{Sanomajärjestelmät}
+Järjestelmät kategoria toimii kattokattegoriana muille kategoroille ja tarjoaa konseptit ja termit muille suunnittelualleille. 
+Kategoria esittelee lähtökohtaiset pohja suunnittelumallit minkä päälle muut luvut rakentavat.
+
+\begin{itemize}
+   \item Message Channel
+\end{itemize}
+
+Neljästäkymmenestäkahdeksasta modernista integraatioalusta kymmenen hyödyntää putket-ja-suodattimet arkkitehtuurityyliä \citep{Freire2019}.
 
 \chapter{Integraatioteknologioiden jaottelusta}
 
