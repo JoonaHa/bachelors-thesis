@@ -138,13 +138,29 @@ Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut
    \item Sanoma\textit{(Message)}
       Jos kanavaa voi ajatella putkena niin sanomaa voi ajatella putken vetenä, paitsi virran sijaan putkesssa data kulkee yksittäisinä datayksiköinä. Kuten monen muunkin protokollan kohdalla, niin myös sanomakin sisältää otsakkeen \textit{(header)} ja  hyötykuorman \textit{(payload)}. Sanomajärjestelmät eivät ota kantaa hyötykuorman sisältöön, mutta vastaanottava sovellus voi reagoida eritavoila hyötykuorman sisältöön. Saapuva sanoma voi aktivoida proseduurin, välittää dataa, ilmoittaa sovellusta tilamuutoksesta tai vaatia sovelluksesta vastausta \citep{Hohpe2004}. Sanomat voi myös lähettää sarjana jos lähetettävä data ei mahdu yhteen sanoman hyötykuormaan. Jos datalla on rajallinen voimassaoloaika, voi sanoma tarkentaa lähetetyn datan voimassa olo ajan \citep{Hohpe2004}. Hohpen ja Woofin teos sisältää suunnittelumallit näille erillaisille sanoman käyttötavoile.
    \item Putket ja suodattimet \textit{(Pipes and filters)}
-      Putket ja suodattimet suunnittelumallissa putkena toimivat edellä mainitut kanavat ja suodattimet ovat pieniä itsenäisiä prosessointiaskeleita joilla ei ole kytköksiäs muihin prosessointiaskeleihin. Kanavat yhdistävät nämä suodattime toisiinssa ja suodattimet voivat toimia yksin tai olla yhdistettynä toisiinsa. Vaihtoehtoisesti putkena voi toimia muistissa oleva jono. Suodattimien rajapinta pitää olla tarpeeksi yksinkertainen, että putkien implementaation on vaihdettavissa ja kiinteitä kytköksiä muihin suodattimiin tai putkiin ei synny.
+      Putket ja suodattimet suunnittelumallissa putkena toimivat edellä mainitut kanavat ja suodattimet ovat pieniä itsenäisiä prosessointiaskeleita joilla ei ole kytköksiä muihin prosessointiaskeleihin. Kanavat yhdistävät nämä suodattimet toisiinssa ja suodattimet voivat toimia yksin tai olla yhdistettynä toisiinsa. Vaihtoehtoisesti putkena voi toimia muistissa oleva jono. Suodattimien rajapinta pitää olla tarpeeksi yksinkertainen, että putkien implementaatio on vaihdettavissa ja kiinteitä kytköksiä muihin suodattimiin tai putkiin ei synny.
 Asynkroninen viestintä komponenttien välillä mahdollistaa suodattimien samanaikaisen käytön.
+Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi testata itsenäisinä komponentteina jonka lopputuloksen oikeudellisuutta voi helposti verrata siihen sisälle syötettyyn dataan.
 
 
       Putket ja suodattimet lähestymistapana on myös saanut suosiota integraatioalustoiden arkkitehtuureissa; neljästäkymmenestäkahdeksasta modernista integraatioalusta kymmenen hyödyntää putket ja suodattimet arkkitehtuurityyliä \citep{Freire2019}. Putket ja suodattimet arkkitehtuurille löytyy myös implementaatioohjeita monelle alustalle ja teknologialle. Internet haulla putket ja suodattimet suunnittelumallille löytyy ohjeet seitsemän eri teknologian virallisilta sivuilta, Amazon Web Services, Red Hat Fuse, Spring Integration, Microsoft Azure, Mulesoft Runtime ja Apache Camel \citep{AWSPipes} \citep{RedHatJboss} \citep{SpringPipes} \citep{AzurePipeAndFilt} \citep{MulesoftPat} \citep{CamelPipes}.
 
-      Suodattamien käyttö ei ole täysin ilmaista. Suodattamien skaalautuvuuden haasteena on useiden putkien käyttö; samoakanavat eivät ole täysin ilmaisia kuten aikasemmassa suunnittelumallissa on mainittu. Myös sanomien julkaisu ei ole ilmaista, koska viesti pitää käsitellä kanavan formaatista sovellukseen käyttämään formaattiin ja sama prosessi pitää tehdä takaperin sanoman poistuessa.
+      Suodattamien käyttö ei ole täysin ilmaista. Suodattamien skaalautuvuuden haasteena on se, että jokainen suodatin tarvii oman putkensa datan kuljettamiseen. Jos putken toteutetaa sanomakanavana niin näiden käyttö eivä myöskään ole täysin ilmaisia kuten aikasemmassa suunnittelumallissa on mainittu; vastaavasti muistissa olevat jonot kuluttavat luonnollisesti muistiresursseja. Myös sanomien kulku putkissa ja suodattimista tuo omat haasteensa, koska viestit pitää käsitellä kanavan formaatista sovellukseen käyttämään formaattiin ja sama prosessi pitää tehdä takaperin sanoman lähtiessä, syöden operaatiosyklejä. Pitkät suodatinketjut tarjoavat arkkitehtuurista joustavuutta löyhien kytköstensä ansioista, mutta maksavat potentiaalisen suoritustehon laskemisen muodossa, johtuen toistuvista datan esitystavan muutoksista.
+
+      
+      Asynkronisten sanomakanavien hyödyntäminen mahdollistaa jokaisen suodatinyksikön käsitellä sanoman omassa säikeessään tai prosessissaan. Tämä johtaa huomattavasti suurenpaan suoritustehoon kun yksikään suodatinyksikkö ei ole odottamassa sanoman käsittelyn päättymistä vaan seuraavaa sanomaa voidaan alkaa käsittelemään enne kuin edellinen on valmistunut.
+      Hohpe ja Woolf kutsuvat tätä prosessointiputkeksi \textit{(processing pipeline)} jota selventää kuva~\ref{fig:pipelineprocess} \citep{Hohpe2004} \citep{EnterpriseIntegration} Kuvassa~\ref{fig:pipelineprocess} sanoman salaus puretaan, autentikoidaan ja lopuksi tarkistetaan duplikaateilta. Peräkkäisessä käsittelyssä (lue ilman asynkronisuutta) sanomat joutuvat odottamaan toisten sanomien käsittelyä. Alemmassa prosessointiputkessa asynkronisuus mahdollista suodattimien operaatiot heti kun seuraava sanoma saapuu.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{kuvat/pipeline_processing.png}
+\caption{Kuva peräkkäisen käsittelyn ja prosessointiputken eroista \citep{Hohpe2004}\label{fig:pipelineprocess}}
+\end{center}
+\end{figure}
+
+
+
+
+
 \end{itemize}
 
 
