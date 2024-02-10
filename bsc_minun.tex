@@ -147,27 +147,29 @@ Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi tes
 
       Suodattamien käyttö ei ole täysin ilmaista. Suodattamien skaalautuvuuden haasteena on se, että jokainen suodatin tarvii oman putkensa datan kuljettamiseen. Jos putken toteutetaa sanomakanavana niin näiden käyttö eivä myöskään ole täysin ilmaisia kuten aikasemmassa suunnittelumallissa on mainittu; vastaavasti muistissa olevat jonot kuluttavat luonnollisesti muistiresursseja. Myös sanomien kulku putkissa ja suodattimista tuo omat haasteensa, koska viestit pitää käsitellä kanavan formaatista sovellukseen käyttämään formaattiin ja sama prosessi pitää tehdä takaperin sanoman lähtiessä, syöden operaatiosyklejä. Pitkät suodatinketjut tarjoavat arkkitehtuurista joustavuutta löyhien kytköstensä ansioista, mutta maksavat potentiaalisen suoritustehon laskemisen muodossa, johtuen toistuvista datan esitystavan muutoksista.
 
-      
+
       Asynkronisten sanomakanavien hyödyntäminen mahdollistaa jokaisen suodatinyksikön käsitellä sanoman itsenäisesti omassa säikeessään tai prosessissaan. Tämä johtaa huomattavasti suurenpaan suoritustehoon kun yksikään suodatinyksikkö ei ole odottamassa sanoman käsittelyn päättymistä vaan seuraavaa sanomaa voidaan alkaa käsittelemään enne kuin edellinen on valmistunut.
-      Hohpe ja Woolf kutsuvat tätä prosessointiputkeksi \textit{(processing pipeline)} jota selventää kuva~\ref{fig:pipelineprocess} \citep{Hohpe2004} \citep{EnterpriseIntegration} Kuvassa~\ref{fig:pipelineprocess} sanoman salaus puretaan, autentikoidaan ja lopuksi tarkistetaan duplikaateilta. Peräkkäisessä käsittelyssä, eli ilman asynkronisuutta, sanomat joutuvat odottamaan toisten sanomien käsittelyä. Alemmassa prosessointiputkessa asynkronisuus mahdollistaa suodattimien operaatiot heti kun seuraava sanoma saapuu.
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{kuvat/pipeline_processing.png}
-\caption{Kuva sanomien peräkkäisen käsittelyn ja prosessointiputken eroista \citep{Hohpe2004}\label{fig:pipelineprocess}}
-\end{center}
-\end{figure}
+      Hohpe ja Woolf kutsuvat tätä prosessointiputkeksi \textit{(processing pipeline)} jota selventää kuva~\ref{fig:pipelineprocess} \citep{Hohpe2004} \citep{EnterpriseIntegration} Kuvassa~\ref{fig:pipelineprocess} sanoman salaus puretaan \texit{(decrypt)}, autentikoidaan \texit{(authent.)} ja lopuksi tarkistetaan duplikaateilta \texit{(de-dup)}. Peräkkäisessä käsittelyssä, eli ilman asynkronisuutta, sanomat joutuvat odottamaan toisten sanomien käsittelyä. Alemmassa prosessointiputkessa asynkronisuus mahdollistaa suodattimien operaatiot heti kun seuraava sanoma saapuu.
+      \begin{figure}[ht]
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{kuvat/pipeline_processing.png}
+      \caption{Kuva sanomien peräkkäisen käsittelyn ja prosessointiputken eroista \citep{Hohpe2004}\label{fig:pipelineprocess}}
+      \end{center}
+      \end{figure}
 
 
-Suodatinketjun suorituskykyä voidaan parantaa tästä entisestään. Edellisessä prosessointiputken esimerkissä heikkoutena on se, että kaikesta hitain suodatinprosessi määrää koko järjestelmän sanomien käsittelytahdin. Tässä tapauksessa hitain suodatin voidaan rinnakkaistaa. Haasteena on varmistaa, että jokaisen sanoman voi käsitellä vain yksi rinnakkaisista suodatinprosesseista. Toinen huomioon otettava aspekti on, että rinnakkaistaminen ei takaa sanomien suoritusjärjestyksen säilymistä. Jos sanomien käsittleyjärjestyksellä on väliä, suodatinprosesseja voi olla vain yksi instanssi.
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=0.8\textwidth]{kuvat/paraller_processing.png}
-\caption{Kuva sanomien rinnakkaisesta käsittelystä kun järjestyksellä on väliä \citep{Hohpe2004}\label{fig:parallelprocess}}
-\end{center}
-\end{figure}
+      Suodatinketjun suorituskykyä voidaan parantaa tästä entisestään. Edellisessä prosessointiputken esimerkissä heikkoutena on se, että kaikesta hitain suodatinprosessi määrää koko järjestelmän sanomien käsittelytahdin. Tässä tapauksessa hitain suodatin voidaan rinnakkaistaa. Haasteena on varmistaa, että jokaisen sanoman voi käsitellä vain yksi rinnakkaisista suodatinprosesseista. Toinen huomioon otettava aspekti on, että rinnakkaistaminen ei takaa sanomien suoritusjärjestyksen säilymistä. Jos sanomien käsittleyjärjestyksellä on väliä, suodatinprosesseja voi olla vain yksi instanssi. Kolmas haaste on suodattimien tilanhallinta. Tilanhallinta rinnakkaisissa operaatioissa lisää tunnettusti kompleksisuutta, niin suodattimen tilanpalautuminen lähtöpisteeseen operaation valmistuttua yksinkertaistaa huomattavasti suodattimien rinnakkaistamista.
+      Kuvan~\ref{fig:parallelprocess} esimerkissä Hohpe ja Woof näyttävät miten salauksen purkamisen \texit{(decrypt)} käytetty suodatin voidaan rinnakkaistaa kolmeksi rinnakkaiseksi prosessiksi, koska purkamisoperaatio on työläin suodattimista \citep{Hohpe2004}. Esimerkissä duplikaattien tarkastus \texit{(de-dup)} on pidetty peräkkäisenä prosessina, koska duplikaattien havaitseminen tarvitsee sanomahistorian hyödyntämistä eli operaatio ei ole tilaton ja sen rinnakkaistaminen on haastavaa. 
+      \begin{figure}[h]
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{kuvat/paraller_processing.png}
+      \caption{Kuva sanomien rinnakkaisesta käsittelystä kun järjestyksellä on väliä \citep{Hohpe2004}\label{fig:parallelprocess}}
+      \end{center}
+      \end{figure}
 
 
 
+   \item Sanomareititin \textit{(Message Router)}
 
 \end{itemize}
 
