@@ -179,4 +179,9 @@ Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi tes
 
 Laaja-alaisessa tutkimuksessaan \citep{Ritter2017} laajentaa järjestelmäintegraatioiden suunnitelumalleja ja kartoittavat integraatioiden suunnittelumallien käytön kaupallisissa ja avoimen lähdekoodin projekteissa.
 
+Synkrononisia- ja  virtausprotokolleja \texit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä Hohpe ja Woof myöntävätät \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
+Samassa haastattelussa Hohpe Ja Woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi EIP:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
+
+Virtausdatan käsittelemistä EIP-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Virtausdatan käsittelyä varten EIP-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \texit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti.
+
 \chapter{Yhteenveto}
