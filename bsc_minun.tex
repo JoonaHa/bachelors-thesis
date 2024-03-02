@@ -185,6 +185,11 @@ Samassa haastattelussa Hohpe Ja Woof toteavatkin, että virtausprotokollien suun
 Virtausdatan käsittelemistä EIP-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Virtausdatan käsittelyä varten EIP-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti.
 
 
+EIP:een toinen sudenkuoppa on tilalliset \textit{(stateful)} protokollat. Hohpe myöntää, että tilallisesta suunnittelumalleista voisi tulla EIP toinen voluumi ja tilallisten suunnittelumallien sisällyttäminen oikeuttaisi "Enterprise Integrations Patterns" otsikon käyttöä \citep{Zimmermann2016}.
+Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivullee \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
 
-Selitä tähän miten EIP:stä puuttuu stateful patternit
+
+
+
+
 \chapter{Yhteenveto}
