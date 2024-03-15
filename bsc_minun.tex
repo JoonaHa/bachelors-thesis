@@ -139,8 +139,8 @@ Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut
       Jos kanavaa voi ajatella putkena niin sanomaa voi ajatella putken vetenä, paitsi virran sijaan putkesssa data kulkee yksittäisinä datayksiköinä. Kuten monen muunkin protokollan kohdalla, niin myös sanomakin sisältää otsakkeen \textit{(header)} ja  hyötykuorman \textit{(payload)}. Sanomajärjestelmät eivät ota kantaa hyötykuorman sisältöön, mutta vastaanottava sovellus voi reagoida eritavoila hyötykuorman sisältöön. Saapuva sanoma voi aktivoida proseduurin, välittää dataa, ilmoittaa sovellusta tilamuutoksesta tai vaatia sovelluksesta vastausta \citep{Hohpe2004}. Sanomat voi myös lähettää sarjana jos lähetettävä data ei mahdu yhteen sanoman hyötykuormaan. Jos datalla on rajallinen voimassaoloaika, voi sanoma tarkentaa lähetetyn datan voimassa olo ajan \citep{Hohpe2004}. Hohpen ja Woofin teos sisältää suunnittelumallit näille erillaisille sanoman käyttötavoile.
    \item Putket ja suodattimet \textit{(Pipes and filters)}
       Putket ja suodattimet suunnittelumallissa putkena toimivat edellä mainitut kanavat ja suodattimet ovat pieniä itsenäisiä prosessointiaskeleita joilla ei ole kytköksiä muihin prosessointiaskeleihin. Kanavat yhdistävät nämä suodattimet toisiinssa ja suodattimet voivat toimia yksin tai olla yhdistettynä toisiinsa. Vaihtoehtoisesti putkena voi toimia muistissa oleva jono. Suodattimien rajapinta pitää olla tarpeeksi yksinkertainen, että putkien implementaatio on vaihdettavissa ja kiinteitä kytköksiä muihin suodattimiin tai putkiin ei synny.
-Asynkroninen viestintä komponenttien välillä mahdollistaa suodattimien samanaikaisen käytön.
-Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi testata itsenäisinä komponentteina jonka lopputuloksen oikeudellisuutta voi helposti verrata siihen sisälle syötettyyn dataan.
+   Asynkroninen viestintä komponenttien välillä mahdollistaa suodattimien samanaikaisen käytön.
+   Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi testata itsenäisinä komponentteina jonka lopputuloksen oikeudellisuutta voi helposti verrata siihen sisälle syötettyyn dataan.
 
 
       Putket ja suodattimet lähestymistapana on myös saanut suosiota integraatioalustoiden arkkitehtuureissa; neljästäkymmenestäkahdeksasta modernista integraatioalusta kymmenen hyödyntää putket ja suodattimet arkkitehtuurityyliä \citep{Freire2019}. Putket ja suodattimet arkkitehtuurille löytyy myös implementaatioohjeita monelle alustalle ja teknologialle. Internet haulla putket ja suodattimet suunnittelumallille löytyy ohjeet seitsemän eri teknologian virallisilta sivuilta, Amazon Web Services, Red Hat Fuse, Spring Integration, Microsoft Azure, Mulesoft Runtime ja Apache Camel \citep{AWSPipes} \citep{RedHatJboss} \citep{SpringPipes} \citep{AzurePipeAndFilt} \citep{MulesoftPat} \citep{CamelPipes}.
@@ -169,6 +169,9 @@ Suodattimien löyhät kytkökset helpottavat testaamista kun suodattimia voi tes
 
 
    \item Sanomareititin \textit{(Message Router)}
+      Putkien ja suodattimien löyhät kytkennät mahdolistavat uuden prosessointiaskeleen lisäämisen oleamssaolevien väliin. Sanomareitittimen tapauksessa reititin vastaa putkien ja suodattamien suodatinta siinä suhteessa, että se tekee suorittaa prosessointia, mutta suodattimien sijaan reititin on kytketty useampaan ulostulo kanavaan. Reititin ei myöskän muokkaa sanomaa vain on ainoastaan keskittynyt sanomien reittittämiseen.
+   Reitittimen etuna on löyhä kytkentä, ympärillä olevine sudoattimien ei tarvi olla tietoisia reittittimen olemassaolosta ja kaikki reititys päätökset säilytetään yhdessä sijainnissa; jos uusia sanomatyppejä tai muuta muutoksia toteutetaa niin ainoastaan sanomareitittimen logiikka tarvitsee muokata.
+
 
 \end{itemize}
 
@@ -190,9 +193,7 @@ Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivullee \citep{conve
 
 
 Virheenhallinnasta:
-\begin{quote}
 To handle erroneous situations during message processing, escalate them and make systems more fault-tolerant, error handling is seen as a major aspect [5], [45]. Hohpe et al. [3], [70] do only cover Dead Letter Channel as solution and sketch some ideas about the topic. Overall, in the literature, the topic is neither addressed from a pattern, formalization, nor modeling perspective. While [5] mentions missing patterns and formalization, Merkel et al. [45] lists Balancing and Distribution, as well as [69] mentions Fault-tolerance and Message Scheduling as missing aspects. Similarly, the insight into the current state of affairs, called monitoring, for services and cross-cloud are seen as important topics in [45], [61], [62]\citep{Ritter2017}
-\end{quote}
 
 
 
