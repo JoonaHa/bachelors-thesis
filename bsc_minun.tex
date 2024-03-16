@@ -169,8 +169,14 @@ Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut
 
 
    \item Sanomareititin \textit{(Message Router)}
-      Putkien ja suodattimien löyhät kytkennät mahdolistavat uuden prosessointiaskeleen lisäämisen oleamssaolevien väliin. Sanomareitittimen tapauksessa reititin vastaa putkien ja suodattamien suodatinta siinä suhteessa, että se tekee suorittaa prosessointia, mutta suodattimien sijaan reititin on kytketty useampaan ulostulo kanavaan. Reititin ei myöskän muokkaa sanomaa vain on ainoastaan keskittynyt sanomien reittittämiseen.
-   Reitittimen etuna on löyhä kytkentä, ympärillä olevine sudoattimien ei tarvi olla tietoisia reittittimen olemassaolosta ja kaikki reititys päätökset säilytetään yhdessä sijainnissa; jos uusia sanomatyppejä tai muuta muutoksia toteutetaa niin ainoastaan sanomareitittimen logiikka tarvitsee muokata.
+      Putkien ja suodattimien löyhät kytkennät mahdolistavat uuden prosessointiaskeleen lisäämisen oleamssaolevien väliin. Sanomareitittimen tapauksessa reititin vastaa putkien ja suodattamien suodatinta siinä suhteessa, että se tekee suorittaa prosessointia, mutta suodattimien sijaan reititin on kytketty useampaan ulostulo kanavaan. Reititin ei myöskän muokkaa sanomaa vain on ainoastaan keskittynyt sanomien määränpään valitsemiseen.
+   Reitittimen etuna on löyhä kytkentä muihin komponentteihin; ympärillä olevien sudoattimien ei tarvitse olla tietoisia reittittimen olemassaolosta ja kaikki reitityspäätöksien logiikka elää yhdessä sijainnissa. Jos uusia sanomatyppejä tai reititysmuutoksia toteutetaan niin ainoastaan sanomareitittimen logiikka tarvitsee muokata. Koska saapuvan kanavan kaikki viestit siirtyvät reitittimen läpi yksitellen, on saapuvien viestien käsittelyjäjrestys myös taattu.
+   Löyhän kytkennän ylläpitohaasteet korostuvat sanomareitintä hyödyntäessä. Jos suurin osa järjestelmästä on löyhästi kytketty toiseen niin järjestlmän kokonaiskuvan muodostaminen käy hankalaksi. Hohpe ja Woofin mukaan näitä haasteita voi lieventää hyödyntämällä sanomien kulkuhistoriaa \citep{Hohpe2004}[sivu~93].
+
+
+   Reittitimen haasteina ovat erilaiset pullonkaulat. Reittittimestä voi syntyä ylläpidollinen pulonkaula, koska reittittimen pitää olla tietoinen kaikista vastaanottavista kanavista ja tästä voi syntyä ylläpiolline ongelma varsinkin jos vastaanottokanavien lista vaihtuu tiheään. Toinen mahdollinen pullonkaula on suoritysky. Reititin luonteensa vuoksi lisää ylimääräisen prosessointiaskeleen ja monissa sanomajärjestlmissä sanoman siirtäminen toiselle kanavalle vaati sanomien uudelleen koodausta. Useamman reitittimen rinnakkainen käyttö lieventä ongelmaa, mutta jokatapauksessa reititin tulee vaikuttamaan negatiivisesti sanomien viiveeseen vaikka sanomien käsittelytahti pysyisikin samana \citep{Hohpe2004}.
+   
+
 
 
 \end{itemize}
