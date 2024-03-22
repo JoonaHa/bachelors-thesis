@@ -171,12 +171,19 @@ Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut
    \item Sanomareititin \textit{(Message Router)}
       Putkien ja suodattimien löyhät kytkennät mahdolistavat uuden prosessointiaskeleen lisäämisen oleamssaolevien väliin. Sanomareitittimen tapauksessa reititin vastaa putkien ja suodattamien suodatinta siinä suhteessa, että se tekee suorittaa prosessointia, mutta suodattimien sijaan reititin on kytketty useampaan ulostulo kanavaan. Reititin ei myöskän muokkaa sanomaa vain on ainoastaan keskittynyt sanomien määränpään valitsemiseen.
    Reitittimen etuna on löyhä kytkentä muihin komponentteihin; ympärillä olevien sudoattimien ei tarvitse olla tietoisia reittittimen olemassaolosta ja kaikki reitityspäätöksien logiikka elää yhdessä sijainnissa. Jos uusia sanomatyppejä tai reititysmuutoksia toteutetaan niin ainoastaan sanomareitittimen logiikka tarvitsee muokata. Koska saapuvan kanavan kaikki viestit siirtyvät reitittimen läpi yksitellen, on saapuvien viestien käsittelyjäjrestys myös taattu.
-   Löyhän kytkennän ylläpitohaasteet korostuvat sanomareitintä hyödyntäessä. Jos suurin osa järjestelmästä on löyhästi kytketty toiseen niin järjestlmän kokonaiskuvan muodostaminen käy hankalaksi. Hohpe ja Woofin mukaan näitä haasteita voi lieventää hyödyntämällä sanomien kulkuhistoriaa \citep{Hohpe2004}[sivu~93].
+   Löyhän kytkennän ylläpitohaasteet korostuvat sanomareitintä hyödyntäessä. Jos suurin osa järjestelmästä on löyhästi kytketty toiseen niin järjestlmän kokonaiskuvan muodostaminen käy hankalaksi. Hohpe ja Woofin mukaan näitä haasteita voi lieventää hyödyntämällä sanomien kulkuhistoriaa \citep[sivu~93]{Hohpe2004}.
 
 
-   Reittitimen haasteina ovat erilaiset pullonkaulat. Reittittimestä voi syntyä ylläpidollinen pulonkaula, koska reittittimen pitää olla tietoinen kaikista vastaanottavista kanavista ja tästä voi syntyä ylläpiolline ongelma varsinkin jos vastaanottokanavien lista vaihtuu tiheään. Toinen mahdollinen pullonkaula on suoritysky. Reititin luonteensa vuoksi lisää ylimääräisen prosessointiaskeleen ja monissa sanomajärjestlmissä sanoman siirtäminen toiselle kanavalle vaati sanomien uudelleen koodausta. Useamman reitittimen rinnakkainen käyttö lieventä ongelmaa, mutta jokatapauksessa reititin tulee vaikuttamaan negatiivisesti sanomien viiveeseen vaikka sanomien käsittelytahti pysyisikin samana \citep{Hohpe2004}.
-   
+   Reittitimen haasteina ovat erilaiset pullonkaulat. Reittittimestä voi syntyä ylläpidollinen pullonkaula, koska reittittimen pitää olla tietoinen kaikista vastaanottavista kanavista ja tästä voi syntyä ylläpiolline ongelma varsinkin jos vastaanottokanavien lista vaihtuu tiheään. Toinen mahdollinen pullonkaula on suoritysky. Reititin luonteensa vuoksi lisää ylimääräisen prosessointiaskeleen ja monissa sanomajärjestlmissä sanoman siirtäminen toiselle kanavalle vaati sanomien uudelleen koodausta. Useamman reitittimen rinnakkainen käyttö lieventää ongelmaa, mutta jokatapauksessa reititin tulee vaikuttamaan negatiivisesti sanomien viiveeseen vaikka sanomien käsittelytahti pysyisikin samana \citep[sivu~93]{Hohpe2004}.
 
+
+   Reitittimen käyttö voidaan kategorioida useamaan eri tyyppiin. Yksinkertaisin reititin on kiinteä jolloin sanoma kulkee yhdestä kanavasta yhteen vastaanottaja kanavaan. Kiinteiden reitittimen tarkoitus on irrottaa kiinteitä kytkentöjä erilaisista alijärjestelmistä tai välittää sanomia eri integraationratkaisujen välillä.
+   Reititin voi olla sisältöpohjainen \textit{(content-based)} tai ympäristöpohjainen \textit{(context-based)}. Sisältöpohjainen tekee reitityspäätöksiä sanoman sisällön perusteella. Ympäristöpohjainen ottaa huomioon ympäristön tilan ja tekee esimerkiksi kuormituksen tasaamista tai uudelleenreititystä ympäröivän systeemin virhetilanteessa.
+   Reitittimet voi jakaa tilallisiin ja tilattomiin; tilalliset reitittimet ottavat huomioon aikasemmat sanomat ne voivat esimerkiksi estää duplikaattisanomien saapumisen tallentamalla jo saapuneet sanomat.
+   Reitin voi olla myös dynaaminen \textit{dynamic router} ja vastaanottaa konfiguraatiomuutoksia ohjausväylän kautta. Tällä tavalla reititin voi muutta reitityslogiikkaansa ilman koodimuutoksia \citep[sivu~94]{Hohpe2004}.
+
+
+   \item Sanomakääntäjä \textit{(Message Translator)}
 
 
 \end{itemize}
@@ -194,7 +201,7 @@ Virtausdatan käsittelemistä EIP-malleilla on kokeiltu laitteistokiihdyttämise
 
 
 EIP:een toinen sudenkuoppa on tilalliset \textit{(stateful)} protokollat. Hohpe myöntää, että tilallisesta suunnittelumalleista voisi tulla EIP toinen voluumi ja tilallisten suunnittelumallien sisällyttäminen oikeuttaisi "Enterprise Integrations Patterns" otsikon käyttöä \citep{Zimmermann2016}.
-Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivullee \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
+Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivulle \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
 
 
 
