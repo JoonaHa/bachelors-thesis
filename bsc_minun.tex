@@ -195,18 +195,25 @@ Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut
 
 
    \item Sanomankääntäjä \textit{(Message Translator)}:
-      Sanomankääntäjä on suodatintyyppi, joka mahdollistaa eri dataformaatteja käyttävät sovellukset keskustelemaan keskenään sanomien avulla. Hohpe ja Woof vertaavat sanomankääntäjä EIP:tä sanomajärjestelmille tarkoitetuksi versioksi tunnetusta sovitin suunnittelumalliksi, joka \citep[sivu~97]{Hohpe2004} tunnetaan tunnetusta Gang of Four teoksesta \citep{Gamma1994}.
-   Sanomakääntäjä ratkaiseee jaetun tietokannan haasteita jota käsiteltiin luvuvssa \ref{Tekniset lähestymistavat}. Erityisesti yhtenäisen skeemaan löytäminen ei ole ongelma ja järjestelmät on  kytketty löyhemmin toisiinsa kääntäjiä hyödyntämällä.
-   Yhteisen datayypin ajatusta voitaisiin hyödyntää toteuttamalla samoman datatyypin muunnokset sanomien päätepisteisiin \ref{Sanomien päätepiste}, mutta valmiissa kaupallisissa sanomajärjestlemiä tukevissa sovelluksissa päätepisteen koodi ei ole muokattavissa. Lisäksi sanoien kääntämislogiikan eläessä päätepisteessä, koodin uudelleenkäyttäminen on haastavaa.
+      Sanomankääntäjä on suodatintyyppi, joka mahdollistaa eri dataformaatteja käyttävät sovellukset keskustelemaan keskenään sanomien avulla. Hohpe ja Woof vertaavat sanomankääntäjä EIP:tä sanomajärjestelmille tarkoitetuksi versioksi tunnetusta sovitinsuunnittelumallista \citep[sivu~97]{Hohpe2004}, joka sai alkunsa Gang of Four teoksesta \citep{Gamma1994}.
+ Keratauksena aikaisempiin esiteltyihin EIP: hin verrattuna sanomakääntäjän tarkoituksena on vähentää tiukkoja riippuvuuksia arkkitehtuurissa; sanomakanava mahdollisti, että sovellusten ei tarvitse tietää toistensa sijaintia, sanomareititin mahdollisti löyhät kytkennät sovellusten viestien reitittämisessä, joten sanomakääntäjä estää järjestelmien tiukat riippuvuudet toistensa dataformaateista.
+   Sanomakääntäjä ratkaiseee jaetun tietokannan haasteita jota käsiteltiin luvuvssa \ref{Tekniset lähestymistavat}. Erityisesti yhtenäisen skeemaan löytäminen ei muodostu ongelmaksi ja järjestelmät on  kytketty löyhemmin toisiinsa kääntäjiä hyödyntämällä.
+   Vaihtoehtoinen lähestymistapa sanomakääntäjän sijaan olisi käyttää yhteistä datatyyppiä koko sanomajärjestelmässä, joka jakaa myös yhtäläisyyksiä jaetun tietokannan kanssa \ref{Tekniset lähestymistavat}, toteuttamalla samoman datatyypin muunnokset sanomien päätepisteisiin \ref{Sanomien päätepiste}, mutta valmiissa kaupallisissa sanomajärjestlemiä tukevissa sovelluksissa päätepisteen koodi ei ole muokattavissa. Lisäksi sanomien kääntämislogiikan eläessä päätepisteessä, koodin uudelleenkäyttäminen on haastavaa.
 
-   Sanomakääntäjä mahdollisti, että sovellusten ei tarvitse tietää toistensa sijaintia, sanomareititin mahdollisti löyhät kytkennät sovellusten viestien reitittämisessä, joten sanomakääntäjä estää järjestelmien tiukat riippuvuudet toistensa dataformaateista.
+   Hohpe ja Woof \citep{Hohpe2004} jakavat sanomkääntäjän operaatiot eri abstraktiotasoihin, ottaen löyhästi vaikutteita OSI-mallista \citep{OSImodel}, jakaen kääntämisoperaatiot kuljetus-, datan esitys-, datatyyppi- ja tietorakennekerroksiin (sovelluskerros).
+   Kuljetuskerrokseen kuuluvat protokollat kuten http, mqtt, JMS. Datan esityskerros on kiinnostunut datan muodosta kute JSON, XML ja enkoodauksesta kuten UTF-8. Datatyyppi viittaa soveluksen muistinsisäisiin esityistapohin esim. ovatko postinumerot merkkijonoja vai kokonaisnumeroita ja ovatko esim. aikaleimat aina UTC-ajassa vai sisätävätkö aikavyöhykeinformaation.
+   Tietorakennekerros (tai sovelluskerros) ottaa kantaa logiisiin kokonaisuuksiin, kuten eri dataentiteettien assosisaatioihin ja niiden kardianaliteetin esim. onko dataentiteettien välillä moni-moneen-yhteyksiä.
+   Jakamalla kääntämisoperaatiot usempaan kerrokseen voidaan operaatioita käsitellä itsenäisesti omassa abstraktiotasossaan, kuten kuvassa \ref{fig:translationlayers}, ilman riippuvuutta muihin kääntäjiin ja kääntämisoperaation koodin uudelleenkäyttäminen on suoraviivaista. Myös eri abstraktiotasojen operaatiot ovat vaihdettavissa toisiin. Esimerkiksi datan esityskerrosessa \textit{(Data Representation)} voidaankin päättää, että data esitetäänkin JSON:ina CSV:een sijaan ilman, että vaihto aiheuttaa muutoksia muiden tasojen operaatioissa.
 
-   Hohpe ja Woof \citep{Hohpe2004} jakavat sanomkääntäjän operaatiot eri abstraktiotasoihin, ottaen löyhästi vaikutteita OSI-mallista \citep{OSImodel}. Jakaen kääntämisoperaatiot kuljetus-, datan esitys-, datatyyppi- ja tietorakennekerroksiin (sovelluskerros).
-   Kuljetuskerrokseen kuuluvat protokollat kuten http, mqtt, JMS. Datan esityskerros on kiinnostunut datan muodosta kute JSON, XML ja enkoodauksesta kuten UTF-8. Datatyyppi viittaa soveluksen muistinsisäisiin esityistapohin esim. ovatko postikoodit merkkijonoja vai kokonaisnumeroita ja ovatko aikaleimat UTC-aikaa vai sisätävätkö aikavyöhykeinformaation.
-   Tietorakennekerros (tai sovelluskerros) otta kantaa logiisiin kokonaisuuksiin, kuten eri data entiteettien assosisaation ja kardianaliteetin esim. moni-moneen-yhteydet.
-
+      \begin{figure}[h]
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{./kuvat/translation_layers.png}
+      \caption{Sanomakääntäjän operaatiot voivat kohdistua kaikkiin abstraktiotasoihin \citep{Hohpe2004}\label{fig:translationlayers}}
+      \end{center}
+      \end{figure}
 
 \item Sanomien päätepiste \textit{(Message Endpoint)}\label{Sanomien päätepiste}:
+
 
 \end{itemize}
 
