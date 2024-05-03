@@ -233,6 +233,30 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 Laaja-alaisessa tutkimuksessaan \citep{Ritter2017} laajentaa järjestelmäintegraatioiden suunnitelumalleja ja kartoittavat integraatioiden suunnittelumallien käyttöä kaupallisissa ja avoimen lähdekoodin projekteissa.
 
 
+\section{Kirjailijoiden omaa modernisointia}
+   EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; jota on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä jotka ovat tämänpäivän opiskelijalle tuttuja. 
+
+
+   Hohpen henkilökohtainen blogi sisältää useamman päivitetyn esimerkin tunnetuista EIP-suunnittelumallista, mutta nyt implementoituina käyttäen pilviteknologioita: 
+   \begin{itemize}
+      \item Sisältöpohjainen reititin, EIP:een kategoriassa sanomien reititys, modernisoitiin käyttäen Googlen pilvialustan \textit{(GCP)} Google Cloud Functions palvelitonta arkkitehtuuria vuonna 2017 \citep{HohpeEIPGCP}. Alkuperäisen teoksen C\# Microsoft Message Queuing pohjainen toteutus vaihtui Node.js pohjaiseen, Google Cloud Pub/sub kirjastoa hyödyntävään toteutukseen.
+   \item EIP-teoksessa esitelty monimutkaisempi esimerkki lainanvälitttäjästä \textit{(Loan Broker)} \citep[sivu~317]{Hohpe2004} toteutettuun kolmella eri tavalla: Java / Apache Axis web-palvelimena, C\# / Microsoft Message Queuing sanomajonona ja Tibco ActiveEnterprise julkaise ja tilaa kanavana. Vuonna 2021 Hohpe aloitti sarjan blogikirjoituksia joissa lainanvälittäjä esimerki toteutetaan uudelleen käyttäen Amazon Web Services \textit{(AWS)} pilviteknologioita \citep{HohpeLoanAWS}.
+      Lainanvälittäjä esimerkki toteuttettiin pilvituotteilla AWS Step Functions, AWS Lambda, AWS Simple Notification Service, AWS Simple Queuing Service ja AWS DynamoDB. Katso kuva \ref{fig:hohpe_loanbroker_4}.
+
+      \begin{figure}[h]
+      \begin{center}
+      \includegraphics[width=0.8\textwidth]{kuvat/hohpe_loanbroker_4.png}
+      \caption{Kuva EIP:een lainanvälittäjä esimerkistä AWS:än palveluita hyödnytämällä.  \citep{HohpeLoanAWS_4}\label{fig:hohpe_loanbroker_4}}
+      \end{center}
+      \end{figure}
+
+
+      Myöhemmissä sarjan osissa Hohpe keskittyy ohjelmiston julkaisemiseen AWS:ää hyödyntäen \citep{HohpeLoanAWS_4} \citep{HohpeLoanAWS_5}. Hohpe myös argumentoi, että EIP-suunittelumallit ovat itse pilviarkkitehtuuriratkaisun lisäksi hyödyllisiä abstaktioita koodin julkaisu automatisoidessa \citep{HohpeLoanAWS_5} Julkaisussa käytettävät teknologiat ovat AWS CloudFormation, AWS Simple Storage Service, AWS Serverless Application Model ja AWS Cloud Development Kit.
+
+   \item Hohpen esimerkkien modernisointi jatkuu Google Cloudia käyttäen samana vuonna, lainanvälittäjä esimerkin siirtämisenä AWS:ltä Google Cloudille \citep{HohpeLoanGCP}.
+      Ohjelman siirto ja kuvan \ref{fig:hohpe_loanbroker_4} AWS palvelut kuvaantuivat yksi yhteen GCP:een palveluille. Esimerkissä hyödynnettiin GCP Workflows, GCP Cloud Functions, GCP PubSub, GCP DataStore teknologoioita.
+      Julkaisun automaatiossa huomattavaa oli, että AWS CloudFormationille ei löytynyt suoraa vastaavuutta GCP:een tarjonnasta ja vastaava toiminnalisuus pitää löytää kolmannen osapuolen ratkaisuista \citep{HohpeLoanGCP}.
+   \end{itemize}
 
 
 \section{Virtausdata}
@@ -248,8 +272,13 @@ Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivulle \citep{conver
 
 
 
+\section{Virheenhallinta}
+
 Virheenhallinnasta:
 To handle erroneous situations during message processing, escalate them and make systems more fault-tolerant, error handling is seen as a major aspect [5], [45]. Hohpe et al. [3], [70] do only cover Dead Letter Channel as solution and sketch some ideas about the topic. Overall, in the literature, the topic is neither addressed from a pattern, formalization, nor modeling perspective. While [5] mentions missing patterns and formalization, Merkel et al. [45] lists Balancing and Distribution, as well as [69] mentions Fault-tolerance and Message Scheduling as missing aspects. Similarly, the insight into the current state of affairs, called monitoring, for services and cross-cloud are seen as important topics in [45], [61], [62]\citep{Ritter2017}
+
+
+\section{Formalisointi}
 
 
 
