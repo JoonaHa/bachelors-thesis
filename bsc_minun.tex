@@ -230,9 +230,6 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 \chapter{Sanomajärjestelmien kehitystä}
 
-Laaja-alaisessa tutkimuksessaan \citep{Ritter2017} laajentaa järjestelmäintegraatioiden suunnitelumalleja ja kartoittavat integraatioiden suunnittelumallien käyttöä kaupallisissa ja avoimen lähdekoodin projekteissa.
-
-
 \section{Kirjailijoiden omaa modernisointia}
    EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; jota on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä jotka ovat tämänpäivän opiskelijalle tuttuja. 
 
@@ -246,30 +243,41 @@ Laaja-alaisessa tutkimuksessaan \citep{Ritter2017} laajentaa järjestelmäintegr
       \begin{figure}[h]
       \begin{center}
       \includegraphics[width=0.8\textwidth]{kuvat/hohpe_loanbroker_4.png}
-      \caption{Kuva EIP:een lainanvälittäjä esimerkistä AWS:än palveluita hyödnytämällä.  \citep{HohpeLoanAWS_4}\label{fig:hohpe_loanbroker_4}}
+      \caption{Kuva EIP:een lainanvälittäjä esimerkistä AWS:än palveluita hyödyntämällä.  \citep{HohpeLoanAWS_4}\label{fig:hohpe_loanbroker_4}}
       \end{center}
       \end{figure}
 
 
-      Myöhemmissä sarjan osissa Hohpe keskittyy ohjelmiston julkaisemiseen AWS:ää hyödyntäen \citep{HohpeLoanAWS_4} \citep{HohpeLoanAWS_5}. Hohpe myös argumentoi, että EIP-suunittelumallit ovat itse pilviarkkitehtuuriratkaisun lisäksi hyödyllisiä abstaktioita koodin julkaisu automatisoidessa \citep{HohpeLoanAWS_5} Julkaisussa käytettävät teknologiat ovat AWS CloudFormation, AWS Simple Storage Service, AWS Serverless Application Model ja AWS Cloud Development Kit.
+      Myöhemmissä sarjan osissa Hohpe keskittyy ohjelmiston julkaisemiseen AWS:ää hyödyntäen \citep{HohpeLoanAWS_4} \citep{HohpeLoanAWS_5}. Hohpe myös argumentoi, että EIP-suunittelumallit ovat itse pilviarkkitehtuuriratkaisun lisäksi hyödyllisiä abstraktioita koodin julkaisua automatisoidessa \citep{HohpeLoanAWS_5}. Julkaisussa käytettävät teknologiat ovat AWS CloudFormation, AWS Simple Storage Service, AWS Serverless Application Model ja AWS Cloud Development Kit.
 
-   \item Hohpen esimerkkien modernisointi jatkuu Google Cloudia käyttäen samana vuonna, lainanvälittäjä esimerkin siirtämisenä AWS:ltä Google Cloudille \citep{HohpeLoanGCP}.
+   \item Hohpen esimerkkien modernisointi jatkuu samana vuonna, lainanvälittäjä esimerkin siirtämisenä AWS:ltä Google Cloudille \citep{HohpeLoanGCP}.
       Ohjelman siirto ja kuvan \ref{fig:hohpe_loanbroker_4} AWS palvelut kuvaantuivat yksi yhteen GCP:een palveluille. Esimerkissä hyödynnettiin GCP Workflows, GCP Cloud Functions, GCP PubSub, GCP DataStore teknologoioita.
       Julkaisun automaatiossa huomattavaa oli, että AWS CloudFormationille ei löytynyt suoraa vastaavuutta GCP:een tarjonnasta ja vastaava toiminnalisuus pitää löytää kolmannen osapuolen ratkaisuista \citep{HohpeLoanGCP}.
    \end{itemize}
 
-
-\section{Virtausdata}
-Synkrononisia- ja  virtausprotokolleja \textit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä Hohpe ja Woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
-Samassa haastattelussa Hohpe Ja Woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi EIP:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
-
-Virtausdatan käsittelemistä EIP-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Virtausdatan käsittelyä varten EIP-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti.
+   EIP-teoksessa esiteltyjen suunnitelumallien esimerkkejä on myös vähitellyn uudistettu EIP:een kotisivulle \citep{conversationPatterns}. Tällä hetkellä 67 suuniittelumallista 14 on modernisoitu. Modernisoidut on koottu yhteen paikkaan Hohpen blogiin \citep{HohpeModernExamples}. Aiemmin mainittujen pilvialustaesimerkkien lisäksi EIP-suunnittelumalleja on kyseisissä esimerkeissä toteutettua Golangilla, Apache Kafkalla, Apache Camelilla, Mule ESB:llä, RabbitMQ:lla ja Microsost Azurella.
+   
+   Edellä mainitut esimerkit, mukaan lukien listatut pilvialustaesimerkit, löytyvät julkisesta githubissa isännöidystä tietovarastosta \citep{EIPModernGit}.
 
 
 \section{Tilalliset protokollat}
 EIP:een toinen sudenkuoppa on tilalliset \textit{(stateful)} protokollat. Hohpe myöntää, että tilallisesta suunnittelumalleista voisi tulla EIP toinen voluumi ja tilallisten suunnittelumallien sisällyttäminen oikeuttaisi "Enterprise Integrations Patterns" otsikon käyttöä \citep{Zimmermann2016}.
 Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivulle \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
 
+
+Integraatiotrendien ja kaupallisten sekä avoimen lähdekoodin alustojen  analyysissä todettiin, että lähes kaikki alustat tarjoavat omat tilalliset "keskustelunsa"~ja mahdollisuudet tallennustilan käyttöön \citep{Ritter2017}. Tosin tämä alustojen tarjoama tuki todetaan alkeelliseksi. Palvelukeskeisen arkkitehtuurin \textit{(Service Orieted Architecture, SOA)} kirjallisuudesta löytyy kuitenkin keskustelusuunnittelumalleja mitä ei löydy integraatioalustojen toteutuksista \citep{Ritter2017};
+julkaisussa \citep{Barros2005} suunnittelumallit yhdestä-moneksi \textit{(one-from-many)} ja  yhdestä-moneen \textit{(one-to-many)} ovat monenvälisiä keskustelusuunnittelumalleja jotka todetaan puuuttuvan olemassaolevsita toteutuksista \citep{Ritter2017}.
+
+Koska nykypäivän integraatiot keskittyvät enenmmän pilveen, integraatiovaatimukset ovat alkaneet kallistua tilallisiin talennustilaa vaativiin skenaarioihin mihin EIP ei vastaa ja kerätyt keskustelusuunnittelumallit ovat myös keskenräisiä vastatakseen \citep{Ritter2017}. Paremmin muodostetuille keskustelusuunnittelumalleilla löytyisi tarvetta.
+
+Huomioitavaa on, että keskustelusuunnittelumalleja ei voi kuitenkaan verrata palvelukeskeisen arkkitehtuurin koreografia- \textit{(choreography)} tai vuorovaikutussuunnittelumalleille \textit{(interaction patterns)}, koska 
+keskustelumallit kuvaavat monimutkaisempa tehtäviä kuin datan lähettämisen ja vastaanottamisen \citep{Ritter2017}.
+
+\section{Virtausprotokollat}
+Synkrononisia- ja  virtausprotokolleja \textit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä hohpe ja woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
+Samassa haastattelussa hohpe ja woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi eip:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
+
+Virtausdatan käsittelemistä eip-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{Dannritter2017}. Virtausdatan käsittelyä varten eip-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti.
 
 
 \section{Virheenhallinta}
