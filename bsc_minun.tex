@@ -261,7 +261,8 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 
 \section{Tilalliset protokollat}
-EIP:een toinen sudenkuoppa on tilalliset \textit{(stateful)} protokollat. Hohpe myöntää, että tilallisesta suunnittelumalleista voisi tulla EIP toinen voluumi ja tilallisten suunnittelumallien sisällyttäminen oikeuttaisi "Enterprise Integrations Patterns" otsikon käyttöä \citep{Zimmermann2016}.
+EIP-suunnittelumallien heikkous on tilalliset \textit{(stateful)} protokollat. Tarve tilallisille protokollille on todettu 2017 integraatiotrendien anayylissä \citep{Ritter2017} 
+Tämän lisäksi alkuperäisien EIP-teoksen kirjailijat ilmaisivat vuonna 2016, että tilallisien protokollien suunnitelumalleille  on tarvetta, mikä voisi oikeuttaa toisen EIP-voluumin luomiseen \citep{Zimmermann2016}.
 Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivulle \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
 
 
@@ -271,14 +272,18 @@ julkaisussa \citep{Barros2005} suunnittelumallit yhdestä-moneksi \textit{(one-f
 Koska nykypäivän integraatiot keskittyvät enenmmän pilveen, integraatiovaatimukset ovat alkaneet kallistua tilallisiin talennustilaa vaativiin skenaarioihin mihin EIP ei vastaa ja kerätyt keskustelusuunnittelumallit ovat myös keskenräisiä vastatakseen \citep{Ritter2017}. Paremmin muodostetuille keskustelusuunnittelumalleilla löytyisi tarvetta.
 
 Huomioitavaa on, että keskustelusuunnittelumalleja ei voi kuitenkaan verrata palvelukeskeisen arkkitehtuurin koreografia- \textit{(choreography)} tai vuorovaikutussuunnittelumalleille \textit{(interaction patterns)}, koska 
-keskustelumallit kuvaavat monimutkaisempa tehtäviä kuin datan lähettämisen ja vastaanottamisen \citep{Ritter2017}.
+keskustelumallit kuvaavat monimutkaisempia tehtäviä kuin datan lähettämisen ja vastaanottamisen \citep{Ritter2017}.
 
-\section{Virtausprotokollat}
-Synkrononisia- ja  virtausprotokolleja \textit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä hohpe ja woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
+\section{Datavirtaprotokollat}
+Synkrononisia ja datavirtaprotokollia \textit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä hohpe ja woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
 Samassa haastattelussa hohpe ja woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi eip:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
+Kirjailivat toteavat, että koko EAI ekosysteemistä puuttuu datavirtaprotokollien suunnittelumallit ja yhteiset protokollat \citep{Zimmermann2016}, mutta virtaprosessointia hyödynnettiin vuosi myöhemmin ainakin Jitterbitin ja Apache Camelin EAI-ratkaisuissa \citep{Ritter2017}.
 
-Virtausdatan käsittelemistä eip-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Virtausdatan käsittelyä varten eip-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti.
+Virtausdatan käsittelemistä eip-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Tutkimuksessa virtausdatan käsittelyä varten eip-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti \citep{DannRitter2017}.
 
+
+Akateeminen ja tekninen kirjallisuus integraatioista ja datavirroista jää vähälle vuoden 2017 jälkeen. Datavirtojen hallinnoinnista EAI-kontekstisa löytyy kuitenkin joku tuoreempi esimerkki \citep{WilkesPareek}, mutta kirja ei pyri suunnittelumallien kaltaiseen arkkitehtuuristandardisointiin. 
+Tuoreita kaupallisten integraatioalustojen kirjoituksia datavirtojen hyödyntämisestä on julkaistu ja yksi suuri datavirtaus integraatioiden suosion ajaja näyttää olleen Apache Kafka \citep{WSO2Stream} \citep{IBMStream}; samanlaisia trendejä on myös nähtävissä dataintegraatioiden tutkimuspapereissa \citep{Bousdekis2021}.
 
 \section{Virheenhallinta}
 
