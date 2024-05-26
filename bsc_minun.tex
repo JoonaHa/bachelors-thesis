@@ -230,7 +230,7 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 \chapter{Suunnittelumallien kehitystä}
 
-\section{Kirjailijoiden omaa modernisointia}
+\section{Suunniittelumallien rooli nykypäivän ympäristössä}
    EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; jota on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä jotka ovat tämänpäivän opiskelijalle tuttuja. 
 
 
@@ -292,6 +292,14 @@ To handle erroneous situations during message processing, escalate them and make
 
 
 \section{Formalisointi}
+EIP-suunnittelumallien formalisointi on kiinnostava aspekti erityisesti akateemisen kirjallisuuden kontekstissa. Formalisointi mahdollistaa suunnittelumallien matemaattisen analyysin ja varmentamisen ja takaisi varman pohjan järjestelmäintegreaatioiden rakentamiselle suunnittelun ja ajon aikana.
+
+Vuoden 2017 kartoitus \citep{Ritter2017} löysi yhden yrityksen formalisoida EIP:tä \citep{Fahland2013} jonka metodi formalisoinnille on hyödyntää värjättyjä Petri-verkkoja jossa värit kuvaavat datatyyppejä ja hallintasäikeet \textit{(control threads)} mallintavat kontrollirakenteita verkossa.
+Tämän jälkeen formalisointityötä on laajennettu vuonna 2021 \citep{Ritter2021}, jonka formalisointimetodi perustuu DB-verkoille \textit{(DB-nets)} \citep{Montali2017}; tutkimuksessa on pyritty rakentamaan vastuullinen formalisointitapa EIP:lle, mikä täyttää EAI:iin vaatimukset ohjausvuon, datan, ajan ja transaktioden suhteen \citep{Ritter2021}. Jatkotutkimukseen tarpeen tutkimuksen tekijät löytävät EIP-yhdistelmien formalisoinnista, koska nykyinen tutkimus keskittyi yksittäisten EIP:den formalisointiin \citep{Ritter2021}.
+
+
+Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP:eiden olemassaolon pituteen. Suhteutteutettuna siihen kuinka paljon EIP:tä käytetään kaupallisissa ja avoimissa EAI-alustoissa, on nykyisen formalisoinnin keskenräisyys harmillista, mutta viime vuosien uusiutunut kiinnostus aiheesta on lupaavaa. Ylipäätään EAI-teknologioiden formalisointi EIP-mallien ulkopuolella on keskittynyt palvelukeskeisen arkkitehtuurien ratkaisujen formalisointiin \citep{Ritter2017}.
+
 
 
 
