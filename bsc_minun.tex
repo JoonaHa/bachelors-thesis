@@ -286,9 +286,29 @@ Akateeminen ja tekninen kirjallisuus integraatioista ja datavirroista jää väh
 Tuoreita kaupallisten integraatioalustojen kirjoituksia datavirtojen hyödyntämisestä on julkaistu ja yksi suuri datavirtaus integraatioiden suosion ajaja näyttää olleen Apache Kafka \citep{WSO2Stream} \citep{IBMStream}; samanlaisia trendejä on myös nähtävissä dataintegraatioiden tutkimuspapereissa \citep{Bousdekis2021}.
 
 \section{Virheenhallinta}
+EIP lähdeteos käsitteli niukasti virheenhallintaa. Teos sisälsi virheenhallinnan suunnittelumalleina kelvottomien sanomien kanavan \textit{(Invalid Message Channel)}, johon sanomat joiden käsitely päättyi virheeseen lähetetään, sekä toimittamattomien kirjeiden kanavan \textit{(Dead Letter Channel)} johon päätyneiden sanomien lähetys on epäonnistunut eikä sanoma pystynyt jatkamaan käsittelyään esimerkiksi järjestemähäiriön takia \citep{Hohpe2004}.
+Kirjailijat ovat myöhemmin avanneet virheenhallinnan sisällyttämisestä teokseen \citep{Hohpe2004} sillä, että virheenhallintastrategioiden käsittely vaatii kirjalta laajempaa sananstoa erityisesti tilanhallinnasta, mikä olisi paisuttanut teosta \citep{Zimmermann2016}.
 
-Virheenhallinnasta:
-To handle erroneous situations during message processing, escalate them and make systems more fault-tolerant, error handling is seen as a major aspect [5], [45]. Hohpe et al. [3], [70] do only cover Dead Letter Channel as solution and sketch some ideas about the topic. Overall, in the literature, the topic is neither addressed from a pattern, formalization, nor modeling perspective. While [5] mentions missing patterns and formalization, Merkel et al. [45] lists Balancing and Distribution, as well as [69] mentions Fault-tolerance and Message Scheduling as missing aspects. Similarly, the insight into the current state of affairs, called monitoring, for services and cross-cloud are seen as important topics in [45], [61], [62]\citep{Ritter2017}
+Kaupallisissa ja avoimen lähdekoodin EAI-järjestelmissä virheenhallinta ja erityisesti poikkeuksien hallinnointi on kehittynyt pidemmälle kuin EIP-kirjallisuus \citep{Ritter2017}. Järjestelmät sisältävät yleensä systeemin kaikkien virheiden nappaamisen ja kaupalliset palvelut kuten Dell Boomi, IBM, SAP Cloud Integration ja Tibco sisältävät hienovaraisempia työkaluja virheiden vaikutasalan hallinnoimiseen \citep{Ritter2017}.
+
+Tutkimukset \citep{ExceptionRitter2014} \citep{ExceptionRitter2016} ovat kartoittaneet EAI-järjestelmistä käytettyjä virheenhallintastrategioita ja pyrkineet mallintamaan niitä suunnittelumalleina. Virheenhallinnasta on siis tehty myös varsin kattavaa kartoitusta suunnittelumallien perspektiivistä.
+Tapahtuman uudelleen yritys virheen tapahtuessa \textit{(retry pattern)} on yleinen suunnittelumalli joka ilmenee sanomakanavan tai yksittäisen tapahtuman tasolla ja yrittää operaatiota annetun määrän kertoja \citep{ExceptionRitter2014}.
+Virheitä hallinoidaan vikatilanne reitittimellä \textit{(failover router)} jossa sanoma reititetään vaihtoehtoisella kanavalle virheen tapahtuessa. Tämä suunnittelumalli eroaa alkuperäisen teoksen \citep{Hohpe2004} kiertotie EIP:stä \textit{(detour)} tarkastamalla jatkokäsittelyn EIP:tä kutsua ja reitittää vaihtoehtoiselle reitille ilman konfiguraaatiosanomia.
+Kompensointialue \textit{(compensation sphere)} on suunnittelumalli jossa prosessi tai aktiviteetti sisältää joukon korjaavia operaatioita (kompensointeja) jotka aktivoituvat eri virhetilanteista. Kompensoinnit voivat olla vain tiettyyn tilanteeseen reagoivia tai koko määriteltyyn alueeseen reagoivia \citep{ExceptionRitter2014}.
+
+Tämän jälkeen EAI-järjestelmien virheehallinta strategioita on tarkemmin lajiteltu erillaisiin suunnittelumalleihin \citep{ExceptionRitter2016}. Järjestelmien virheenhallintatavat kategorioitiin yhteentoista samankaltaiseen lähestymistapaan, jotka on esitetty taulukossa \ref{fig:exceptionritter}.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{kuvat/ritter_expetions.png}
+\caption{Taulukko EAI-systeemien virheenhallinnan suunnittelumalleista ja niiden kategoiroista \citep{ExceptionRitter2016}.\label{fig:exceptionritter}}
+\end{center}
+\end{figure}
+
+
+Tutkimuksessa arvioitiin Apache Flume, Apache Cameli, Apache Nifi ja SAP HCI EAI-järjestelmien virheenhallintatapoja. Jos virheenhallintatapa esiintyi useammin kuin kerran, virheenhallintatapa sisälytettiin suunnittelumalliksi \citep{ExceptionRitter2016}.
+
 
 
 \section{Formalisointi}
