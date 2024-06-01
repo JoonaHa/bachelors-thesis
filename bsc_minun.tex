@@ -21,36 +21,44 @@ kommunikoinnin ohjelmistojen välillä
 
 Vuonna 2020 EAI-markkinan arvioitiin olevan 9,26 miljardin dollarin (USD) arvoinen \citep{mordorintelligence} ja koostuu ohjelmistojättien (Microsoft, Oracle, Salesforce IBM) ja pienempien yksittäisten yritysten (Workato, SnapLogic, Tibico) tarjoamista järjestelmistä.
 
+Monet tämän päivän järjestelmäintegraatioalustat tarjoavat joukon työkaluja ja lähestymistapoja joila on paljon yhteisiä piireteitä keskenään. Tämän tutkimuksen tarkoituksena on avata mistä nämä toisiaan muistuttavat lähestymistavat ovat peräisin, miten niihin on päädytty ja mikä on niiden asema tänäpäivänä.
 
-\chapter{Integraatioiden lähestymistavat}
+Luku yksi perehtyy korkealta tasolta miten järjestelmäintegraatioita on lähestytty historialisesti ja esittelee järjestelmäintegraatioiden merkittävintä kirjalluutta.
+
+Toinen luku paneutuu sanomapohjaisiin suunnittelumalleihin ja erityisesti järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnettuihin lähestymistapoihin ja perehtyy niiden yläkategoiroihin ja selittäää itse mallien lähestymistapoja ja niiden perusteita. Suunnittelumallien tilannetta nykypäivässä käsitelllään lyhyesti.
+
+Kolmas luku käsittelee miten järjestelmäintegraatioide suunnittelumallit ovat asentuneet moderneja teknologiota käyttäviin järjestelmiin ja pereehtyy miten suunnittelumallien heikkouksina pidetyt piirteet ovat kehittyneet integraatioalustojen ympäristössä.
+
+
+\chapter{Järjestelmäintegraatioiden lähestymistavat}
 
 Esittelen tässä luvussa suosituimpia jäsentely ja lähestymistapoja järjestelmäintegraatioille. Eri lähestymistavat perustuvat viitatuimpaan järjestelmäintegraatioarkkitehtuurin kirjallisuuteen. Luvun tarkoituksena on antaa kattokategorioita erilaisille teknisille lähestymistavoille ja antaa historiallista kontekstia eri arkkitehtuurisuuntauksille.
 
 \section{Integraatiotasot}
 
-Teoksessaan \citep{linthicum2000enterprise} luokittelee integraatioiden lähestymistavat neljään eri tasoon
+Integraatioiden lähestymistavat voidaan luokitella neljään eri tasoon \citep{linthicum2000enterprise}
 
 \begin{enumerate}
    \item Datataso: Dataa liikutellaan eri tietovarastojen välillä ja mahdollinen datan prosessointi ja muokkaus toteutetaan siirron yhteydessä. Kyseisellä menetelmällä on myös paljon yhtäläisyyksiä tyypillisen datavaraston \textit{(data warehouse)} toteutuksen kanssa.
    \item Rajapintataso: Tasolla pyritään hyödyntämään tarkoitusta varten tilattujen tai paketoitujen sovellusten, esimerkiksi SAP, PeopleSoft, tarjoamia ohjelmointirajapintoja.
-   \item Metoditaso: Tällä tasolla pyritään hyödyntämään jaettua sovelluslogiikka. Esimerkiksi hyöntyntämällä sovelluspalvelimia \textit{(application server)} metodienjakamiseen tai käyttämällä hajautettuja objekteja ja/tai etäkutsuja \textit{(Remote Procedure Call, RPC)} hyödyntäviä teknologioita.
+   \item Metoditaso: Tällä tasolla pyritään hyödyntämään jaettua sovelluslogiikka. Esimerkiksi hyöntyntämällä sovelluspalvelimia \textit{(application server)} metodienjakamiseen,  käyttämällä hajautettuja objekteja tai etäkutsuja \textit{(Remote Procedure Call, RPC)} hyödyntäviä teknologioita.
    \item Käyttöliittymätaso: Integraatioiden yhdistävä tekijä on olemassa olevan sovelluksen käyttöliittymä kun sovellus ei tarjoa muita keinoja datan jakamiseen. Tämä toteutetaan hyödyntymällä ruudun tiedonharavointi tekniikoita (screen scraping).
    
 \end{enumerate}
 
 \section{Tekniset lähestymistavat} \label{Tekniset lähestymistavat}
 
-Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen yläkategoriaan \citep[sivu~64]{Hohpe2004}.
+Järjestelmäintegraatioiden arkkitehtuurin määrää pitkälti liiketoiminnan tarpeet ja niiden asettamat vaatimukset. Integraatioiden tekniset lähestymistavat voi luokitella neljään erilaiseen yläkategoriaan \citep[sivu~64]{Hohpe2004}:
 
 \begin{enumerate}
-   \item Tiedostojen siirto
-   \item Jaettu tietokanta
-   \item Etäproseduuriherätys
-   \item Sanomat
+   \item tiedostojen siirto,
+   \item jaettu tietokanta,
+   \item etäproseduuri,
+   \item sanomat
    
 \end{enumerate}
 
-\textbf{Tiedostojen siirto}: Tiedostojen siirrossa integroitavat sovellukset voivat toimia itsenäisesti ja yhden sovelluksen muutokset eivät vaikuta toisen sovelluksen toimintaan kunhan sovellukset toimivat sovituilla tiedostotyypeillä ja tiedoston nimeämisstrategioilla. Integroijan vastuulla on taata, että tiedostot muutetaan toisen sovelluksen ymmärtämään muotoon. Lähestymistapana tiedostojen siirto on yksinkertainen eikä vaadi lisätyökaluja, koska yleisten tiedostotyyppien (JSON, XML, CSV) tuki löytyy käytännössä jokaisesta ohjelmointikielestä tai integraatiotyökalusta.
+\textbf{Tiedostojen siirrossa} integroitavat sovellukset voivat toimia itsenäisesti ja yhden sovelluksen muutokset eivät vaikuta toisen sovelluksen toimintaan kunhan sovellukset toimivat sovituilla tiedostotyypeillä ja tiedoston nimeämisstrategioilla. Integroijan vastuulla on taata, että tiedostot muutetaan toisen sovelluksen ymmärtämään muotoon. Lähestymistapana tiedostojen siirto on yksinkertainen eikä vaadi lisätyökaluja, koska yleisten tiedostotyyppien (JSON, XML, CSV) tuki löytyy käytännössä jokaisesta ohjelmointikielestä tai integraatiotyökalusta.
 Data-analytiikassa ja datavarastojen saralla on myös muita yleisiä tiedostomuotoja kuten Apache Parquet, jolle löytyy myös tuki useista ohjelmointikielistä ohjelmistokirjaston muodossa \citep{Parquet}.
 Sovitusta tiedostomuodosta tulee käytännössä integroitavien sovellusten välinen rajapinta.
 
@@ -59,7 +67,7 @@ Integraatiokehittäjien vastuulle jää siis tiedostojen lukitseminen kirjoituso
 Datan synkronointi järjestelmien välillä tuo oman haasteensa, koska tiedostojen siirtoa tapahtuu yleensä harvakseltaan. Esimerkiksi jos asiakkuudenhallintajärjestelmä tuottaa tiedostoja datan synkronointia varten vain kerran päivässä ja laskutusjärjestelmä lähettää laskut aikaisemmin samana päivänä, niin osa laskuista on jo saattanut lähteä vanhaan osoitteeseen, jos asiakas on päivittänyt osoitetietojaan aikaisemmin saman päivän aikana.
 
 
-\textbf{Jaettu tietokanta}: Jaetun tietokannan etuna tiedostojen siirtoon on muutosten nopea propagoituminen eri sovelluksille. Samassa tietokannassa uusin tieto on saatavilla eri sovelluksille lähes välittömästi. Nopea tiedon liikkuminen tekee virheiden havaitsemisesta ja korjaamisesta helpompaa. Etuna on myös, että tietokantojen datamallit takaavat yhtenevän datan esitysmuodon verrattua tiedostojen siirtoon.
+\textbf{Jaetun tietokannan} etuna tiedostojen siirtoon on muutosten nopea propagoituminen eri sovelluksille. Samassa tietokannassa uusin tieto on saatavilla eri sovelluksille lähes välittömästi. Nopea tiedon liikkuminen tekee virheiden havaitsemisesta ja korjaamisesta helpompaa. Etuna on myös, että tietokantojen datamallit takaavat yhtenevän datan esitysmuodon verrattua tiedostojen siirtoon.
 Datan synkronoinnista ja kirjoitus- ja lukuvuoroista vastaa tietokannan hallintajärjestelmä \textit{(DBMS, Database Management System)} ja transaktioiden hallinnointijärjestelmä antaa hyvät työkalut datan eheyden takaamiselle.
 
 Gregor Hohpen ja Bobby Woolfin teos \citep[sivu~69]{Hohpe2004} korostaa myös SQL-pohjaisten relaatiotietokantojen yleisyyttä. Integraatiokehittäjien ei tarvitse opetella uutta teknologiaa tai taistella uuden tiedostoformaatin kanssa vaan kehittäjät voivat työskennellä laajalti tunnettujen relaatiotietokantojen parissa. Valtaosa ohjelmointikielistä ja kehitystyökaluista tukee SQL:n kanssa työskentelyä joten jaetun tietokannan kanssa työskentely on suoraviivaista ja adoptointi helppoa.
@@ -67,28 +75,31 @@ Gregor Hohpen ja Bobby Woolfin teos \citep[sivu~69]{Hohpe2004} korostaa myös SQ
 Saman tietokannan käyttö estää datan tulkitsemiseen liittyvien ongelmien, kuten semanttisen dissonanssin \textit{(semantic dissonance)} pitkittymistä, missä samaa dataa voidaan tulkita ristiriitaisilla tavoilla. Koska integroitavat sovellukset käyttävät samaa datalähdettä, niin nämä tulkintakysymykset on kohdattava varhaisessa vaiheessa integraatiokehitystä, eikä vasta tuotannossa jossa data voi olla jo yhteensopimatonta tulkintaeroista johtuen. 
 
 
-Jaetun tietokannan suunnitteluhaasteisiin sisältyy yhtenäisen skeemaan suunnittelu, jota useampi eri sovellus pystyy tehokkaasti hyödyntämään. Usein useamman sovelluksen tuomat vaatimukset johtavat monimutkaiseen tietokantaskeemaan jonka käytön kehittäjät kokevat haastavaksi. Yhtenäisen skeeman suunnittelua voi myös vaikeuttaa "poliittiset" haasteet, koska tietokannan suunnittelu voi johtaa aikataulujen venymiseen ja kommunikaatiohaasteisiin tietokantaa hyödyntävien eri yksiköiden välillä.
-Lisää suunnitteluhaasteita tuo ulkoiset ohjelmistot. Lähes poikkeuksetta kaupalliset ohjelmistot tukevat vaan omaa ohjelmiston mukana tulevaa tietokantaformaattia eivätkä taivu siitä poikkeavaan tietokantaskeemaan. Vastaavia haasteita tuo sovellukset jotka on peritty toiselta organisaatiolta esimerkiksi yrityskaupan yhteydessä. Sovellusten jälkeenpäin tehtävä jatkokehittäminen jaettua tietokantaa hyödyntäväksi on yleensä työlästä ja kallista.
-Kun jaettuun tietokantaan yhdistettyjen sovellusten määrä lisääntyy niin ratkaisu voi aiheuttaa suorituskykyhaasteita, varsinkin jos luku- ja kirjoitusoperaatiot kohdistuvat vaan muutamaan tietokantatauluun. Jos sovellukset on hajautettu useammalle laitteelle ja tietokanta niiden kanssa, jotta sovelluksilla on lokaali pääsy kantaan, niin hajauttaminen tuo omat haasteensa. Pääosin datan hajauttamistaktiikkojen muodossa ja lisää näin ratkaisun kompleksisuutta.
+Jaetun tietokannan suunnitteluhaasteisiin sisältyy yhtenäisen skeemaan suunnittelu, jota useampi eri sovellus pystyy tehokkaasti hyödyntämään. Usein useamman sovelluksen tuomat vaatimukset johtavat monimutkaiseen tietokantaskeemaan jonka käytön kehittäjät kokevat haastavaksi. Yhtenäisen skeeman suunnittelua voi myös vaikeuttaa ``poliittiset'' haasteet, koska tietokannan suunnittelu voi johtaa aikataulujen venymiseen ja kommunikaatiohaasteisiin tietokantaa hyödyntävien eri yksiköiden välillä.
+Lisää suunnitteluhaasteita tuo ulkoiset ohjelmistot. Lähes poikkeuksetta kaupalliset ohjelmistot tukevat vaan omaa ohjelmiston mukana tulevaa tietokantaformaattia eivätkä taivu siitä poikkeavaan tietokantaskeemaan. Vastaavia haasteita tuovat sovellukset, jotka on peritty toiselta organisaatiolta esimerkiksi yrityskaupan yhteydessä. Sovellusten jälkeenpäin tehtävä jatkokehittäminen jaettua tietokantaa hyödyntäväksi on yleensä työlästä ja kallista.
+Kun jaettuun tietokantaan yhdistettyjen sovellusten määrä lisääntyy, ratkaisu voi aiheuttaa suorituskykyhaasteita, varsinkin jos luku- ja kirjoitusoperaatiot kohdistuvat vaan muutamaan tietokantatauluun. Jos sovellukset on hajautettu useammalle laitteelle ja tietokanta niiden kanssa, jotta sovelluksilla on lokaali pääsy kantaan, niin hajauttaminen tuo omat haasteensa. Pääosin datan hajauttamistaktiikkojen muodossa ja lisää näin ratkaisun kompleksisuutta.
 
-\textbf{Etäproseduuriherätys:}\textit{(Remote Procedure Invocation)} Edelliset lähestymistavat keskittyivät pääosin datan jakamiseen, mutta näissä lähestymistavoissa pienet datanmuutokset voivat johtaa eri toimintoihin useiden sovellusten taholta. Osoitteen vaihto voi olla yksinkertainen kentän muutos tai laukaista useita rekisteröinti- ja lakiprosesseja useassa eri sovelluksessa. Jaettu tietokanta ei mahdollista minkäänlaista datan kapselointia ja tämä yksi iso datalähde tekee datamuutosten havaitsemisesta ja muutosten vaatimien prosessien aktivoimisesta haastavaa. Tiedostojen siirto tarjoaa suoraviivaisen tavan reagoida datan muutoksen, mutta tämä tapahtuu yleensä viiveellä johtuen tiedostojen synkronoimisen haasteista.
+\textbf{Etäproseduuri} \textit{(Remote Procedure Invocation)} eroaa edellisistä lähestymistavoista. Aiaisemmat lähestymistavat keskittyivät pääosin datan jakamiseen, mutta näissä lähestymistavoissa pienet datanmuutokset voivat johtaa eri toimintoihin useiden sovellusten taholta. Osoitteen vaihto voi olla yksinkertainen kentän muutos tai laukaista useita rekisteröinti- ja lakiprosesseja useassa eri sovelluksessa. Jaettu tietokanta ei mahdollista minkäänlaista datan kapselointia ja tämä yksi iso datalähde tekee datamuutosten havaitsemisesta ja muutosten vaatimien prosessien aktivoimisesta haastavaa. Tiedostojen siirto tarjoaa suoraviivaisen tavan reagoida datan muutoksen, mutta tämä tapahtuu yleensä viiveellä johtuen tiedostojen synkronoimisen haasteista.
 Jaetun tietokannan kapseloimattomuus tarkoittaa myös integraatioiden ylläpidon joustamattomuutta. Muutokset yhdessäkään integroidussa sovelluksessa vaikuttavat jaettuun tietokantaan ja tietokantamuutokset voivat aiheuttaa kauas kantautuvia muutoksia tietokantaa käyttävien sovellusten kesken.
 
-Etäproseduuriherätys mahdollistaa mekanismin jossa sovellus voi kutsua toisen sovelluksen funktiota, jakaa vain tarvittavan datan ja kutsua funktiota joka kertoo datan vastanottajalle miten toimia jaetun datan kanssa.
-Jos sovellus tarvitsee toisen sovelluksen dataa se voi kysyä sitä siltä suoraan. Vastaavasti jos sovelluksen tarvitsee muokata toisen sovelluksen dataa niin se voi tehdä funktiokutsun.
+Etäproseduuri mahdollistaa mekanismin, jossa sovellus voi kutsua toisen sovelluksen funktiota, jakaa vain tarvittavan datan ja kutsua funktiota jonka tarkoitus on kertoa datan vastanottajalle, miten toimia jaetun datan kanssa.
+Jos sovellus tarvitsee toisen sovelluksen dataa se voi kysyä sitä suoraan toiselta sovellukselta. 
 Jokainen sovellus vastaa oman datansa eheydestä ja jokainen sovellus voi tehdä muutoksia omaan dataansa, vaikuttamatta muiden sovellusten tilaan.
 
-Etäproseduuriherätyksen mahdollistavat teknologiat ovat myös yleisiä ja tuttuja kehittäjille. Etäproseduurikutsu \textit{(Remote Procedure Call, RPC)} teknologiat ja kirjastot ovat tunnettuja ja yleisesti käytettyjä. Teoksessa \citep[sivu~71]{Hohpe2004} Martin Fowler listaa CORBA, COM, .NET Remoting ja Java RMI esimerkkeinä ja mainitsee, että web-palveluiden yleistyessä http-yhteyksiä hyödyntävät lähestymistavat kuten SOAP ja XML ovat tulleet kehittäjien suosikeiksi. Varsinkin kun http-yhteyksien kanssa on helppo työskennellä, koska useimpien yritysten palomuurit sallivat http-liikenteen. Teoksen julkaisun jälkeen REST ja JSON ovat pitkälti korvanneet SOAP:in ja XML:än web-palveluiden suosituimpana lähestymistapana.
+Etäproseduurien mahdollistavat teknologiat ovat myös yleisiä ja tuttuja kehittäjille. Etäproseduurikutsu \textit{(Remote Procedure Call, RPC)} teknologiat ja kirjastot ovat tunnettuja ja yleisesti käytettyjä. Esimerkkeinä teoksessa \citep[sivu~71]{Hohpe2004} listataan teknologoina CORBA, COM, .NET Remoting ja Java RMI ja todetaan, että web-palveluiden yleistyessä http-yhteyksiä hyödyntävät lähestymistavat, kuten SOAP ja XML ovat yleistyneet kehityksessä. 
+Teoksen julkaisun jälkeen REST ja JSON ovat pitkälti korvanneet SOAP:in ja XML:än web-palveluiden suosituimpana lähestymistapana.
 
-Etäproseduuriherätyksellä on mahdollisuus vähentää  semanttista dissonanssia, koska sovellukset voivat tarjota usean erillaisen rajapinnan samalle datalle. Eri asiakasohjelmille voidaan tarjota erilainen datanesitysmalli riippuen siitä, mikä asiakasohjelma on kyseessä. Tämä antaa ennemmän mahdollisuuksia esittää datan useammalla eri tavalla verrattuna pelkkään relationaaliseen malliin.
-Useammat eri rajapinnat tarkoittavat lisää työtä integraatiokehittäjille datan muokkaamisen parissa ja integroitaviensovellusten täytyykin neuvotella mitä rajapintoja ne tulevat toisiltansa käyttämään.
+Etäproseduureilla on mahdollisuus vähentää  semanttista dissonanssia, koska sovellukset voivat tarjota usean erillaisen rajapinnan samalle datalle. Eri asiakasohjelmille voidaan tarjota erilainen datanesitysmalli riippuen siitä, mikä asiakasohjelma on kyseessä. Tämä antaa ennemmän mahdollisuuksia esittää datan useammalla eri tavalla verrattuna pelkkään relationaaliseen malliin.
+Useammat eri rajapinnat tarkoittavat lisää työtä integraatiokehittäjille datan muokkaamisen parissa ja integroitavien sovellusten täytyykin neuvotella keskenään mitä rajapintoja ne toisiltansa käyttävät.
 
-Etäproseduuriherätyksen helppous kehittjille voi myös olla sen haittapuoli jos integraatiokehittäjät eivät tiedosta etäkutsujen suorituskyky- ja luotettavuuseroja verrattuna paikkalisiin kutsuihin. Useat etäkutsut voivat kasaannuttaa näitä ongelmia ja johtaa hitaaseen ja epäluotettavaan järjestelmään.
+Etäproseduurien helppous kehittäjille voi luoda myös haasteita jos integraatiokehittäjät eivät tiedosta etäkutsujen suorituskyky- ja luotettavuuseroja verrattuna paikallisiin kutsuihin. Tiheä etäkutsujen käyttö voi pinota näitä ongelmia ja johtaa hitaaseen ja epäluotettavaan järjestelmään.
 
-Vaikka etäproseduuriherätyksen mahdollistama datan kapselointi vähentää sovelluksen kytköksiä karsimalla suuren yhteisen datalähteen, niin se voi silti aiheuttaa solmukohtia, erityisesti kun kyse on jaksossa - tietyssä järjestyksessä tehtävistä- operaatioista. Integraatioijärjestelmistä näistä muodostuu helposti ongelma, koska vastaavat kytkökset eivät välttämättä aiheuttaisi ongelmia yksittäisessä sovelluksessa, mutta usemman sovelluksen integraatiossa lisäkytkökset tarkoittavat lisäviivettä ja ylimääräisiä verkkokutsuja.
+Vaikka etäproseduurin mahdollistama datan kapselointi vähentää sovelluksen kiinteitä kytköksiä karsimalla suuren yhteisen datalähteen, niin se voi silti aiheuttaa solmukohtia. Kytkösten solmukohdat korostuvat kun kyse on jaksossa - tietyssä järjestyksessä tehtävistä- operaatioista.
+Integraatioijärjestelmistä näistä muodostuu helposti ongelma, koska vastaavat kytkökset eivät välttämättä aiheuttaisi ongelmia yksittäisessä sovelluksessa, mutta usemman sovelluksen integraatiossa lisäkytkökset tarkoittavat lisäviivettä ja ylimääräisiä verkkokutsuja.
 
-\textbf{Sanomat:}\textit{(Messaging)} Aikaisemmat integraatioiden lähestymistavat keskittyivät joko datan tai toiminnalisuuden jakamiseen. Gregor Hohpen ja Bobby Woolfin mukaan yleinen integraationkehitykesn haaste on saada eri järjestelmät toimimaan yhdessä mahdollisimman viipettä ilman, että järjestelmien välillä on kytköksiä, jotka tekevät järjestelmästä epäluotettavan joko sovelluksen suorittamisen tai kehittämisen kannalta \citep[sivu~72]{Hohpe2004}. Tiedostojen siirrossa datan siirtyminen ei ole tarpeeksi viipeetöntä ja sovellusten välinen toiminta tarpeeksi sujuvaa vaikka lähestymistapa estääkin rajoittavien kyskösten muodostamisen. Jaetussa tietokannassa data on jaettu ja datan muutokset ovat responsiivisia, mutta kaikki sovellukset ovat kytköksissä samaan tietokantaan ja lähestymistapa ei mahdollista sovellusten yhteistä toimintaa.
-Etäproseduuriherätyksen heikkoudet olivat yleiset hajautettujenjärjestelmien sudenkuopat, kuten verkkoviiveet ja verkon luetattavuus, varsinkin jos eäkutsuja käytetään samallalailla kuin paikallisia kutsuja ja lähestymistavassa sovellusten pitää jakaa tietoa toistensa rajapinnoista, mikä lisää kehitystä vaikeuttavien kytkösten määrää.
+\textbf{Sanomat}\textit{(Messaging)} eroavat muista lähestymistavoista. Aikaisemmat integraatioiden lähestymistavat keskittyivät joko datan tai toiminnalisuuden jakamiseen. Gregor Hohpen ja Bobby Woolfin mukaan yleinen integraationkehityksen haaste on saada eri järjestelmät toimimaan yhdessä mahdollisimman viipeettä ilman. Samalla välttäen kytköksiä järjestelmien välillä, jotka tekevät järjestelmästä epäluotettavan joko sovelluksen suorittamisen tai kehittämisen kannalta \citep[sivu~72]{Hohpe2004}. Tiedostojen siirrossa datan siirtyminen ei ole tarpeeksi viipeetöntä ja sovellusten välinen toiminta tarpeeksi sujuvaa vaikka lähestymistapa estääkin rajoittavien kyskösten muodostamisen. Datan siirtyminen vaatii kalliita levy- ja tiedosto-operaatioita ja tiedosto-operaatioiden tilanhallinta ja synkronoinit on haastavaa.
+Jaetussa tietokannassa datan jakaminen on implisiittisesti helppoa ja datan muutokset ovat responsiivisia, mutta kaikki sovellukset ovat kytköksissä samaan tietokantaan ja lähestymistapa ei mahdollista sovellusten yhteistä toimintaa.
+Etäproseduurien heikkoudet olivat yleiset hajautettujen järjestelmien riskit, kuten verkkoviiveet ja verkon luetattavuus, varsinkin jos eäkutsuja käytetään samalla lailla kuin paikallisia kutsuja ja lähestymistavassa sovellusten pitää jakaa tietoa toistensa rajapinnoista, mikä lisää kehitystä vaikeuttavien kytkösten määrää.
 
 Sanomien käyttö erityisesti asynkroniseen viestintään on aikaisemmin esiteltyjen lähestymistapojen parhaiden puolien yhdistelmä \citep[sivu~73]{Hohpe2004}.
 Sanomien käyttö mahdollistaa pienien tiheästi kulkevien datapakettien lähetyksen ja tallenttamisen ja tiedosto-operaatioiden yksityiskohtien abstsraktoinnin. Tämä mahdollistaa nopeat skeeman muutokset vastaten yrityksen tarpeisiin.
@@ -106,37 +117,38 @@ Edellä mainitut haasteet tarkoittavat sanomapohjaisille järjestelmille suunnit
 
 \chapter{Sanomapohjaiset suunnittelumallit}
 
+\section{Suunnittelumallien asema ja kategoriointi}
 Edellisessä luvussa esitellyistä neljästä kategoriasta Hohpe ja Woolf suosivat sanomien käyttöä integraatioratkaisuissa ja suurin osa teoksesta keskittyy sanomapohjaisen suunnittelumallien esittelyyn \citep[sivu~76]{Hohpe2004}. Nämä järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnetut kehitysohjeet ovat vaikuttaneet useamman eri integraatioalustan arkkitehtuuriin. 
 
 Vuonna 2018 viimeisintä tekniikka edustavista 48:sta integraatioalustasta yksitoista tuki EIP-malleja \citep{Freire2019}.
-Kaksistoista vuotta kirjan julkaisun jälkeen pidetyssä haastattelussa kirjailijat sanovat, että useimmat avoimen lähdekoodin liikepalveluväylät \textit{(enterprise service bus, ESB)} ovat omaksuneet teoksessa esitellyn mallikielen \textit{(pattern language)} \citep{Zimmermann2016}.
+12 vuotta kirjan julkaisun jälkeen pidetyssä haastattelussa kirjailijat sanovat, että useimmat avoimen lähdekoodin liikepalveluväylät \textit{(enterprise service bus, ESB)} ovat omaksuneet teoksessa esitellyn mallikielen \textit{(pattern language)} \citep{Zimmermann2016}.
 Samassa haastattelussa Hohpe ja Woolf toteavatkin, että kirjan pysyminen relevanttina yli 12 vuotta julkaisun jälkeen on harvinaista tietokoneaiheisille kirjoille \citep{Zimmermann2016}. Woolf selittää kirjan pitkän vaikutuksen johtuvan kirjan keskittymisestä suunnittelumalleihin eikä spesifisiin teknologioihin \citep{Zimmermann2016}.
 
 
-Teos sisältää 67 sanomapohjaista suunnittelumallia ja nämä mallit on jaettu seitsemään eri kategoriaan \citep{Hohpe2004}:
+Hohpe ja Woof esittelevät 67 sanomapohjaista suunnittelumallia ja nämä mallit on jaettu seitsemään eri kategoriaan \citep{Hohpe2004}:
 
 
 \begin{enumerate}
-   \item Sanomajärjestelmät \textit{(messaging systems)}
-   \item Sanomakanavat \textit{(messaging channels)}
-   \item Sanomien rakentaminen \textit{(message construction)}
-   \item Sanomien reititys \textit{(message routing)}
-   \item Sanomien muokkaus \textit{(message transformation)}
-   \item Sanomien päätepisteet \textit{(messaging endpoints)}
-   \item Järjestelmän hallinta \textit{(systems management)}
+   \item sanomajärjestelmät \textit{(messaging systems)},
+   \item sanomakanavat \textit{(messaging channels)},
+   \item sanomien rakentaminen \textit{(message construction)},
+   \item sanomien reititys \textit{(message routing)},
+   \item sanomien muokkaus \textit{(message transformation)},
+   \item sanomien päätepisteet \textit{(messaging endpoints)},
+   \item järjestelmän hallinta \textit{(systems management)}
 \end{enumerate}
 
 Tässä tutkielmassa perehdymme vain sanomajärjestelmiin, koska muissa kategorioissa esitetyt EIP:eet sisältyvät sanomäjärjestlemissä esiteltyihin malleihin.
 
 \section{Sanomajärjestelmät}
-Järjestelmät kategoria toimii kattokattegoriana muille kategoroille ja tarjoaa konseptit ja termit muille suunnittelumalleille. 
+Sanomäärjestelmät kategoria toimii kattokattegoriana muille kategoroille ja tarjoaa konseptit ja termit muille suunnittelumalleille. 
 Kategoria esittelee lähtökohtaiset pohjasuunnittelumallit minkä päälle muut suunnittelumallit rakentavat. 
 
 Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:lle, mutta viittaa myös järjestelmään joka jakelee sanomia. Vaihtoehtoinen termi sanomajärjestelmille on sanomapohjainen väliohjelmisto \textit{(message-oriented middleware)}. Hohpe ja Woof käyttävät termiä vastaavasti teoksessaan \citep{Hohpe2004}. Jos tekstissä viitataan sanomajärjestelmiin kattokategoriana se tarkennetaan erikseen, muussa tapauksessa sanomajärjestelmä viitta edellä mainittuun ohjelmistojärjestelmään joka kuljettaa sanomia.
 
 \begin{itemize}
    \item Sanomakanava \textit{(Message Channel)}:
-      Kanavia käytetään viestin organisointiin ja jaotteluun sanomajärjestelmän sisällä. Kanava toimii eräänlaisena virtuaalisena putkena lähettäjän ja vastaanottajan välillä. Kehittäjän vastuulle jää kanavien luonti ja organisointi. Sovelluksen lähettäessä dataa, dataa ei lähetetä satunnaisesti mille tahansa kanavalle vaan lähettävä sovellus tietää juuri oikean kanavan jolle data on tarkoitettu. Vastaavasti sama dynamiikkka kuuluu myös vastaaanottavalle sovellukselle; sovellus tietää juuri oikean kanavan mistä odottaa oikeanlaatuista dataa.
+      Kanavia käytetään sanomien organisointiin ja jaotteluun sanomajärjestelmän sisällä. Kanava toimii eräänlaisena virtuaalisena putkena lähettäjän ja vastaanottajan välillä. Kehittäjän vastuulle jää kanavien luonti ja organisointi. Sovelluksen lähettäessä dataa, dataa ei lähetetä satunnaisesti mille tahansa kanavalle vaan lähettävä sovellus tietää juuri oikean kanavan jolle data on tarkoitettu. Vastaavasti sama dynamiikkka kuuluu myös vastaaanottavalle sovellukselle; sovellus tietää juuri oikean kanavan mistä odottaa oikeanlaatuista dataa.
       Kanavat toimivat loogisina osotteina sanomajäjrestelmälle. Kanavan toteutusyksityiskohdat vaihtelevat eri sanomäjärjestelmien välillä \citep{EnterpriseIntegration} \citep{Hohpe2004}.
       Kanavien käyttö on laskentakapasiteetin osalta halpaa, mutta ei täysin ilmaista; jokainen kanava tarvitsee muistia sanomien datan esitttämiseen ja pysyvien sanomien tapauksesssa -- sanomat jotka säilyvät levyllä esimerkiksi virhetilanteessa -- myös levytilaa. Kanavia kannataa siis luoda useita, mutta lukumäärän kasvaessa tuhansiin, alkaa sanomajärjestelmän skalautuvuudesta tulla haaste \citep{Hohpe2004}.
    \item Sanoma\textit{(Message)}:
@@ -165,14 +177,14 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
       \end{center}
       \end{figure}
 
-      Peräkkäisessä käsittelyssä, eli ilman asynkronisuutta, sanomat joutuvat odottamaan toisten sanomien käsittelyä. Alemmassa prosessointiputkessa asynkronisuus mahdollistaa suodattimien operaatiot heti kun seuraava sanoma saapuu.
+      Peräkkäisessä käsittelyssä, eli sanomat odottavat edellisen sanoman käsittely loppumista, sanomat joutuvat odottamaan toisten sanomien käsittelyä. Alemmassa prosessointiputkessa asynkronisuus mahdollistaa suodattimien operaatiot heti kun seuraava sanoma saapuu.
       
-      Suodatinketjun suorituskykyä voidaan parantaa tästä entisestään. Edellisessä prosessointiputken esimerkissä heikkoutena on se, että kaikesta hitain suodatinprosessi määrää koko järjestelmän sanomien käsittelytahdin. 
+      Suodatinketjun suorituskykyä voidaan parantaa tästä entisestään. Edellisessä \ref{fig:pipelineprocess} prosessointiputken esimerkissä heikkoutena on se, että kaikesta hitain suodatinprosessi määrää koko järjestelmän sanomien käsittelytahdin. 
       Tässä tapauksessa hitain suodatin voidaan rinnakkaistaa. Haasteena on varmistaa, että jokaisen sanoman voi käsitellä vain yksi rinnakkaisista suodatinprosesseista. 
-      Toinen huomioon otettava aspekti on, että rinnakkaistaminen ei takaa sanomien suoritusjärjestyksen säilymistä. Jos sanomien käsittleyjärjestyksellä on väliä, suodatinprosesseja voi olla vain yksi instanssi. 
+      Toinen huomioon otettava aspekti on, että rinnakkaistaminen ei takaa sanomien suoritusjärjestyksen säilymistä. Jos sanomien käsittleyjärjestyksellä on väliä, suodatinprosesseja voi olla vain yksi millä tahansa hetkellä. 
       Kolmas haaste on suodattimien tilanhallinta. Tilanhallinta rinnakkaisissa operaatioissa lisää tunnettusti kompleksisuutta, niin suodattimen tilanpalautuminen lähtöpisteeseen operaation valmistuttua yksinkertaistaa huomattavasti suodattimien rinnakkaistamista.
 
-      Kuvan~\ref{fig:parallelprocess} esimerkissä Hohpe ja Woof näyttävät miten salauksen purkamisen \textit{(decrypt)} käytetty suodatin voidaan rinnakkaistaa kolmeksi rinnakkaiseksi prosessiksi, koska purkamisoperaatio on työläin suodattimista \citep{Hohpe2004}.
+      Osittainsen rinnakkaistamisen  esimerkissä \ref{fig:parallelprocess} Hohpe ja Woof näyttävät miten salauksen purkamisen \textit{(decrypt)} käytetty suodatin voidaan rinnakkaistaa kolmeksi rinnakkaiseksi prosessiksi, koska purkamisoperaatio on työläin suodattimista \citep{Hohpe2004}.
       \begin{figure}[!h]
       \begin{center}
       \includegraphics[width=0.8\textwidth]{kuvat/paraller_processing.png}
@@ -220,7 +232,7 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
       Verrattuna aikaisempiin esiteltyihin kattokategorian EIP:in, sanoman päätepiste on puuttuva palanen, joka mahdollistaa integroitavan sovelluksen liittämisen osaksi sanomaviestintää hyödyntävää kokonaisuutta; sanomien päätepiste on siis asiakasohjelmisto, joka yhdistää sovelluksen sanomakanavaan ja mahollistaa sanomien lähettämisen tai vastaanottamisen. Sanomajärjestselmät ovat palvelinohjelmia ja sanomien päätepiste toimii niiden asiakasohjelmana. 
       Sanomien päätepiste vastaanottaa sovelluksen komennon tai datan ja muuttaa sen sanomaksi ja lähettää sanoman sanomakanavalle ja päinvastoin sanomia vastaanottavalle päätepisteelle. Hohpe ja Woof rajaavat yhden päätepisteinstanssin vain vastaanottamaan tai lähettämään, eikä toteuttamaan molempia eli sovellus hyödyntäisikin useampaa päätepistettä jos sen pitäisi kommunikoida useammalle sanomakanvalle \citep[sivu~106]{Hohpe2004}. Sovellus voi kuitenkin hyödyntää usemapaa päätepisteinstanssia vaikka sanomat lähtisivätkin vai yhdelle kanavalle, mahdollistaakseen instanssien skaalatutumisen useammalle samanaikaiselle säikeelle.
 
-      Päätepisteen koodi on kustomoitu kyseiselle sovellukselle ja sanomajärjestelmän asiakasrajapinnalle sopivaksi. Päätepiste kapseloi sanomajärjestelmän sovellukselta joten sovellus ei ole tietoinen sanomajärjestelmästä. Esimerkiksi sanomajärjestelmän asiakasrajapinnan muutokset vaikuttavat vain päätepisteen koodiin, eikä lainkaan itse integroitavaan sovellukseen.
+      Päätepisteen koodi on kustomoitu kyseiselle sovellukselle ja sanomajärjestelmän asiakasrajapinnalle sopivaksi. Päätepiste kapseloi sanomajärjestelmän sovellukselta joten sovellus ei ole tietoinen sanomajärjestelmästä. Esimerkiksi sanomajärjestelmän asiakasrajapinnan muutokset vaativat vain muutoksia päätepisteen koodiin ja integroitava sovellus on kapseloitu niin etteivät nämä muutokset vaikuta sen toimintaan.
 
       Päätepiste EIP:estä on muokattuja versioita riippuen siitä haluuako sanomia vastaanottava päätepiste käyttää erilaista vastaanottostrategiaa kuten kiertokyselyä tai tapahtumapohjaista reagointia. Useammat vastaanottavat päätepisteet voivat kilpailla sanomien käsittelystä \textit{(computing consumer)} tai jakaa viestin lähettämisen eri päätepisteelle sisäine logiikan mukaan \textit{(message dispatcher)}. Vastaanottava päätepiste voi vastaavasti olla idempotenssi niin toistuivat sanomat eivät aiheuta järjestelmässä virhetiloja \citep[sivu~106]{Hohpe2004}.
 
@@ -228,7 +240,7 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 
 
-\chapter{Suunnittelumallien kehitystä}
+\chapter{Järjestelmäintegraatioiden suunnittelumallien kehitystä}
 
 \section{Suunniittelumallien rooli nykypäivän ympäristössä}
    EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; jota on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä jotka ovat tämänpäivän opiskelijalle tuttuja. 
@@ -285,7 +297,7 @@ Virtausdatan käsittelemistä eip-malleilla on kokeiltu laitteistokiihdyttämise
 Akateeminen ja tekninen kirjallisuus integraatioista ja datavirroista jää vähälle vuoden 2017 jälkeen. Datavirtojen hallinnoinnista EAI-kontekstisa löytyy kuitenkin joku tuoreempi esimerkki \citep{WilkesPareek}, mutta kirja ei pyri suunnittelumallien kaltaiseen arkkitehtuuristandardisointiin. 
 Tuoreita kaupallisten integraatioalustojen kirjoituksia datavirtojen hyödyntämisestä on julkaistu ja yksi suuri datavirtaus integraatioiden suosion ajaja näyttää olleen Apache Kafka \citep{WSO2Stream} \citep{IBMStream}; samanlaisia trendejä on myös nähtävissä dataintegraatioiden tutkimuspapereissa \citep{Bousdekis2021}.
 
-\section{Virheenhallinta}
+\section{Virheenhallinta suunittelumalleissa}
 EIP lähdeteos käsitteli niukasti virheenhallintaa. Teos sisälsi virheenhallinnan suunnittelumalleina kelvottomien sanomien kanavan \textit{(Invalid Message Channel)}, johon sanomat joiden käsitely päättyi virheeseen lähetetään, sekä toimittamattomien kirjeiden kanavan \textit{(Dead Letter Channel)} johon päätyneiden sanomien lähetys on epäonnistunut eikä sanoma pystynyt jatkamaan käsittelyään esimerkiksi järjestemähäiriön takia \citep{Hohpe2004}.
 Kirjailijat ovat myöhemmin avanneet virheenhallinnan sisällyttämisestä teokseen \citep{Hohpe2004} sillä, että virheenhallintastrategioiden käsittely vaatii kirjalta laajempaa sananstoa erityisesti tilanhallinnasta, mikä olisi paisuttanut teosta \citep{Zimmermann2016}.
 
@@ -311,7 +323,7 @@ Tutkimuksessa arvioitiin Apache Flume, Apache Cameli, Apache Nifi ja SAP HCI EAI
 
 
 
-\section{Formalisointi}
+\section{Suunnittelumllien formalisointi}
 EIP-suunnittelumallien formalisointi on kiinnostava aspekti erityisesti akateemisen kirjallisuuden kontekstissa. Formalisointi mahdollistaa suunnittelumallien matemaattisen analyysin ja varmentamisen ja takaisi varman pohjan järjestelmäintegreaatioiden rakentamiselle suunnittelun ja ajon aikana.
 
 Vuoden 2017 kartoitus \citep{Ritter2017} löysi yhden yrityksen formalisoida EIP:tä \citep{Fahland2013} jonka metodi formalisoinnille on hyödyntää värjättyjä Petri-verkkoja jossa värit kuvaavat datatyyppejä ja hallintasäikeet \textit{(control threads)} mallintavat kontrollirakenteita verkossa.
