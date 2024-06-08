@@ -117,7 +117,7 @@ Edellä mainitut haasteet tarkoittavat sanomapohjaisille järjestelmille suunnit
 
 \chapter{Sanomapohjaiset suunnittelumallit}
 
-\section{Suunnittelumallien asema ja kategoriointi}
+\section{Suunnittelumallien asema ja kategorisointi}
 Edellisessä luvussa esitellyistä neljästä kategoriasta Hohpe ja Woolf suosivat sanomien käyttöä integraatioratkaisuissa ja suurin osa teoksesta keskittyy sanomapohjaisen suunnittelumallien esittelyyn \citep[sivu~76]{Hohpe2004}. Nämä järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnetut kehitysohjeet ovat vaikuttaneet useamman eri integraatioalustan arkkitehtuuriin. 
 
 Vuonna 2018 viimeisintä tekniikka edustavista 48: sta integraatioalustasta yksitoista tuki EIP-malleja \citep{Freire2019}.
@@ -204,37 +204,37 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
       Reitittimen haasteina ovat erilaiset pullonkaulat. Reitittimestä voi syntyä ylläpidollinen pullonkaula, koska reitittimen pitää olla tietoinen kaikista vastaanottavista kanavista ja tästä voi syntyä ylläpidollinen ongelma varsinkin jos vastaanottokanavien lista vaihtuu tiheään. Toinen mahdollinen pullonkaula on suorituskyky. Reititin luonteensa vuoksi lisää ylimääräisen prosessointiaskeleen ja monissa sanomajärjestelmissä sanoman siirtäminen toiselle kanavalle vaati sanomien uudelleen koodausta. Useamman reitittimen rinnakkainen käyttö lieventää ongelmaa, mutta joka tapauksessa reititin tulee vaikuttamaan negatiivisesti sanomien viiveeseen vaikka sanomien käsittelytahti pysyisikin samana \citep[sivu~93]{Hohpe2004}.
 
 
-      Reitittimen käyttö voidaan kategorioida useamaan eri tyyppiin. Yksinkertaisin reititin on kiinteä jolloin sanoma kulkee yhdestä kanavasta yhteen vastaanottaja kanavaan. Kiinteiden reitittimen tarkoitus on irrottaa kiinteitä kytkentöjä erilaisista alijärjestelmistä tai välittää sanomia eri integraationratkaisujen välillä.
+      Reitittimen käyttö voidaan kategorioida useampaan eri tyyppiin. Yksinkertaisin reititin on kiinteä, jolloin sanoma kulkee yhdestä kanavasta yhteen vastaanottaja kanavaan. Kiinteiden reitittimen tarkoitus on irrottaa kiinteitä kytkentöjä erilaisista alijärjestelmistä tai välittää sanomia eri integraationratkaisujen välillä.
       Reititin voi olla sisältöpohjainen \textit{(content-based)} tai ympäristöpohjainen \textit{(context-based)}. Sisältöpohjainen tekee reitityspäätöksiä sanoman sisällön perusteella. Ympäristöpohjainen ottaa huomioon ympäristön tilan ja tekee esimerkiksi kuormituksen tasaamista tai uudelleenreititystä ympäröivän systeemin virhetilanteessa.
-      Reitittimet voi jakaa tilallisiin ja tilattomiin; tilalliset reitittimet ottavat huomioon aikasemmat sanomat ne voivat esimerkiksi estää duplikaattisanomien saapumisen tallentamalla jo saapuneet sanomat.
+      Reitittimet voi jakaa tilallisiin ja tilattomiin; tilalliset reitittimet ottavat huomioon aikaisemmat sanomat ne voivat esimerkiksi estää duplikaattisanomien saapumisen tallentamalla jo saapuneet sanomat.
       Reitin voi olla myös dynaaminen \textit{dynamic router} ja vastaanottaa konfiguraatiomuutoksia ohjausväylän kautta. Tällä tavalla reititin voi muutta reitityslogiikkaansa ilman koodimuutoksia \citep[sivu~94]{Hohpe2004}.
 
 
    \item Sanomankääntäjä \textit{(Message Translator)}:
       Sanomankääntäjä on suodatintyyppi, joka mahdollistaa eri dataformaatteja käyttävät sovellukset keskustelemaan keskenään sanomien avulla. Hohpe ja Woof vertaavat sanomankääntäjä EIP:tä sanomajärjestelmille tarkoitetuksi versioksi tunnetusta sovitinsuunnittelumallista \citep[sivu~97]{Hohpe2004}, joka sai alkunsa Gang of Four teoksesta \citep{Gamma1994}.
-      Keratauksena aikaisempiin esiteltyihin EIP: hin verrattuna sanomakääntäjän tarkoituksena on vähentää tiukkoja riippuvuuksia arkkitehtuurissa; sanomakanava mahdollisti, että sovellusten ei tarvitse tietää toistensa sijaintia, sanomareititin mahdollisti löyhät kytkennät sovellusten viestien reitittämisessä, joten sanomakääntäjä estää järjestelmien tiukat riippuvuudet toistensa dataformaateista.
-      Sanomakääntäjä ratkaiseee jaetun tietokannan haasteita jota käsiteltiin luvuvssa \ref{Tekniset lähestymistavat}. Erityisesti yhtenäisen skeemaan löytäminen ei muodostu ongelmaksi ja järjestelmät on  kytketty löyhemmin toisiinsa kääntäjiä hyödyntämällä.
-      Vaihtoehtoinen lähestymistapa sanomakääntäjän sijaan olisi käyttää yhteistä datatyyppiä koko sanomajärjestelmässä, joka jakaa myös yhtäläisyyksiä jaetun tietokannan kanssa \ref{Tekniset lähestymistavat}, toteuttamalla samoman datatyypin muunnokset sanomien päätepisteisiin \ref{Sanomien päätepiste}, mutta valmiissa kaupallisissa sanomajärjestlemiä tukevissa sovelluksissa päätepisteen koodi ei ole muokattavissa. Lisäksi sanomien kääntämislogiikan eläessä päätepisteessä, koodin uudelleenkäyttäminen on haastavaa.
+      Kertauksena aikaisempiin esiteltyihin EIP: hin verrattuna sanomakääntäjän tarkoituksena on vähentää tiukkoja riippuvuuksia arkkitehtuurissa; sanomakanava mahdollisti, että sovellusten ei tarvitse tietää toistensa sijaintia, sanomareititin mahdollisti löyhät kytkennät sovellusten viestien reitittämisessä, joten sanomakääntäjä estää järjestelmien tiukat riippuvuudet toistensa dataformaateista.
+      Sanomakääntäjä ratkaisee jaetun tietokannan haasteita jota käsiteltiin luvussa \ref{Tekniset lähestymistavat}. Erityisesti yhtenäisen skeemaan löytäminen ei muodostu ongelmaksi ja järjestelmät on  kytketty löyhemmin toisiinsa kääntäjiä hyödyntämällä.
+      Vaihtoehtoinen lähestymistapa sanomakääntäjän sijaan olisi käyttää yhteistä datatyyppiä koko sanomajärjestelmässä, joka jakaa myös yhtäläisyyksiä jaetun tietokannan kanssa \ref{Tekniset lähestymistavat}, toteuttamalla sanoman datatyypin muunnokset sanomien päätepisteisiin \ref{Sanomien päätepiste}, mutta valmiissa kaupallisissa sanomajärjestlemiä tukevissa sovelluksissa päätepisteen koodi ei ole muokattavissa. Lisäksi sanomien kääntämislogiikan eläessä päätepisteessä, koodin uudelleenkäyttäminen on haastavaa.
 
-      Hohpe ja Woof \citep{Hohpe2004} jakavat sanomkääntäjän operaatiot eri abstraktiotasoihin, ottaen löyhästi vaikutteita OSI-mallista \citep{OSImodel}, jakaen kääntämisoperaatiot kuljetus-, datan esitys-, datatyyppi- ja tietorakennekerroksiin (sovelluskerros).
-      Kuljetuskerrokseen kuuluvat protokollat kuten http, mqtt, JMS. Datan esityskerros on kiinnostunut datan muodosta kute JSON, XML ja enkoodauksesta kuten UTF-8. Datatyyppi viittaa soveluksen muistinsisäisiin esityistapohin esim. ovatko postinumerot merkkijonoja vai kokonaisnumeroita ja ovatko esim. aikaleimat aina UTC-ajassa vai sisätävätkö aikavyöhykeinformaation.
-      Tietorakennekerros (tai sovelluskerros) ottaa kantaa logiisiin kokonaisuuksiin, kuten eri dataentiteettien assosisaatioihin ja niiden kardianaliteetin esim. onko dataentiteettien välillä moni-moneen-yhteyksiä.
-      Jakamalla kääntämisoperaatiot usempaan kerrokseen voidaan operaatioita käsitellä itsenäisesti omassa abstraktiotasossaan, kuten kuvassa \ref{fig:translationlayers}, ilman riippuvuutta muihin kääntäjiin ja kääntämisoperaation koodin uudelleenkäyttäminen on suoraviivaista. Myös eri abstraktiotasojen operaatiot ovat vaihdettavissa toisiin. Esimerkiksi datan esityskerrosessa \textit{(Data Representation)} voidaankin päättää, että data esitetäänkin JSON:ina CSV:een sijaan ilman, että vaihto aiheuttaa muutoksia muiden tasojen operaatioissa.
+      Hohpe ja Woof \citep{Hohpe2004} jakavat sanomakääntäjän operaatiot eri abstraktiotasoihin, ottaen löyhästi vaikutteita OSI-mallista \citep{OSImodel}, jakaen kääntämisoperaatiot kuljetus-, datan esitys-, datatyyppi- ja tietorakennekerroksiin (sovelluskerros).
+      Kuljetuskerrokseen kuuluvat protokollat kuten http, mqtt, JMS. Datan esityskerros on kiinnostunut datan muodosta kuten JSON, XML ja enkoodauksesta kuten UTF-8. Datatyyppi viittaa soveluksen muistinsisäisiin esitystapoihin esim. ovatko postinumerot merkkijonoja vai kokonaisnumeroita ja ovatko esim. aikaleimat aina UTC-ajassa vai sisältävätkö aikavyöhykeinformaation.
+      Tietorakennekerros (tai sovelluskerros) ottaa kantaa loogisiin kokonaisuuksiin, kuten eri dataentiteettien assosiaatioihin ja niiden kardinaliteetin esim. onko dataentiteettien välillä moni-moneen-yhteyksiä.
+      Jakamalla kääntämisoperaatiot useampaan kerrokseen voidaan operaatioita käsitellä itsenäisesti omassa abstraktiotasossaan, kuten kuvassa \ref{fig:translationlayers}, ilman riippuvuutta muihin kääntäjiin ja kääntämisoperaation koodin uudelleenkäyttäminen on suoraviivaista. Myös eri abstraktiotasojen operaatiot ovat vaihdettavissa toisiin. Esimerkiksi datan esityskerroksessa \textit{(Data Representation)} voidaankin päättää, että data esitetäänkin JSON:ina CSV:een sijaan ilman, että vaihto aiheuttaa muutoksia muiden tasojen operaatioissa.
 
       \begin{figure}[h]
       \begin{center}
       \includegraphics[width=0.8\textwidth]{./kuvat/translation_layers.png}
-      \caption{Sanomakääntäjän operaatiot voivat kohdistua kaikkiin abstraktiotasoihin \citep{Hohpe2004}\label{fig:translationlayers}}
+      \caption{Sanomakääntäjän operaatiot voivat kohdistua kaikkiin abstraktiotasoihin \citep{Hohpe2004}\label{fig:translationlayers}.}
       \end{center}
       \end{figure}
 
    \item Sanomien päätepiste \textit{(Message Endpoint)}\label{Sanomien päätepiste}:
-      Verrattuna aikaisempiin esiteltyihin kattokategorian EIP:in, sanoman päätepiste on puuttuva palanen, joka mahdollistaa integroitavan sovelluksen liittämisen osaksi sanomaviestintää hyödyntävää kokonaisuutta; sanomien päätepiste on siis asiakasohjelmisto, joka yhdistää sovelluksen sanomakanavaan ja mahollistaa sanomien lähettämisen tai vastaanottamisen. Sanomajärjestselmät ovat palvelinohjelmia ja sanomien päätepiste toimii niiden asiakasohjelmana. 
-      Sanomien päätepiste vastaanottaa sovelluksen komennon tai datan ja muuttaa sen sanomaksi ja lähettää sanoman sanomakanavalle ja päinvastoin sanomia vastaanottavalle päätepisteelle. Hohpe ja Woof rajaavat yhden päätepisteinstanssin vain vastaanottamaan tai lähettämään, eikä toteuttamaan molempia eli sovellus hyödyntäisikin useampaa päätepistettä jos sen pitäisi kommunikoida useammalle sanomakanvalle \citep[sivu~106]{Hohpe2004}. Sovellus voi kuitenkin hyödyntää usemapaa päätepisteinstanssia vaikka sanomat lähtisivätkin vai yhdelle kanavalle, mahdollistaakseen instanssien skaalatutumisen useammalle samanaikaiselle säikeelle.
+      Verrattuna aikaisempiin esiteltyihin kattokategorian EIP:in, sanoman päätepiste on puuttuva palanen, joka mahdollistaa integroitavan sovelluksen liittämisen osaksi sanomaviestintää hyödyntävää kokonaisuutta; sanomien päätepiste on siis asiakasohjelmisto, joka yhdistää sovelluksen sanomakanavaan ja mahdollistaa sanomien lähettämisen tai vastaanottamisen. Sanomajärjestelmät ovat palvelinohjelmia ja sanomien päätepiste toimii niiden asiakasohjelmana. 
+      Sanomien päätepiste vastaanottaa sovelluksen komennon tai datan ja muuttaa sen sanomaksi ja lähettää sanoman sanomakanavalle ja päinvastoin sanomia vastaanottavalle päätepisteelle. Hohpe ja Woof rajaavat yhden päätepisteinstanssin vain vastaanottamaan tai lähettämään, eikä toteuttamaan molempia eli sovellus hyödyntäisikin useampaa päätepistettä jos sen pitäisi kommunikoida useammalle sanomakanalle \citep[sivu~106]{Hohpe2004}. Sovellus voi kuitenkin hyödyntää useampaa päätepisteinstanssia vaikka sanomat lähtisivätkin vai yhdelle kanavalle, mahdollistaakseen instanssien skaalautumisen useammalle samanaikaiselle säikeelle.
 
-      Päätepisteen koodi on kustomoitu kyseiselle sovellukselle ja sanomajärjestelmän asiakasrajapinnalle sopivaksi. Päätepiste kapseloi sanomajärjestelmän sovellukselta joten sovellus ei ole tietoinen sanomajärjestelmästä. Esimerkiksi sanomajärjestelmän asiakasrajapinnan muutokset vaativat vain muutoksia päätepisteen koodiin ja integroitava sovellus on kapseloitu niin etteivät nämä muutokset vaikuta sen toimintaan.
+      Päätepisteen koodi on räätälöity kyseiselle sovellukselle ja sanomajärjestelmän asiakasrajapinnalle sopivaksi. Päätepiste kapseloi sanomajärjestelmän sovellukselta joten sovellus ei ole tietoinen sanomajärjestelmästä. Esimerkiksi sanomajärjestelmän asiakasrajapinnan muutokset vaativat vain muutoksia päätepisteen koodiin ja integroitava sovellus on kapseloitu niin etteivät nämä muutokset vaikuta sen toimintaan.
 
-      Päätepiste EIP:estä on muokattuja versioita riippuen siitä haluuako sanomia vastaanottava päätepiste käyttää erilaista vastaanottostrategiaa kuten kiertokyselyä tai tapahtumapohjaista reagointia. Useammat vastaanottavat päätepisteet voivat kilpailla sanomien käsittelystä \textit{(computing consumer)} tai jakaa viestin lähettämisen eri päätepisteelle sisäine logiikan mukaan \textit{(message dispatcher)}. Vastaanottava päätepiste voi vastaavasti olla idempotenssi niin toistuivat sanomat eivät aiheuta järjestelmässä virhetiloja \citep[sivu~106]{Hohpe2004}.
+      Päätepiste EIP:estä on muokattuja versioita riippuen siitä haluaako sanomia vastaanottava päätepiste käyttää erilaista vastaanottostrategiaa kuten kiertokyselyä tai tapahtumapohjaista reagointia. Useammat vastaanottavat päätepisteet voivat kilpailla sanomien käsittelystä \textit{(computing consumer)} tai jakaa viestin lähettämisen eri päätepisteelle sisäisen logiikan mukaan \textit{(message dispatcher)}. Vastaanottava päätepiste voi vastaavasti olla idempotenssi niin toistuivat sanomat eivät aiheuta järjestelmässä virhetiloja \citep[sivu~106]{Hohpe2004}.
 
 \end{itemize}
 
@@ -242,95 +242,95 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 \chapter{Järjestelmäintegraatioiden suunnittelumallien kehitystä}
 
-\section{Suunniittelumallien rooli nykypäivän ympäristössä}
-   EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; jota on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä jotka ovat tämänpäivän opiskelijalle tuttuja. 
+\section{Suunnittelumallien rooli nykypäivän ympäristössä}
+   EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; näitä on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä, jotka ovat tämän päivän opiskelijalle tuttuja. 
 
 
-   Hohpen henkilökohtainen blogi sisältää useamman päivitetyn esimerkin tunnetuista EIP-suunnittelumallista, mutta nyt implementoituina käyttäen pilviteknologioita: 
+   Hohpen henkilökohtainen blogi sisältää useamman päivitetyn esimerkin tunnetuista EIP-suunnittelumallista, mutta nyt toteutettuna käyttäen pilviteknologioita: 
    \begin{itemize}
       \item Sisältöpohjainen reititin, EIP:een kategoriassa sanomien reititys, modernisoitiin käyttäen Googlen pilvialustan \textit{(GCP)} Google Cloud Functions palvelitonta arkkitehtuuria vuonna 2017 \citep{HohpeEIPGCP}. Alkuperäisen teoksen C\# Microsoft Message Queuing pohjainen toteutus vaihtui Node.js pohjaiseen, Google Cloud Pub/sub kirjastoa hyödyntävään toteutukseen.
-   \item EIP-teoksessa esitelty monimutkaisempi esimerkki lainanvälitttäjästä \textit{(Loan Broker)} \citep[sivu~317]{Hohpe2004} toteutettuun kolmella eri tavalla: Java / Apache Axis web-palvelimena, C\# / Microsoft Message Queuing sanomajonona ja Tibco ActiveEnterprise julkaise ja tilaa kanavana. Vuonna 2021 Hohpe aloitti sarjan blogikirjoituksia joissa lainanvälittäjä esimerki toteutetaan uudelleen käyttäen Amazon Web Services \textit{(AWS)} pilviteknologioita \citep{HohpeLoanAWS}.
-      Lainanvälittäjä esimerkki toteuttettiin pilvituotteilla AWS Step Functions, AWS Lambda, AWS Simple Notification Service, AWS Simple Queuing Service ja AWS DynamoDB. Katso kuva \ref{fig:hohpe_loanbroker_4}.
+   \item EIP-kirjassa esitelty monimutkaisempi esimerkki lainanvälittäjästä \textit{(Loan Broker)} \citep[sivu~317]{Hohpe2004} toteutettuun kolmella eri tavalla: Java / Apache Axis web-palvelimena, C\# / Microsoft Message Queuing sanomajonona ja Tibco ActiveEnterprise julkaise ja tilaa kanavana. Vuonna 2021 Hohpe aloitti sarjan blogikirjoituksia, joissa lainanvälittäjä esimerkki toteutetaan uudelleen käyttäen Amazon Web Services \textit{(AWS)} pilviteknologioita \citep{HohpeLoanAWS}.
+      Lainanvälittäjä esimerkki toteutettiin pilvituotteilla AWS Step Functions, AWS Lambda, AWS Simple Notification Service, AWS Simple Queuing Service ja AWS DynamoDB. Katso kuva \ref{fig:hohpe_loanbroker_4}.
 
       \begin{figure}[h]
       \begin{center}
       \includegraphics[width=0.8\textwidth]{kuvat/hohpe_loanbroker_4.png}
-      \caption{Kuva EIP:een lainanvälittäjä esimerkistä AWS:än palveluita hyödyntämällä.  \citep{HohpeLoanAWS_4}\label{fig:hohpe_loanbroker_4}}
+      \caption{Kuva EIP:een lainanvälittäjä esimerkistä AWS:än palveluita hyödyntämällä \citep{HohpeLoanAWS_4}\label{fig:hohpe_loanbroker_4}.}
       \end{center}
       \end{figure}
 
 
-      Myöhemmissä sarjan osissa Hohpe keskittyy ohjelmiston julkaisemiseen AWS:ää hyödyntäen \citep{HohpeLoanAWS_4} \citep{HohpeLoanAWS_5}. Hohpe myös argumentoi, että EIP-suunittelumallit ovat itse pilviarkkitehtuuriratkaisun lisäksi hyödyllisiä abstraktioita koodin julkaisua automatisoidessa \citep{HohpeLoanAWS_5}. Julkaisussa käytettävät teknologiat ovat AWS CloudFormation, AWS Simple Storage Service, AWS Serverless Application Model ja AWS Cloud Development Kit.
+      Myöhemmissä sarjan osissa Hohpe keskittyy ohjelmiston julkaisemiseen AWS:ää hyödyntäen \citep{HohpeLoanAWS_4} \citep{HohpeLoanAWS_5}. Hohpe myös argumentoi, että EIP-suunnittelumallit ovat itse pilviarkkitehtuuriratkaisun lisäksi hyödyllisiä abstraktioita koodin julkaisua automatisoidessa \citep{HohpeLoanAWS_5}. Julkaisussa käytettävät teknologiat ovat AWS CloudFormation, AWS Simple Storage Service, AWS Serverless Application Model ja AWS Cloud Development Kit.
 
    \item Hohpen esimerkkien modernisointi jatkuu samana vuonna, lainanvälittäjä esimerkin siirtämisenä AWS:ltä Google Cloudille \citep{HohpeLoanGCP}.
       Ohjelman siirto ja kuvan \ref{fig:hohpe_loanbroker_4} AWS palvelut kuvaantuivat yksi yhteen GCP:een palveluille. Esimerkissä hyödynnettiin GCP Workflows, GCP Cloud Functions, GCP PubSub, GCP DataStore teknologoioita.
-      Julkaisun automaatiossa huomattavaa oli, että AWS CloudFormationille ei löytynyt suoraa vastaavuutta GCP:een tarjonnasta ja vastaava toiminnalisuus pitää löytää kolmannen osapuolen ratkaisuista \citep{HohpeLoanGCP}.
+      Julkaisun automaatiossa huomattavaa oli, että AWS CloudFormationille ei löytynyt suoraa vastaavuutta GCP:een tarjonnasta ja vastaava toiminnallisuus pitää löytää kolmannen osapuolen ratkaisuista \citep{HohpeLoanGCP}.
    \end{itemize}
 
-   EIP-teoksessa esiteltyjen suunnitelumallien esimerkkejä on myös vähitellyn uudistettu EIP:een kotisivulle \citep{conversationPatterns}. Tällä hetkellä 67 suuniittelumallista 14 on modernisoitu. Modernisoidut on koottu yhteen paikkaan Hohpen blogiin \citep{HohpeModernExamples}. Aiemmin mainittujen pilvialustaesimerkkien lisäksi EIP-suunnittelumalleja on kyseisissä esimerkeissä toteutettua Golangilla, Apache Kafkalla, Apache Camelilla, Mule ESB:llä, RabbitMQ:lla ja Microsost Azurella.
+   EIP-teoksessa esiteltyjen suunnittelumallien esimerkkejä on myös vähitellen uudistettu EIP:een kotisivulle \citep{conversationPatterns}. Tällä hetkellä 67 suuniittelymallista 14 on modernisoitu. Modernisoidut on koottu yhteen paikkaan Hohpen blogiin \citep{HohpeModernExamples}. Aiemmin mainittujen pilvialustaesimerkkien lisäksi EIP-suunnittelumalleja on kyseisissä esimerkeissä toteutettua Golangilla, Apache Kafkalla, Apache Camelilla, Mule ESB:llä, RabbitMQ:lla ja Microsost Azurella.
    
-   Edellä mainitut esimerkit, mukaan lukien listatut pilvialustaesimerkit, löytyvät julkisesta githubissa isännöidystä tietovarastosta \citep{EIPModernGit}.
+   Edellä mainitut esimerkit, mukaan lukien listatut pilvialustaesimerkit, löytyvät julkisesta Githubissa isännöidystä tietovarastosta \citep{EIPModernGit}.
 
 
 \section{Tilalliset protokollat}
-EIP-suunnittelumallien heikkous on tilalliset \textit{(stateful)} protokollat. Tarve tilallisille protokollille on todettu 2017 integraatiotrendien anayylissä \citep{Ritter2017} 
-Tämän lisäksi alkuperäisien EIP-teoksen kirjailijat ilmaisivat vuonna 2016, että tilallisien protokollien suunnitelumalleille  on tarvetta, mikä voisi oikeuttaa toisen EIP-voluumin luomiseen \citep{Zimmermann2016}.
-Hohpe on alkanut kerämään tilallisia suunnittelumalleja sivulle \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikeneet uutta kirjaa. Verrattuna EIP:een Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstarktiot on rakennettu.
+EIP-suunnittelumallien heikkous on tilalliset \textit{(stateful)} protokollat. Tarve tilallisille protokollille on todettu 2017 integraatiotrendien analyysissä \citep{Ritter2017} 
+Tämän lisäksi alkuperäisien EIP-kirjan kirjailijat ilmaisivat vuonna 2016, että tilallisien protokollien suunnittelumalleille on tarvetta, mikä voisi oikeuttaa toisen EIP-voluumin luomiseen \citep{Zimmermann2016}.
+Hohpe on alkanut keräämään tilallisia suunnittelumalleja sivulle \citep{conversationPatterns}, mutta toistaiseksi suunnittelumallit eivät ole poikenneet uutta kirjaa. Verrattuna EIP-suunnittelumalleihin, Hohpen tilalliset mallit käyttävät sanomien sijaan keskusteluja \textit{(conversations)} jonka ympärille suunnittelumallien abstraktiot on rakennettu.
 
 
 Integraatiotrendien ja kaupallisten sekä avoimen lähdekoodin alustojen  analyysissä todettiin, että lähes kaikki alustat tarjoavat omat tilalliset "keskustelunsa"~ja mahdollisuudet tallennustilan käyttöön \citep{Ritter2017}. Tosin tämä alustojen tarjoama tuki todetaan alkeelliseksi. Palvelukeskeisen arkkitehtuurin \textit{(Service Orieted Architecture, SOA)} kirjallisuudesta löytyy kuitenkin keskustelusuunnittelumalleja mitä ei löydy integraatioalustojen toteutuksista \citep{Ritter2017};
-julkaisussa \citep{Barros2005} suunnittelumallit yhdestä-moneksi \textit{(one-from-many)} ja  yhdestä-moneen \textit{(one-to-many)} ovat monenvälisiä keskustelusuunnittelumalleja jotka todetaan puuuttuvan olemassaolevsita toteutuksista \citep{Ritter2017}.
+julkaisussa \citep{Barros2005} suunnittelumallit yhdestä-moneksi \textit{(one-from-many)} ja yhdestä-moneen \textit{(one-to-many)} ovat monenvälisiä keskustelusuunnittelumalleja jotka todetaan puuttuvan olemassa olevista toteutuksista \citep{Ritter2017}.
 
-Koska nykypäivän integraatiot keskittyvät enenmmän pilveen, integraatiovaatimukset ovat alkaneet kallistua tilallisiin talennustilaa vaativiin skenaarioihin mihin EIP ei vastaa ja kerätyt keskustelusuunnittelumallit ovat myös keskenräisiä vastatakseen \citep{Ritter2017}. Paremmin muodostetuille keskustelusuunnittelumalleilla löytyisi tarvetta.
+Koska nykypäivän integraatiot keskittyvät enemmän pilvipalveluhin, integraatiovaatimukset ovat alkaneet kallistua tilallisiin tallennustilaa vaativiin skenaarioihin mihin EIP ei vastaa ja kerätyt keskustelusuunnittelumallit ovat myös keskeneräisiä vastatakseen \citep{Ritter2017}. Paremmin muodostetuille keskustelusuunnittelumalleilla löytyisi tarvetta.
 
 Huomioitavaa on, että keskustelusuunnittelumalleja ei voi kuitenkaan verrata palvelukeskeisen arkkitehtuurin koreografia- \textit{(choreography)} tai vuorovaikutussuunnittelumalleille \textit{(interaction patterns)}, koska 
 keskustelumallit kuvaavat monimutkaisempia tehtäviä kuin datan lähettämisen ja vastaanottamisen \citep{Ritter2017}.
 
 \section{Datavirtaprotokollat}
-Synkrononisia ja datavirtaprotokollia \textit{(streaming protocol)} ei  ole huomioitu järjestelmäintegraatioisssa eikä niiden suunnittelumalleissa, minkä hohpe ja woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
-Samassa haastattelussa hohpe ja woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi eip:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
+Synkronisia ja datavirtaprotokollia \textit{(streaming protocol)} ei ole huomioitu järjestelmäintegraatioissa eikä niiden suunnittelumalleissa, minkä Hohpe ja Woof myöntävät haastattelussa \citep{Zimmermann2016}. Erityisesti virtausprotokollien puute aiheuttaa haasteita esimerkiksi big data järjestelmien integraatioissa \citep{Ritter2017}.
+Samassa haastattelussa Hohpe ja Woof toteavatkin, että virtausprotokollien suunnittelumallien dokumentointi parantaisi sanomien käytön ja virtauskäyttötapausten yhtäläisyyksien ymmärtämistä ja johtaisi EIP:een kaltaisten suunnittelumallien löytämiseen \citep{Ritter2017}.
 Kirjailivat toteavat, että koko EAI ekosysteemistä puuttuu datavirtaprotokollien suunnittelumallit ja yhteiset protokollat \citep{Zimmermann2016}, mutta virtaprosessointia hyödynnettiin vuosi myöhemmin ainakin Jitterbitin ja Apache Camelin EAI-ratkaisuissa \citep{Ritter2017}.
 
-Virtausdatan käsittelemistä eip-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Tutkimuksessa virtausdatan käsittelyä varten eip-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuromituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti \citep{DannRitter2017}.
+Virtausdatan käsittelemistä EIP-malleilla on kokeiltu laitteistokiihdyttämisen kanssa hyödyntämällä ohjelmoitavia porttimatriiseja \citep{DannRitter2017}. Tutkimuksessa virtausdatan käsittelyä varten EIP-malleja laajennettiin kahdella uudella suunnittelumallilla: kuormituksen tasaaja \textit{(load balancer)} ja liittäjä reititin \textit{(join router)}. Kuormituksen tasaaja lähettää sanomaan yhteen useasta kanavasta hyödyntämällä yleisiä kuormituksen tasaus mekanismeja. Liittäjä reititin liittää useasta eri kanavasta saapuvat sanomat yhdelle kanavalle ohjelmoidun logiikan mukaisesti \citep{DannRitter2017}.
 
 
-Akateeminen ja tekninen kirjallisuus integraatioista ja datavirroista jää vähälle vuoden 2017 jälkeen. Datavirtojen hallinnoinnista EAI-kontekstisa löytyy kuitenkin joku tuoreempi esimerkki \citep{WilkesPareek}, mutta kirja ei pyri suunnittelumallien kaltaiseen arkkitehtuuristandardisointiin. 
+Akateeminen ja tekninen kirjallisuus integraatioista ja datavirroista jää vähälle vuoden 2017 jälkeen. Datavirtojen hallinnoinnista EAI-kontekstissa löytyy kuitenkin joku tuoreempi esimerkki \citep{WilkesPareek}, mutta kirja ei pyri suunnittelumallien kaltaiseen arkkitehtuuristandardisointiin. 
 Tuoreita kaupallisten integraatioalustojen kirjoituksia datavirtojen hyödyntämisestä on julkaistu ja yksi suuri datavirtaus integraatioiden suosion ajaja näyttää olleen Apache Kafka \citep{WSO2Stream} \citep{IBMStream}; samanlaisia trendejä on myös nähtävissä dataintegraatioiden tutkimuspapereissa \citep{Bousdekis2021}.
 
-\section{Virheenhallinta suunittelumalleissa}
-EIP lähdeteos käsitteli niukasti virheenhallintaa. Teos sisälsi virheenhallinnan suunnittelumalleina kelvottomien sanomien kanavan \textit{(Invalid Message Channel)}, johon sanomat joiden käsitely päättyi virheeseen lähetetään, sekä toimittamattomien kirjeiden kanavan \textit{(Dead Letter Channel)} johon päätyneiden sanomien lähetys on epäonnistunut eikä sanoma pystynyt jatkamaan käsittelyään esimerkiksi järjestemähäiriön takia \citep{Hohpe2004}.
-Kirjailijat ovat myöhemmin avanneet virheenhallinnan sisällyttämisestä teokseen \citep{Hohpe2004} sillä, että virheenhallintastrategioiden käsittely vaatii kirjalta laajempaa sananstoa erityisesti tilanhallinnasta, mikä olisi paisuttanut teosta \citep{Zimmermann2016}.
+\section{Virheenhallinta suunnittelumalleissa}
+EIP-lähdeteos käsitteli niukasti virheenhallintaa. Teos sisälsi virheenhallinnan suunnittelumalleina kelvottomien sanomien kanavan \textit{(Invalid Message Channel)} johon sanomat, joiden käsittely päättyi virheeseen lähetetään, sekä toimittamattomien kirjeiden kanavan \textit{(Dead Letter Channel)} johon päätyneiden sanomien lähetys on epäonnistunut eikä sanoma pystynyt jatkamaan käsittelyään esimerkiksi järjestelmähäiriön takia \citep{Hohpe2004}.
+Kirjailijat ovat myöhemmin avanneet virheenhallinnan sisällyttämisestä teokseen \citep{Hohpe2004} sillä, että virheenhallintastrategioiden käsittely vaatii kirjalta laajempaa sanastoa erityisesti tilanhallinnasta, mikä olisi paisuttanut teosta \citep{Zimmermann2016}.
 
-Kaupallisissa ja avoimen lähdekoodin EAI-järjestelmissä virheenhallinta ja erityisesti poikkeuksien hallinnointi on kehittynyt pidemmälle kuin EIP-kirjallisuus \citep{Ritter2017}. Järjestelmät sisältävät yleensä systeemin kaikkien virheiden nappaamisen ja kaupalliset palvelut kuten Dell Boomi, IBM, SAP Cloud Integration ja Tibco sisältävät hienovaraisempia työkaluja virheiden vaikutasalan hallinnoimiseen \citep{Ritter2017}.
+Kaupallisissa ja avoimen lähdekoodin EAI-järjestelmissä virheenhallinta ja erityisesti poikkeuksien hallinnointi on kehittynyt pidemmälle kuin EIP-kirjallisuus \citep{Ritter2017}. Järjestelmät sisältävät yleensä systeemin kaikkien virheiden nappaamisen ja kaupalliset palvelut kuten Dell Boomi, IBM, SAP Cloud Integration ja Tibco sisältävät hienovaraisempia työkaluja virheiden vaikutusalan hallinnoimiseen \citep{Ritter2017}.
 
 Tutkimukset \citep{ExceptionRitter2014} \citep{ExceptionRitter2016} ovat kartoittaneet EAI-järjestelmistä käytettyjä virheenhallintastrategioita ja pyrkineet mallintamaan niitä suunnittelumalleina. Virheenhallinnasta on siis tehty myös varsin kattavaa kartoitusta suunnittelumallien perspektiivistä.
 Tapahtuman uudelleen yritys virheen tapahtuessa \textit{(retry pattern)} on yleinen suunnittelumalli joka ilmenee sanomakanavan tai yksittäisen tapahtuman tasolla ja yrittää operaatiota annetun määrän kertoja \citep{ExceptionRitter2014}.
-Virheitä hallinoidaan vikatilanne reitittimellä \textit{(failover router)} jossa sanoma reititetään vaihtoehtoisella kanavalle virheen tapahtuessa. Tämä suunnittelumalli eroaa alkuperäisen teoksen \citep{Hohpe2004} kiertotie EIP:stä \textit{(detour)} tarkastamalla jatkokäsittelyn EIP:tä kutsua ja reitittää vaihtoehtoiselle reitille ilman konfiguraaatiosanomia.
+Virheitä hallinnoidaan vikatilanne reitittimellä \textit{(failover router)} jossa sanoma reititetään vaihtoehtoisella kanavalle virheen tapahtuessa. Tämä suunnittelumalli eroaa alkuperäisen teoksen \citep{Hohpe2004} kiertotie EIP:stä \textit{(detour)} tarkastamalla jatkokäsittelyn EIP:tä kutsua ja reitittää vaihtoehtoiselle reitille ilman konfiguraatiosanomia.
 Kompensointialue \textit{(compensation sphere)} on suunnittelumalli jossa prosessi tai aktiviteetti sisältää joukon korjaavia operaatioita (kompensointeja) jotka aktivoituvat eri virhetilanteista. Kompensoinnit voivat olla vain tiettyyn tilanteeseen reagoivia tai koko määriteltyyn alueeseen reagoivia \citep{ExceptionRitter2014}.
 
-Tämän jälkeen EAI-järjestelmien virheehallinta strategioita on tarkemmin lajiteltu erillaisiin suunnittelumalleihin \citep{ExceptionRitter2016}. Järjestelmien virheenhallintatavat kategorioitiin yhteentoista samankaltaiseen lähestymistapaan, jotka on esitetty taulukossa \ref{fig:exceptionritter}.
+Tämän jälkeen EAI-järjestelmien virheenhallinta strategioita on tarkemmin lajiteltu erilaisiin suunnittelumalleihin \citep{ExceptionRitter2016}. Järjestelmien virheenhallintatavat kategorisointiin yhteentoista samankaltaiseen lähestymistapaan, jotka on esitetty taulukossa \ref{fig:exceptionritter}.
 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{kuvat/ritter_expetions.png}
-\caption{Taulukko EAI-systeemien virheenhallinnan suunnittelumalleista ja niiden kategoiroista \citep{ExceptionRitter2016}.\label{fig:exceptionritter}}
+\caption{Taulukko EAI-systeemien virheenhallinnan suunnittelumalleista ja niiden kategorioista \citep{ExceptionRitter2016}.\label{fig:exceptionritter}}
 \end{center}
 \end{figure}
 
 
-Tutkimuksessa arvioitiin Apache Flume, Apache Cameli, Apache Nifi ja SAP HCI EAI-järjestelmien virheenhallintatapoja. Jos virheenhallintatapa esiintyi useammin kuin kerran, virheenhallintatapa sisälytettiin suunnittelumalliksi \citep{ExceptionRitter2016}.
+Tutkimuksessa arvioitiin Apache Flume, Apache Cameli, Apache Nifi ja SAP HCI EAI-järjestelmien virheenhallintatapoja. Jos virheenhallintatapa esiintyi useammin kuin kerran, virheenhallintatapa sisällytettiin suunnittelumalliksi \citep{ExceptionRitter2016}.
 
 
 
-\section{Suunnittelumllien formalisointi}
-EIP-suunnittelumallien formalisointi on kiinnostava aspekti erityisesti akateemisen kirjallisuuden kontekstissa. Formalisointi mahdollistaa suunnittelumallien matemaattisen analyysin ja varmentamisen ja takaisi varman pohjan järjestelmäintegreaatioiden rakentamiselle suunnittelun ja ajon aikana.
+\section{Suunnittelumallien formalisointi}
+EIP-suunnittelumallien formalisointi on kiinnostava aspekti erityisesti akateemisen kirjallisuuden kontekstissa. Formalisointi mahdollistaa suunnittelumallien matemaattisen analyysin ja varmentamisen ja takaisi varman pohjan järjestelmäintegraatioiden rakentamiselle suunnittelun ja ajon aikana.
 
 Vuoden 2017 kartoitus \citep{Ritter2017} löysi yhden yrityksen formalisoida EIP:tä \citep{Fahland2013} jonka metodi formalisoinnille on hyödyntää värjättyjä Petri-verkkoja jossa värit kuvaavat datatyyppejä ja hallintasäikeet \textit{(control threads)} mallintavat kontrollirakenteita verkossa.
-Tämän jälkeen formalisointityötä on laajennettu vuonna 2021 \citep{Ritter2021}, jonka formalisointimetodi perustuu DB-verkoille \textit{(DB-nets)} \citep{Montali2017}; tutkimuksessa on pyritty rakentamaan vastuullinen formalisointitapa EIP:lle, mikä täyttää EAI:iin vaatimukset ohjausvuon, datan, ajan ja transaktioden suhteen \citep{Ritter2021}. Jatkotutkimukseen tarpeen tutkimuksen tekijät löytävät EIP-yhdistelmien formalisoinnista, koska nykyinen tutkimus keskittyi yksittäisten EIP:den formalisointiin \citep{Ritter2021}.
+Tämän jälkeen formalisointityötä on laajennettu vuonna 2021 \citep{Ritter2021}, jonka formalisointimetodi perustuu DB-verkoille \textit{(DB-nets)} \citep{Montali2017}; tutkimuksessa on pyritty rakentamaan vastuullinen formalisointitapa EIP-suunnittelumalleille, mikä täyttää EAI:in vaatimukset ohjausvuon, datan, ajan ja transaktioiden suhteen \citep{Ritter2021}. Jatkotutkimukseen tarpeen tutkimuksen tekijät löytävät EIP-yhdistelmien formalisoinnista, koska nykyinen tutkimus keskittyi yksittäisten EIP-suunnittelumallien formalisointiin \citep{Ritter2021}.
 
 
-Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP:eiden olemassaolon pituteen. Suhteutteutettuna siihen kuinka paljon EIP:tä käytetään kaupallisissa ja avoimissa EAI-alustoissa, on nykyisen formalisoinnin keskenräisyys harmillista, mutta viime vuosien uusiutunut kiinnostus aiheesta on lupaavaa. Ylipäätään EAI-teknologioiden formalisointi EIP-mallien ulkopuolella on keskittynyt palvelukeskeisen arkkitehtuurien ratkaisujen formalisointiin \citep{Ritter2017}.
+Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelumallien olemassaolon pituuteen. Suhteutettuna siihen kuinka paljon EIP:tä käytetään kaupallisissa ja avoimissa EAI-alustoissa, on nykyisen formalisoinnin keskeneräisyys harmillista, mutta viime vuosien uusiutunut kiinnostus aiheesta on lupaavaa. Ylipäätään EAI-teknologioiden formalisointi EIP-mallien ulkopuolella on keskittynyt palvelukeskeisen arkkitehtuurien ratkaisujen formalisointiin \citep{Ritter2017}.
 
 
 
