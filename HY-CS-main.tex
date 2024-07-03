@@ -193,6 +193,10 @@
 %\include{Ch.50_Conclusions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do not overflow urls in bibliography
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
 \cleardoublepage                          %fixes the position of bibliography in bookmarks
 \phantomsection
 \addcontentsline{toc}{chapter}{\bibname}  % This lines adds the bibliography to the ToC

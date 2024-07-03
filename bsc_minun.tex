@@ -339,10 +339,14 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
 
 
 \begin{center}
-    \begin{tabular}{ | l | l | l | l | l | l |}
+    \begin{tabular}{ |l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth} |p{0.2\textwidth}|p{0.2\textwidth}|}
     \hline
     Suunnittelumalli & Suorituskyky & Tilallinen/Tilaton & Virheenhallinta  & Pilvi & Formalisointi \\ \hline
-    Splitter & & & & & \\ \hline
+    Splitter & &
+      \begin{itemize}
+         \item Tilaton. Jakaja jakaa vain yhden sanoman sisällön eikä säilytä tilaa.
+     \end{itemize}
+             & & & \\ \hline
     Message Translator & & &  & & \\ \hline
     Content Based Router & & & & & \\ \hline
     Content Enricher & & & & & \\ \hline
