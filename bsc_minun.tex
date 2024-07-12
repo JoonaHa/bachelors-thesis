@@ -338,10 +338,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
 \chapter{Yhteenveto}
 
 
+\newpage
 \begin{center}
-    \begin{tabular}{ |l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth} |p{0.2\textwidth}|p{0.2\textwidth}|}
+    \begin{tabular}{ |l|p{0.2\textwidth}|p{0.2\textwidth}|p{0.2\textwidth} |p{0.1\textwidth}|p{0.1\textwidth}|}
     \hline
-    Suunnittelumalli & Tuki & Tilallinen/Tilaton & Virheenhallinta  & Pilvi & Formalisointi \\ \hline
+    Suunnittelumalli & Tuki & Tilallinen/Tilaton & Modernisoitu  & Pilvi & Formalisointi \\ \hline
     Splitter &
         \begin{itemize}
             \item 12/15 alustassa täysi tuki \citep{Ritter2017}.
@@ -351,7 +352,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \begin{itemize}
             \item Tilaton. Jakaja jakaa vain yhden sanoman sisällön eikä säilytä tilaa.
         \end{itemize}
-      & & & \\ \hline
+      &
+        \begin{itemize}
+            \item Ei
+        \end{itemize}
+      & & \\ \hline
     Message Translator & 
         \begin{itemize}
             \item 8/15 alustassa täysi tuki \citep{Ritter2017}.
@@ -361,7 +366,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \begin{itemize}
             \item Tilaton. Kääntäjä kääntää vain yhden sanoman sisällön eikä säilytä tilaa.
         \end{itemize}
-      &  & & \\ \hline
+      &
+        \begin{itemize}
+            \item Ei
+        \end{itemize}
+      & & \\ \hline
     Content Based Router & 
         \begin{itemize}
             \item 11/15 alustassa täysi tuki \citep{Ritter2017}.
@@ -371,7 +380,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \begin{itemize}
             \item Tilaton. Reititin ei muista aikaisempi sanomia.
         \end{itemize}
-      & & & \\ \hline
+      &
+        \begin{itemize}
+           \item Kyllä. Modernisoitu esimerkki Apache Camelille \citep{HohpeModernExamples}.
+        \end{itemize}
+      & & \\ \hline
     Content Enricher & 
         \begin{itemize}
             \item 6/15 alustassa täysi tuki \citep{Ritter2017}.
@@ -381,7 +394,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \begin{itemize}
             \item Tilaton. Rikastaja ei muista aikaisempia sanomia.
         \end{itemize}
-      & & & \\ \hline
+      &
+        \begin{itemize}
+           \item Kyllä. Modernisoitu esimerkki käyttäen Amazon EventBridge Pipes pilvipalvelua \citep{HohpeModernExamples}.
+        \end{itemize}
+      & & \\ \hline
     Content Filter & 
       &
         \begin{itemize}
@@ -391,7 +408,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \begin{itemize}
             \item Tilaton. Suodatin suodattaa vain yksittäisen sanoman sisältöä.
         \end{itemize}
-      & & & \\ \hline
+      &
+        \begin{itemize}
+            \item Ei
+        \end{itemize}
+      & & \\ \hline
     \end{tabular}
 \end{center}
 
