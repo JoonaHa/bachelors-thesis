@@ -322,13 +322,13 @@ Tutkimuksessa arvioitiin Apache Flume, Apache Cameli, Apache Nifi ja SAP HCI EAI
 
 
 
-\section{Suunnittelumallien formalisointi}
+\section{Suunnittelumallien formalisointi} \label{section:formalisointi}
 EIP-suunnittelumallien formalisointi on kiinnostava aspekti erityisesti akateemisen kirjallisuuden kontekstissa. Formalisointi mahdollistaa suunnittelumallien matemaattisen analyysin ja varmentamisen ja takaisi varman pohjan järjestelmäintegraatioiden rakentamiselle suunnittelun ja ajon aikana.
 
-Vuoden 2017 kartoitus \citep{Ritter2017} löysi yhden yrityksen formalisoida EIP:tä \citep{Fahland2013} jonka metodi formalisoinnille on hyödyntää värjättyjä Petri-verkkoja jossa värit kuvaavat datatyyppejä ja hallintasäikeet \textit{(control threads)} mallintavat kontrollirakenteita verkossa.
+Vuoden 2017 kartoitus \citep{Ritter2017} löysi yhden yrityksen formalisoida EIP:tä \citep{Fahland2013} jonka metodi formalisoinnille on hyödyntää värjättyjä Petri-verkkoja jossa värit kuvaavat datatyyppejä ja hallintasäikeet \textit{(control threads)} mallintavat kontrollirakenteita verkossa \citep{Fahland2013}.
 Tämän jälkeen formalisointityötä on laajennettu vuonna 2021 \citep{Ritter2021}, jonka formalisointimetodi perustuu DB-verkoille \textit{(DB-nets)} \citep{Montali2017}; tutkimuksessa on pyritty rakentamaan vastuullinen formalisointitapa EIP-suunnittelumalleille, mikä täyttää EAI:in vaatimukset ohjausvuon, datan, ajan ja transaktioiden suhteen \citep{Ritter2021}. Jatkotutkimukseen tarpeen tutkimuksen tekijät löytävät EIP-yhdistelmien formalisoinnista, koska nykyinen tutkimus keskittyi yksittäisten EIP-suunnittelumallien formalisointiin \citep{Ritter2021}.
 
-
+begin center latex
 Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelumallien olemassaolon pituuteen. Suhteutettuna siihen kuinka paljon EIP:tä käytetään kaupallisissa ja avoimissa EAI-alustoissa, on nykyisen formalisoinnin keskeneräisyys harmillista, mutta viime vuosien uusiutunut kiinnostus aiheesta on lupaavaa. Ylipäätään EAI-teknologioiden formalisointi EIP-mallien ulkopuolella on keskittynyt palvelukeskeisen arkkitehtuurien ratkaisujen formalisointiin \citep{Ritter2017}.
 
 
@@ -337,11 +337,13 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
 
 \chapter{Yhteenveto}
 
+Taulukoihin \ref{table:eip1} ja \ref{table:eip2} on tiivistetty tutkielman sisältö. Taulukot sisältävät viisi parhaiten tuettua EIP-suunnittelumallia. Järjestyksenä ensimmäisenä ovat suunnittelumallit, joille löytetyy parhaiten edes osittainen tuki erillaisilta integraatioalustoilta, perustuen tutkimukseen \citep{Ritter2017}.
+Kaikki listatut suunnittelumallit ovat alkuperäisen EIP-kirjan \citep{Hohpe2004} suunnitelumalleja ja kaikki listatut mallit ovat myös tilattomia.
+Moderisoitu on rajattu EIP-suunnittelumallien omiin modernisointi toimiin \citep{HohpeModernExamples}. Formalisoinnissa on keskitytty luvussa \ref{section:formalisointi} käsiteltyihin metodeihin eli värjättyihin Petri-verkkoihin ja DB-verkoihin.
 
-\newpage
-\begin{table}
+\begin{table}[h]
 \centering
-    \begin{tabular}{ |p{0.19\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.28\textwidth}|}
+    \begin{tabular}{|p{0.19\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
     \hline
     Suunnittelumalli & Tuki & Modernisoitu & Formalisointi \\ \hline
     Jakaja \textit{(Splitter)} &
@@ -355,7 +357,7 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \end{itemize}
       &
         \begin{itemize}
-           \item DB-net formalisointi esimerkki \citep{Ritter2021}.
+           \item DB-verkko formalisointi esimerkki \citep{Ritter2021}.
         \end{itemize}
     \\ \hline
     Sanomakääntäjä \textit{(Message Translator)} & 
@@ -369,7 +371,7 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \end{itemize}
       &  
         \begin{itemize}
-           \item DB-net formalisointi esimerkki \citep{Ritter2021}.
+           \item DB-verkko formalisointi esimerkki \citep{Ritter2021}.
            \item Värjätty Petri-verkko formalisointi esimerkki \citep{Fahland2013}.
         \end{itemize}
       \\ \hline
@@ -384,18 +386,19 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \end{itemize}
       &
         \begin{itemize}
-           \item DB-net formalisointi esimerkki \citep{Ritter2021}.
+           \item DB-verkko formalisointi esimerkki \citep{Ritter2021}.
         \end{itemize}
       \\ \hline
     \end{tabular}
    \caption{Taulukko yleisimpien EIP-suunnittelumallien ominaisuuksista.}
+   \label{table:eip1}
 \end{table}
 
 
 
-\begin{table}
+\begin{table}[h]
 \centering
-    \begin{tabular}{ |p{0.19\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.28\textwidth}|}
+    \begin{tabular}{|p{0.19\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.2\textwidth}|}
     \hline
     Suunnittelumalli & Tuki & Modernisoitu & Formalisointi \\ \hline
     Sisällön rikastaja \textit{(Content Enricher)} & 
@@ -409,7 +412,7 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
         \end{itemize}
       &
         \begin{itemize}
-           \item DB-net formalisointi esimerkki \citep{Ritter2021}.
+           \item DB-verkko formalisointi esimerkki \citep{Ritter2021}.
            \item Värjätty Petri-verkko formalisointi esimerkki \citep{Fahland2013}.
         \end{itemize}
       \\ \hline
@@ -429,7 +432,11 @@ Formalisoinnin tutkimus on tuoretta ja keskenräistä verrattuna EIP-suunnittelu
       \\ \hline
     \end{tabular}
    \caption{Taulukko yleisimpien EIP-suunnittelumallien ominaisuuksista.}
+   \label{table:eip2}
 \end{table}
 
 
+
+\chapter*{Tekoälyn käyttö tutkielmassa}
+Tutkielman käytössä hyödynnettiin kielimalleja ChatGPT ja Microsoft CoPilot. Kielimalleja hyödynnettiin tutkielman jaottelun ideoitiin ja lähteiden etsimiseen. Kumpikaan käyttökohde ei vaikuttanut tietoisesti tutkielman tulokeseen kielimallien liian hallusinoimisen vuoksi.
 
