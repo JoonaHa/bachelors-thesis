@@ -348,11 +348,16 @@ EIP-suunnitelumallit johdetaan kuudesta kattokategoriasta joista muut suunnittel
 
 Sanomapohjaisia suunnittelumalleja löytyy useiden EAI-ratkaisujen dokumentaatiosta, kuten myös pilvipalvelutarjoajien teknisistä blogeista. EIP-kirjalijat ovat myös pyrkineet modernisoimaan suunnittelumalleja nykypäivän pilviympäristöön ja hyödyntämään uusipia teknologiaratkaisuja.
 
-Sanomapohajaisten suunnittelumallien tunnettu puute on tilallisuuden uupuminen. EIP-kirjan esittelemät mallit ovat lähes poikkeuksetta tilattomia. Tilallisten suunnittelumallien puute ei ole estänyt integraatioalustoja kehittämästä omia tilallisia lähestymistapojaan. Toinen tunnettu puute on datavirtaprotokollien huomioimattomuus, mikä aiheuttaa vaikeuksia big data-järjestelmissä. Kirjallisuuden vähyys ei ole estänyt 
+Sanomapohajaisten suunnittelumallien tunnettu puute on tilallisuuden uupuminen. EIP-kirjan esittelemät mallit ovat lähes poikkeuksetta tilattomia. Tilallisten suunnittelumallien puute ei ole estänyt integraatioalustoja kehittämästä omia tilallisia lähestymistapojaan. Toinen tunnettu puute on datavirtaprotokollien huomioimattomuus, mikä aiheuttaa vaikeuksia big data-järjestelmissä. Kirjallisuuden vähyys ei ole tässäkään tapauksessa estänyt kehitystä. Yksi datavirtojen hyödyntämisen ajajista on ollut Apache Kafkan suosio. Vastaavanlainen puute on myös virheenhallinta. EIP-kirja sisälsi vain kaksi virheenhallinta suunnittelumallia, mutta EAI-ratkaisut ovat kehittäneet omia mekanismejaan virheenhallitsemiseen ja tieteellinen kirjalllisuus on pyrkinyt mallintamaan näitä lähestymistapoja ja muodostamaan niistä yleiskäytettäviä suunnittelumalleja.
 
-Taulukoihin \ref{table:eip1} ja \ref{table:eip2} on tiivistetty tutkielman sisältö. Taulukot sisältävät viisi parhaiten tuettua EIP-suunnittelumallia. Järjestyksenä ensimmäisenä ovat suunnittelumallit, joille löytetyy parhaiten edes osittainen tuki erillaisilta integraatioalustoilta, perustuen tutkimukseen \citep{Ritter2017}.
+Sanomapohjaisten suunnittelumallien kirjallisuutta on myös vaikeuttanut formalisoinnin puute, mikä on vaikeuttanut mallien syvempää analysointia. Analysointi on keskittynyt kahteen tapaan: värjättyihin Petri-verkkoihin ja ajotettuihin DB-verkkohin. Myöhemmän metodin pyrkiessä ottamaan enemmän huomioon sanomapohjaisten suunnittellumallien elementtejä. Kirjallisuus formalisoinnillle on myös kohtuu tuoretta.
+
+Sanomapohjaset suunnittelumallit ovat olleet vaikutusvaltainen aspekti EAI-ratkaisujen kehityksessä, mikä näkyy myös nykypäivän pilviratkaisujen lähestymistavoissa. Isoa osaa alkuperäisten EIP-suunnittelumallien puutteista on paikattu niiden implementaatiosssa ja myöhemmässä kirjallisuudessa. Formalisoinnin puutteellisuuden vaikuttaessa negatiivisesti suunnittelumallien tieteelliseen kirjallisuuteen.
+
+
+Taulukoihin \ref{table:eip1} ja \ref{table:eip2} on tiivistetty tutkielman lopputuloksia. Taulukot sisältävät viisi parhaiten tuettua EIP-suunnittelumallia. Järjestyksenä ensimmäisenä ovat suunnittelumallit, joille löytetyy parhaiten edes osittainen tuki erillaisilta integraatioalustoilta, perustuen tutkimukseen \citep{Ritter2017}.
 Kaikki listatut suunnittelumallit ovat alkuperäisen EIP-kirjan \citep{Hohpe2004} suunnitelumalleja ja kaikki listatut mallit ovat myös tilattomia.
-Moderisoitu on rajattu EIP-suunnittelumallien omiin modernisointi toimiin \citep{HohpeModernExamples}. Formalisoinnissa on keskitytty luvussa \ref{section:formalisointi} käsiteltyihin metodeihin eli värjättyihin Petri-verkkoihin ja DB-verkoihin.
+Modernisoitu on rajattu EIP-suunnittelumallien omiin modernisointi toimiin \citep{HohpeModernExamples}. Formalisoinnissa on keskitytty luvussa \ref{section:formalisointi} käsiteltyihin metodeihin eli värjättyihin Petri-verkkoihin ja DB-verkoihin.
 
 \begin{table}[h]
 \centering
