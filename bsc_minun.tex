@@ -21,18 +21,18 @@ kommunikoinnin ohjelmistojen välillä
 
 Vuonna 2020 EAI-markkinan arvioitiin olevan 9,26 miljardin dollarin (USD) arvoinen \citep{mordorintelligence} ja koostuu ohjelmistojättien (Microsoft, Oracle, Salesforce IBM) ja pienempien yksittäisten yritysten (Workato, SnapLogic, Tibico) tarjoamista järjestelmistä.
 
-Monet tämän päivän järjestelmäintegraatioalustat tarjoavat joukon työkaluja ja lähestymistapoja joilla, on paljon yhteisiä piirteitä keskenään. Tämän tutkielman tarkoituksena on avata, mistä nämä toisiaan muistuttavat lähestymistavat ovat peräisin, miten niihin on päädytty ja mikä on niiden asema tänä päivänä.
+Monet tämän päivän järjestelmäintegraatioalustat tarjoavat joukon työkaluja ja lähestymistapoja, joilla on paljon yhteisiä piirteitä keskenään. Tämän tutkielman tarkoituksena on avata, mistä nämä toisiaan muistuttavat lähestymistavat ovat peräisin, miten niihin on päädytty ja mikä on niiden asema tänä päivänä.
 
 Luku \ref{chap:lähestymis_tavat} kuvaa, miten järjestelmäintegraatioita on lähestytty historiallisesti ja esittelee järjestelmäintegraatioiden merkittävintä kirjallisuutta.
 
-Toinen luku paneutuu sanomapohjaisiin suunnittelumalleihin ja erityisesti järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnettuihin lähestymistapoihin ja perehtyy niiden yläkategorioihin ja selittää itse mallien lähestymistapoja ja niiden perusteita. Suunnittelumallien tilannetta nykypäivässä käsitellään lyhyesti.
+Luku \ref{chap:sanomapohjaiset} paneutuu sanomapohjaisiin suunnittelumalleihin ja erityisesti järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnettuihin lähestymistapoihin ja perehtyy niiden yläkategorioihin ja selittää itse mallien lähestymistapoja ja niiden perusteita. Suunnittelumallien nykytilannetta käsitellään lyhyesti.
 
-Kolmas luku käsittelee, miten järjestelmäintegraatioiden suunnittelumallit ovat asentuneet moderneja teknologioita käyttäviin järjestelmiin ja perehtyy, miten suunnittelumallien heikkouksina pidetyt piirteet ovat kehittyneet integraatioalustojen ympäristössä.
+Luku \ref{chap:kehitystä} käsittelee, miten järjestelmäintegraatioiden suunnittelumallit ovat asentuneet moderneja teknologioita käyttäviin järjestelmiin ja perehtyy suunnittelumallien heikkouksina pidettyjen piirteiden kehitykseen integraatioalustaympäristössä.
 
 
 \chapter{Järjestelmäintegraatioiden lähestymistavat} \label{chap:lähestymis_tavat}
 
-Esittelen tässä luvussa suosituimpia jäsentely ja lähestymistapoja järjestelmäintegraatioille. Eri lähestymistavat perustuvat viitatuimpaan järjestelmäintegraatioarkkitehtuurin kirjallisuuteen. Luvun tarkoituksena on antaa kattokategorioita erilaisille teknisille lähestymistavoille ja antaa historiallista kontekstia eri arkkitehtuurisuuntauksille.
+Tässä luvussa esitellään suosituimpia jäsentely ja lähestymistapoja järjestelmäintegraatioille. Eri lähestymistavat perustuvat viitatuimpaan järjestelmäintegraatioarkkitehtuurin kirjallisuuteen. Luvun tarkoituksena on antaa kattokategorioita erilaisille teknisille lähestymistavoille ja antaa historiallista kontekstia eri arkkitehtuurisuuntauksille.
 
 \section{Integraatiotasot}
 
@@ -115,7 +115,7 @@ Sanomien käytön löyhät kytkennät lisäävät integroitavien sovellusten koh
 
 Edellä mainitut haasteet tarkoittavat sanomapohjaisille järjestelmille suunniteltuja lähestymistapoja ja arkkitehtuureja mitkä toistuvat järjestelmissä niiden yksittäisistä eroista huolimatta.
 
-\chapter{Sanomapohjaiset suunnittelumallit}
+\chapter{Sanomapohjaiset suunnittelumallit} \label{chap:sanomapohjaiset}
 
 \section{Suunnittelumallien asema ja kategorisointi}
 Edellisessä luvussa esitellyistä neljästä kategoriasta Hohpe ja Woolf suosivat sanomien käyttöä integraatioratkaisuissa ja suurin osa teoksesta keskittyy sanomapohjaisen suunnittelumallien esittelyyn \citep[sivu~76]{Hohpe2004}. Nämä järjestelmäintegraatioiden suunnittelumalleina \textit{(enterprise integration patterns, EIP)} tunnetut kehitysohjeet ovat vaikuttaneet useamman eri integraatioalustan arkkitehtuuriin. 
@@ -239,7 +239,7 @@ Sanomajärjestelmät \textit{(messaging systems)} on kattokategorian nimi EIP:ll
 
 
 
-\chapter{Järjestelmäintegraatioiden suunnittelumallien kehitystä}
+      \chapter{Järjestelmäintegraatioiden suunnittelumallien kehitystä} \label{chap:kehitystä}
 
 \section{Suunnittelumallien rooli nykypäivän ympäristössä}
    EIP-teoksen \citep{Hohpe2004} julkaisun jälkeen kirjailijat (pääasiassa Gregor Hohpe) ovat pyrkineet pitämään sisällön relevanttina. Vaikka kirjan arkkitehtuurisisältö itsessään on pysynyt relevanttina ja vaikuttaa selkeästi nykypäivän järjestelmäintegraatioratkaisuissa ja asynkronisten sanomien käytössä, on kirjan koodiesimerkit ja teknologiamaininnat vanhentuneet; näitä on myös tässä tutkielmassa pyritty korjaamaan tuoreemmilla esimerkeillä, jotka ovat tämän päivän opiskelijalle tuttuja. 
