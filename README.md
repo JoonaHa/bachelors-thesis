@@ -1,3 +1,8 @@
+# BCS thesis based on the University of Helsinki Latex Template
+
+---
+
+
 #  Thesis templates
 ## University of Helsinki, Faculty of Science, Department of Computer Science
 
